@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions — Brink Browser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#f8f9fb; --bg2:#ffffff; --bg3:#f2f4f7; --surface:#eaedf2; --border:rgba(0,0,0,0.07); --border2:rgba(0,0,0,0.12); --accent:#1ec490; --accent2:#17a376; --text:#0f1117; --text2:#5a6275; --text3:#9aa3b2; --serif:'Instrument Serif',Georgia,serif; --sans:'DM Sans',sans-serif; --radius:14px; --radius-lg:22px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; height: 62px; background: rgba(248,249,251,0.88); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border-bottom: 1px solid var(--border); transition: background 0.3s; }
+    .nav-inner { max-width: 860px; width: 100%; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nav-logo-text { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+    .nav-links a.active { color: var(--accent); font-weight: 600; }
+
+    .page-hero { padding: 140px 24px 60px; text-align: center; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 58px); font-weight: 400; line-height: 1.07; letter-spacing: -0.02em; color: var(--text); max-width: 680px; margin: 0 auto 16px; }
+    .page-hero .meta { font-size: 14px; color: var(--text3); }
+
+    .legal-section { padding: 72px 24px 100px; }
+    .legal-inner { max-width: 720px; margin: 0 auto; }
+
+    .legal-inner h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; color: var(--text); margin: 48px 0 16px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .legal-inner h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+    .legal-inner p { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.8; margin-bottom: 16px; }
+    .legal-inner p:last-child { margin-bottom: 0; }
+    .legal-inner ul { margin: 12px 0 16px 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .legal-inner ul li { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.7; padding-left: 20px; position: relative; }
+    .legal-inner ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+    .legal-inner a { color: var(--accent); text-decoration: none; }
+    .legal-inner a:hover { text-decoration: underline; }
+    .legal-inner strong { font-weight: 600; color: var(--text); }
+
+    .legal-notice { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 48px; }
+    .legal-notice p { font-size: 14px; color: var(--text2); line-height: 1.7; margin: 0; }
+
+    footer { border-top: 1px solid var(--border); background: var(--bg2); }
+    .footer-top { max-width: 860px; margin: 0 auto; padding: 36px 24px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-bottom { max-width: 860px; margin: 0 auto; padding: 16px 24px 28px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+    .footer-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .footer-logo-mark { width: 28px; height: 28px; border-radius: 7px; overflow: hidden; flex-shrink: 0; }
+    .footer-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .footer-logo-text { font-size: 14px; font-weight: 600; color: var(--text2); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+    .footer-links { display: flex; gap: 24px; align-items: center; }
+    .footer-links a { font-size: 13px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text2); }
+    .footer-social { display: flex; gap: 10px; align-items: center; }
+    .footer-social a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); color: var(--text3); text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+    .footer-social a:hover { background: var(--surface); border-color: var(--border2); color: var(--text2); }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .footer-top, .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
+        <span class="nav-logo-text">Brink</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="features.html">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Legal</div>
+    <h1>Terms &amp; Conditions</h1>
+    <p class="meta">Last updated: June 2026 &nbsp;·&nbsp; Governing law: England and Wales</p>
+  </div>
+
+  <section class="legal-section">
+    <div class="legal-inner">
+
+      <div class="legal-notice">
+        <p>Please read these Terms and Conditions carefully before downloading or using Brink Browser. By downloading, installing or using the app, you agree to be bound by these terms. If you do not agree, do not use the app.</p>
+      </div>
+
+      <h2>1. About Brink</h2>
+      <p>Brink Browser ("Brink", "the app", "we", "us") is a research browser application developed by Josh Bradley, an independent developer based in the United Kingdom. The app is available on the Apple App Store for iPad and iPhone.</p>
+
+      <h2>2. Acceptance of Terms</h2>
+      <p>By downloading, installing or using Brink, you agree to these Terms and Conditions in full. If you are under 16 years of age, you must have obtained consent from a parent or legal guardian before using the app.</p>
+      <p>We reserve the right to update these Terms at any time. Continued use of the app after changes are posted constitutes your acceptance of the revised Terms.</p>
+
+      <h2>3. Licence to Use</h2>
+      <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to use Brink for your personal, non-commercial use on Apple devices you own or control.</p>
+      <p>You may not:</p>
+      <ul>
+        <li>Copy, modify, distribute or sell any part of the app</li>
+        <li>Reverse engineer or attempt to extract the source code</li>
+        <li>Use the app for any unlawful purpose</li>
+        <li>Attempt to gain unauthorised access to any systems connected to the app</li>
+      </ul>
+
+      <h2>4. Purchase and Payment</h2>
+      <p>Brink is available as a <strong>one-time purchase</strong> through the Apple App Store. There are no subscriptions, recurring charges or in-app purchases at this time.</p>
+      <p>All purchases are processed by Apple and are subject to Apple's own Terms of Sale. We do not handle payment information directly. Refund requests are governed by Apple's refund policy and should be directed to Apple.</p>
+
+      <h2>5. App Availability and Updates</h2>
+      <p>We aim to keep Brink available and functioning, but we do not guarantee uninterrupted access. The app may be temporarily unavailable due to maintenance, updates or circumstances beyond our control.</p>
+      <p>We may release updates to the app from time to time. Some updates may be required to continue using certain features. We reserve the right to modify, suspend or discontinue any feature at any time without notice.</p>
+
+      <h2>6. Intellectual Property</h2>
+      <p>All content, design, code, graphics and branding within Brink Browser are the intellectual property of Josh Bradley unless otherwise stated. The Brink name, logo and app icon are proprietary marks.</p>
+      <p>Nothing in these Terms grants you any right to use our intellectual property other than as permitted by the licence above.</p>
+
+      <h2>7. User Responsibilities</h2>
+      <p>You are responsible for how you use Brink and for any content you save, note or record within the app. Brink is intended for personal study and research use. You agree not to use the app in any way that is unlawful, harmful or in violation of any third party's rights.</p>
+
+      <h2>8. Third-Party Websites</h2>
+      <p>Brink is a web browser. When you browse websites through the app, you are subject to those websites' own terms and privacy policies. We are not responsible for the content, availability or practices of any third-party websites you visit.</p>
+
+      <h2>9. Disclaimers</h2>
+      <p>Brink is provided "as is" without any warranties, express or implied. To the fullest extent permitted by law, we disclaim all warranties including fitness for a particular purpose and non-infringement.</p>
+      <p>We do not warrant that the app will be error-free, secure or uninterrupted at all times.</p>
+
+      <h2>10. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Josh Bradley shall not be liable for any indirect, incidental, special or consequential damages arising from your use of Brink, including but not limited to loss of data, loss of research, or loss of productivity.</p>
+      <p>Our total liability to you for any claim arising from these Terms or your use of the app shall not exceed the amount you paid for the app.</p>
+
+      <h2>11. Age Requirement</h2>
+      <p>Brink is designed for users aged 16 and over. By using the app, you confirm that you are at least 16 years old, or that you have obtained parental or guardian consent.</p>
+
+      <h2>12. Governing Law</h2>
+      <p>These Terms and Conditions are governed by and construed in accordance with the laws of England and Wales. Any disputes arising under these Terms will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+      <h2>13. Contact</h2>
+      <p>If you have any questions about these Terms, please contact us at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a> or via the contact form at <a href="contact.html">brinkbrowser.app/contact</a>.</p>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <a href="index.html" class="footer-logo">
+        <div class="footer-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
+        <span class="footer-logo-text">Brink Browser</span>
+      </a>
+      <div class="footer-links">
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Josh Bradley. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://www.reddit.com" target="_blank" rel="noopener" title="Reddit">
+          <svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+        </a>
+        <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener" title="Buy Me a Coffee">
+          <svg viewBox="0 0 24 24"><path d="M7 22h10a1 1 0 00.997-.923l1-10A1 1 0 0018 10H6a1 1 0 00-.997 1.077l1 10A1 1 0 007 22zM21 6h-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v1H3a1 1 0 00-1 1v2a3 3 0 003 3h.078l.99 9.887A3 3 0 009.053 24h5.893a3 3 0 002.986-2.113L18.922 12H19a3 3 0 003-3V7a1 1 0 00-1-1zm-1 3a1 1 0 01-1 1h-.9l.1-1H19v1zm-4-4v1H8V5h8zM4 9V8h1.8l.1 1H5a1 1 0 01-1-1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(248,249,251,0.96)' : 'rgba(248,249,251,0.88)'; });
+  </script>
+</body>
+</html>
