@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — Brink Browser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#f8f9fb; --bg2:#ffffff; --bg3:#f2f4f7; --surface:#eaedf2;
+      --border:rgba(0,0,0,0.07); --border2:rgba(0,0,0,0.12);
+      --accent:#1ec490; --accent2:#17a376;
+      --text:#0f1117; --text2:#5a6275; --text3:#9aa3b2;
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'DM Sans',sans-serif;
+      --radius:14px; --radius-lg:22px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 62px; background: rgba(248,249,251,0.88); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border-bottom: 1px solid var(--border); transition: background 0.3s; display: flex; align-items: center; }
+    .nav-inner { max-width: 860px; width: 100%; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nav-logo-text { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+    .nav-links a.active { color: var(--accent); font-weight: 600; }
+    .nav-cta { background: var(--accent) !important; color: white !important; padding: 7px 18px !important; border-radius: 9px !important; font-weight: 600 !important; font-size: 13px !important; }
+    .nav-cta:hover { opacity: 0.88 !important; }
+
+    /* PAGE HERO */
+    .page-hero { padding: 140px 24px 72px; text-align: center; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(42px, 6vw, 72px); font-weight: 400; line-height: 1.07; letter-spacing: -0.02em; color: var(--text); max-width: 720px; margin: 0 auto 20px; }
+    .page-hero h1 em { font-style: italic; color: var(--accent); }
+    .page-hero p { font-size: 18px; font-weight: 300; color: var(--text2); max-width: 540px; margin: 0 auto; line-height: 1.65; }
+
+    /* ANCHOR BAR — centred */
+    .anchor-bar-wrapper { position: sticky; top: 62px; z-index: 90; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .anchor-bar { display: flex; justify-content: center; gap: 2px; overflow-x: auto; scrollbar-width: none; padding: 0 24px; }
+    .anchor-bar::-webkit-scrollbar { display: none; }
+    .anchor-btn { display: flex; align-items: center; gap: 8px; padding: 16px 20px 14px; font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--text2); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: color 0.2s, border-color 0.2s; margin-bottom: -1px; text-decoration: none; }
+    .anchor-btn svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; fill: none; flex-shrink: 0; }
+    .anchor-btn:hover { color: var(--text); }
+    .anchor-btn.active { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+
+    /* SECTIONS */
+    .features-section { padding: 80px 24px; }
+    .features-section.alt { background: var(--bg2); }
+    .features-section.tinted { background: var(--bg3); }
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    /* SECTION HEADING */
+    .feature-section-heading { margin-bottom: 64px; padding-bottom: 28px; border-bottom: 1px solid var(--border); text-align: center; }
+    .feature-section-heading h2 { font-family: var(--serif); font-size: clamp(34px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--text); margin-bottom: 12px; }
+    .feature-section-heading h2 em { font-style: italic; color: var(--accent); }
+    .feature-section-heading p { font-size: 17px; font-weight: 300; color: var(--text2); max-width: 520px; line-height: 1.7; margin: 0 auto; }
+    .feature-section-heading .section-label { display: block; }
+
+    /* FEATURE ROWS */
+    .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; margin-bottom: 80px; }
+    .feature-row:last-child { margin-bottom: 0; }
+    .feature-row.reverse { direction: rtl; }
+    .feature-row.reverse > * { direction: ltr; }
+
+    .feature-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: rgba(30,196,144,0.08); padding: 5px 12px; border-radius: 100px; margin-bottom: 16px; }
+    .feature-row-text h3 { font-family: var(--serif); font-size: clamp(24px, 3vw, 36px); font-weight: 400; line-height: 1.18; letter-spacing: -0.02em; color: var(--text); margin-bottom: 14px; }
+    .feature-row-text p { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.75; margin-bottom: 16px; }
+    .feature-row-text p:last-child { margin-bottom: 0; }
+
+    /* BULLET POINTS inside feature rows */
+    .feature-bullets { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .feature-bullets li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text2); font-weight: 400; }
+    .feature-bullets li::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+
+    /* IMAGE / PLACEHOLDER */
+    .feature-row-image img { width: 100%; border-radius: 18px; box-shadow: 0 24px 64px rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.06); display: block; }
+    .feature-row.portrait-row { grid-template-columns: 1fr 1.4fr; gap: 48px; }
+    .feature-row.portrait-row.reverse { direction: rtl; }
+    .feature-row.portrait-row.reverse > * { direction: ltr; }
+    .feature-placeholder { background: var(--bg3); border: 1px solid var(--border2); border-radius: 18px; aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+    .feature-placeholder svg { width: 32px; height: 32px; stroke: var(--text3); stroke-width: 1.5; fill: none; }
+    .feature-placeholder span { font-size: 13px; color: var(--text3); font-weight: 500; }
+
+    /* FOOTER */
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+
+    @media (max-width: 900px) {
+      .footer-top, .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .nav-inner { padding: 0 20px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .anchor-bar { justify-content: flex-start; }
+      .feature-row, .feature-row.reverse { grid-template-columns: 1fr; gap: 32px; direction: ltr; }
+    }
+    footer { border-top: 1px solid var(--border); background: var(--bg2); }
+    .footer-top { max-width: 860px; margin: 0 auto; padding: 36px 24px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-bottom { max-width: 860px; margin: 0 auto; padding: 16px 24px 28px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+    .footer-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .footer-logo-mark { width: 28px; height: 28px; border-radius: 7px; overflow: hidden; flex-shrink: 0; }
+    .footer-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .footer-logo-text { font-size: 14px; font-weight: 600; color: var(--text2); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+    .footer-links { display: flex; gap: 24px; align-items: center; }
+    .footer-links a { font-size: 13px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text2); }
+    .footer-social { display: flex; gap: 10px; align-items: center; }
+    .footer-social a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); color: var(--text3); text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+    .footer-social a:hover { background: var(--surface); border-color: var(--border2); color: var(--text2); }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
+        <span class="nav-logo-text">Brink</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="features.html" class="active">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Features</div>
+    <h1>One app for your<br><em>entire research workflow</em></h1>
+    <p>Browser, reader, notes, citations, lecture capture and research organisation — all in one place. That's the difference.</p>
+  </div>
+
+  <!-- CENTRED ANCHOR BAR -->
+  <div class="anchor-bar-wrapper">
+    <div class="anchor-bar">
+      <a href="#workspace" class="anchor-btn active">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+        Research Workspace
+      </a>
+      <a href="#reading" class="anchor-btn">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+        Reader Mode
+      </a>
+      <a href="#productivity" class="anchor-btn">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Focus &amp; Capture
+      </a>
+      <a href="#privacy" class="anchor-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Privacy &amp; Design
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- RESEARCH WORKSPACE                     -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="features-section alt" id="workspace">
+    <div class="container">
+
+      <div class="feature-section-heading reveal">
+        <div class="section-label">Research Workspace</div>
+        <h2>A persistent academic<br><em>workspace, not bookmarks</em></h2>
+        <p>Most browsers give you bookmarks. Brink gives you a full research workspace — folders, subfolders, saved websites, notes, images, recordings and citations all living together.</p>
+      </div>
+
+      <!-- Sidebar & Folders -->
+      <div class="feature-row reveal"class="feature-row portrait-row reveal">
+        <div class="feature-row-text">
+          <span class="feature-tag">Sidebar &amp; Folders</span>
+          <h3>Your research organised<br>the way you think</h3>
+          <p>The sidebar stays open alongside your browsing. Create nested folders for each module, subject or project and drag research between them. Everything is persistent — close the app and come back exactly where you left off.</p>
+          <ul class="feature-bullets">
+            <li>Nested folders and subfolders</li>
+            <li>Drag and drop organisation</li>
+            <li>Expand and collapse folders</li>
+            <li>Persistent across sessions</li>
+          </ul>
+        </div>
+        <div class="feature-row-image">
+          <img src="sidebar-screenshot.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Save Everything -->
+      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
+        <div class="feature-row-text">
+          <span class="feature-tag">Research Saving</span>
+          <h3>Save anything,<br>into any folder</h3>
+          <p>Brink lets you save far more than just links. Capture a page, a note, an image, a lecture recording or a citation — all into the same folder, all searchable, all together.</p>
+          <ul class="feature-bullets">
+            <li>Websites and articles</li>
+            <li>Quick notes and research notes</li>
+            <li>Images and PDFs</li>
+            <li>Lecture recordings</li>
+            <li>Generated citations</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="save-research-screenshot.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Highlighting -->
+      <div class="feature-row portrait-row reveal">
+        <div class="feature-row-text">
+          <span class="feature-tag">Highlighting</span>
+          <h3>Highlight what matters,<br>save it straight to a folder</h3>
+          <p>Select any text on a webpage and highlight it in yellow, green, blue or red. Highlights are saved with the page so they're still there when you return. Use them to extract the most important parts of an article straight into your research.</p>
+          <ul class="feature-bullets">
+            <li>Four highlight colours</li>
+            <li>Highlights persist on return</li>
+            <li>Research extraction workflow</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="highlight-screenshot.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Citations -->
+      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
+        <div class="feature-row-text">
+          <span class="feature-tag">Citations</span>
+          <h3>Generate citations<br>in one tap</h3>
+          <p>Select Harvard, APA or MLA and Brink formats a citation from any saved research item instantly. Copy it straight into your essay — no manual formatting, no switching to a separate citation tool, no hunting for author names.</p>
+          <ul class="feature-bullets">
+            <li>Harvard, APA and MLA formats</li>
+            <li>Generated from saved sources</li>
+            <li>One tap, ready to paste</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="citation-feature.png" alt="" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- READER MODE                            -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="features-section tinted" id="reading">
+    <div class="container">
+
+      <div class="feature-section-heading reveal">
+        <div class="section-label">Reader Mode</div>
+        <h2>Not a basic reader —<br><em>a reading application</em></h2>
+        <p>Most browsers strip an article and call it reader mode. Brink goes much further with full typography controls, reading progress, time estimates and distraction-free full-screen study.</p>
+      </div>
+
+      <!-- Reader Mode main -->
+      <div class="feature-row portrait-row reveal">
+        <div class="feature-row-text">
+          <span class="feature-tag">Distraction-free reading</span>
+          <h3>Clean article view with<br>full reading controls</h3>
+          <p>One tap removes everything except the content — ads, navigation, cookie banners, autoplay. Then customise every aspect of how you read so articles feel like books, not websites.</p>
+          <ul class="feature-bullets">
+            <li>Font family and size controls</li>
+            <li>Line spacing and content width</li>
+            <li>Contrast and theme controls</li>
+            <li>Image visibility toggle</li>
+            <li>Full-screen reading mode</li>
+            <li>Reading progress indicator</li>
+            <li>Estimated reading time</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="readermode.png" alt="" />
+        </div>
+      </div>
+
+      <!-- PDF VIEWER -->
+      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
+        <div class="feature-row-text">
+          <span class="feature-tag">PDF VIEWER</span>
+          <h3>Fill, annotate and save<br>PDFs without leaving Brink</h3>
+          <p>Open any PDF directly in Brink — whether it's a form from the web or a document you've saved to your research. Fill in text fields, 
+            check boxes and annotate pages, then save your changes directly back to your research folder. Your edits persist every time you reopen the file.</p>
+            <ul class="feature-bullets">
+            <li>Fill interactive form fields</li>
+            <li>Check boxes and radio buttons</li>
+            <li>Save edits back to your research folder</li>
+            <li>Persistent — edits are there when you return</li>
+            <li>Opens PDFs from the web or saved research</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="pdfviewer-screenshot.png" alt="" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- FOCUS & CAPTURE                        -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="features-section alt" id="productivity">
+    <div class="container">
+
+      <div class="feature-section-heading reveal">
+        <div class="section-label">Focus &amp; Capture</div>
+        <h2>Block distractions,<br><em>capture everything</em></h2>
+        <p>Website blocking with PIN protection, timed focus sessions and lecture recording — the tools that actually change how productively you study.</p>
+      </div>
+
+      <!-- Website Blocking -->
+      <div class="feature-row portrait-row reveal">
+        <div class="feature-row-text">
+          <span class="feature-tag">Website Blocking</span>
+          <h3>Block distracting sites<br>permanently or during study</h3>
+          <p>Add any site to your blocked list and it's gone. Use permanent blocking for sites you never want to see, or activate study mode blocking that only applies during a focus session — so you can choose when to enforce it.</p>
+          <ul class="feature-bullets">
+            <li>Permanent or session-based blocking</li>
+            <li>PIN protection to prevent overrides</li>
+            <li>Block any domain instantly</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="blocking-screenshot.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Focus Sessions -->
+      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
+        <div class="feature-row-text">
+          <span class="feature-tag">Focus Sessions</span>
+          <h3>Timed sessions with<br>automatic enforcement</h3>
+          <p>Start a focus session and Brink enforces your blocked site list for the duration. A quiet pill in the corner counts down your remaining time. When the session ends, your blocked sites are released automatically.</p>
+          <ul class="feature-bullets">
+            <li>Customisable session length</li>
+            <li>Auto-enforces blocked sites</li>
+            <li>Persistent countdown timer</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="focus-session-pill-open.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Lecture Capture -->
+      <div class="feature-row portrait-row reveal">
+        <div class="feature-row-text">
+          <span class="feature-tag">Lecture Capture</span>
+          <h3>Record lectures without<br>leaving your browser</h3>
+          <p>Start a recording inside Brink and it runs in the background while you browse. Recordings are saved directly into your research folders alongside the pages you were reading — so your audio and sources stay linked automatically.</p>
+          <ul class="feature-bullets">
+            <li>Background recording while browsing</li>
+            <li>Rename and replay recordings</li>
+            <li>Saved into research folders</li>
+            <li>Alongside notes and saved pages</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="lecture-capture.png" alt="" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- PRIVACY & DESIGN                       -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="features-section tinted" id="privacy">
+    <div class="container">
+
+      <div class="feature-section-heading reveal">
+        <div class="section-label">Privacy &amp; Design</div>
+        <h2>Clean, private and<br><em>built to look good</em></h2>
+        <p>No ads, no tracking, no data collection — ever. Plus a personalisation system that makes the whole workspace feel like yours.</p>
+      </div>
+
+      <!-- Ad Blocking -->
+      <div class="feature-row portrait-row reveal">
+        <div class="feature-row-text">
+          <span class="feature-tag">Ad Blocking</span>
+          <h3>Faster, cleaner pages<br>with zero effort</h3>
+          <p>Brink blocks ads and trackers at the network level before they reach the page — no extensions required, no setup. Pages load faster, look cleaner and contain fewer distractions. Better for reading, better for studying.</p>
+          <ul class="feature-bullets">
+            <li>Network-level blocking</li>
+            <li>Faster page loads</li>
+            <li>No popups or autoplay ads</li>
+            <li>Zero configuration required</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="adBlock-screenshot.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Themes -->
+      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
+        <div class="feature-row-text">
+          <span class="feature-tag">Workspace Themes</span>
+          <h3>Ten colours that make<br>the workspace feel like yours</h3>
+          <p>Choose from ten workspace colours — soft pastels in light mode and rich dark tones in dark mode. Every border, icon and surface updates together. Switch your system theme and Brink follows automatically, always showing only colours that work for your current mode.</p>
+          <ul class="feature-bullets">
+            <li>Ten workspace colour themes</li>
+            <li>Light and dark mode variants</li>
+            <li>Auto-adapts to system theme</li>
+            <li>Reader mode has its own theme controls</li>
+          </ul>
+        </div>
+        <div class="feature-row-image portrait">
+          <img src="theme-light.png" alt="" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 40 ? 'rgba(248,249,251,0.96)' : 'rgba(248,249,251,0.88)';
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = document.querySelectorAll('section[id]');
+    const anchorBtns = document.querySelectorAll('.anchor-btn');
+    const OFFSET = 130;
+
+    function updateActive() {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - OFFSET) current = s.id; });
+      anchorBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('href') === '#' + current));
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+
+    anchorBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(btn.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - OFFSET + 1, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+  <footer>
+    <div class="footer-top">
+      <a href="index.html" class="footer-logo">
+        <div class="footer-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
+        <span class="footer-logo-text">Brink Browser</span>
+      </a>
+      <div class="footer-links">
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Josh Bradley. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://www.reddit.com" target="_blank" rel="noopener" title="Reddit">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+        </a>
+        <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener" title="Buy Me a Coffee">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 22h10a1 1 0 00.997-.923l1-10A1 1 0 0018 10H6a1 1 0 00-.997 1.077l1 10A1 1 0 007 22zM21 6h-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v1H3a1 1 0 00-1 1v2a3 3 0 003 3h.078l.99 9.887A3 3 0 009.053 24h5.893a3 3 0 002.986-2.113L18.922 12H19a3 3 0 003-3V7a1 1 0 00-1-1zm-1 3a1 1 0 01-1 1h-.9l.1-1H19v1zm-4-4v1H8V5h8zM4 9V8h1.8l.1 1H5a1 1 0 01-1-1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
