@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brink — Browse with purpose</title>
-  <link rel="icon" type="image/png" href="brink-icon.png" />
+  <title>Brink — The Research Browser</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Nunito:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet" />
@@ -198,12 +197,38 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
 
     /* RESPONSIVE */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .nav-inner { padding: 0 20px; }
       .nav-links li:not(:last-child) { display: none; }
-      .ipad-section, .split-section, .about-home-inner { grid-template-columns: 1fr; gap: 48px; }
-      .split-section.reverse { direction: ltr; }
+
+      .ipad-section,
+      .split-section,
+      .split-section.reverse,
+      .split-section.portrait-row,
+      .split-section.portrait-row.reverse,
+      .split-section.portrait-row-left,
+      .about-home-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        direction: ltr;
+      }
+
+      /* Always show image first on mobile */
+      .split-section.portrait-row > :last-child,
+      .split-section.portrait-row-left > :first-child {
+        order: -1;
+      }
+
+      .content-section { padding: 60px 20px; }
+      .about-home { padding: 60px 20px; }
+
+      .hero { padding: 100px 20px 60px; }
+      .hero h1 { font-size: clamp(36px, 10vw, 56px); }
+      .hero-sub { font-size: 16px; margin: 20px auto 36px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+
       .footer-top, .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
     }
   </style>
 </head>
@@ -339,7 +364,7 @@
       <div class="reveal reveal-delay-2">
         <div class="about-quote">
           <div class="about-quote-text">"I built the browser I wish I'd had when I started studying."</div>
-          <div class="about-quote-attr">— Josh, Brink Browser</div>
+          <div class="about-quote-attr">— Josh Bradley, Brink Browser</div>
         </div>
       </div>
     </div>
@@ -359,8 +384,8 @@
         <a href="features.html">Features</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
       </div>
     </div>
 
@@ -373,7 +398,7 @@
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
         </a>
         <!-- Buy Me a Coffee -->
-        <a href="https://buymeacoffee.com/joshbradley" target="_blank" rel="noopener" title="Buy Me a Coffee">
+        <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener" title="Buy Me a Coffee">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 22h10a1 1 0 00.997-.923l1-10A1 1 0 0018 10H6a1 1 0 00-.997 1.077l1 10A1 1 0 007 22zM21 6h-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v1H3a1 1 0 00-1 1v2a3 3 0 003 3h.078l.99 9.887A3 3 0 009.053 24h5.893a3 3 0 002.986-2.113L18.922 12H19a3 3 0 003-3V7a1 1 0 00-1-1zm-1 3a1 1 0 01-1 1h-.9l.1-1H19v1zm-4-4v1H8V5h8zM4 9V8h1.8l.1 1H5a1 1 0 01-1-1z"/></svg>
         </a>
       </div>
