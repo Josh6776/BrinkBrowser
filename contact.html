@@ -114,6 +114,60 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
     }
+
+
+    /* Shared mobile, accessibility and iOS polish */
+    nav {
+      padding-top: env(safe-area-inset-top);
+      height: calc(62px + env(safe-area-inset-top));
+    }
+    .nav-hamburger {
+      width: 44px;
+      height: 44px;
+      padding: 11px;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-hamburger:focus-visible,
+    .nav-links a:focus-visible,
+    .nav-mobile-menu a:focus-visible,
+    .footer-links a:focus-visible,
+    .footer-social a:focus-visible,
+    .btn-primary:focus-visible,
+    .btn-secondary:focus-visible,
+    .appstore-btn:focus-visible,
+    .form-submit:focus-visible,
+    .form-input:focus-visible {
+      outline: 3px solid rgba(30,196,144,0.35);
+      outline-offset: 3px;
+    }
+    .nav-mobile-menu {
+      top: calc(62px + env(safe-area-inset-top));
+      padding-left: max(24px, env(safe-area-inset-left));
+      padding-right: max(24px, env(safe-area-inset-right));
+    }
+    .nav-mobile-menu[hidden] { display: none !important; }
+    .footer-links { flex-wrap: wrap; justify-content: center; row-gap: 10px; }
+    .footer-social a { width: 44px; height: 44px; }
+    footer { padding-bottom: env(safe-area-inset-bottom); }
+    img { max-width: 100%; }
+    @media (max-width: 768px) {
+      .footer-links { gap: 10px 18px; }
+      .footer-top, .footer-bottom { padding-left: 20px; padding-right: 20px; }
+      .page-hero { padding-left: 20px; padding-right: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -127,18 +181,17 @@
       <ul class="nav-links">
         <li><a href="features.html">Features</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-
-  <div class="nav-mobile-menu" id="nav-mobile-menu">
+  <div class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation" hidden>
     <a href="features.html">Features</a>
     <a href="about.html">About</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html" class="active" aria-current="page">Contact</a>
   </div>
 
   <div class="page-hero">
@@ -196,7 +249,7 @@
         <div class="contact-form reveal reveal-delay-2">
 
           <!-- Success state -->
-          <div class="form-success" id="form-success">
+          <div class="form-success" id="form-success" role="status" aria-live="polite">
             <div class="form-success-icon">
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
@@ -206,27 +259,27 @@
 
           <!-- Form -->
           <div id="form-wrap">
-            <div class="form-global-error" id="form-global-error">Something went wrong. Please try again or email us directly at hello@brinkbrowser.app</div>
+            <div class="form-global-error" id="form-global-error" role="alert" aria-live="polite">Something went wrong. Please try again or email us directly at hello@brinkbrowser.app</div>
 
-            <form id="contact-form" novalidate>
+            <form id="contact-form" novalidate aria-describedby="form-global-error">
               <div class="form-row">
                 <label class="form-label" for="name">Name</label>
-                <input class="form-input" type="text" id="name" name="name" placeholder="Your name" />
-                <div class="field-error" id="name-error">Please enter your name.</div>
+                <input class="form-input" type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+                <div class="field-error" id="name-error" role="alert">Please enter your name.</div>
               </div>
               <div class="form-row">
                 <label class="form-label" for="email">Email</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" />
-                <div class="field-error" id="email-error">Please enter a valid email address.</div>
+                <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" required />
+                <div class="field-error" id="email-error" role="alert">Please enter a valid email address.</div>
               </div>
               <div class="form-row">
                 <label class="form-label" for="subject">Subject</label>
-                <input class="form-input" type="text" id="subject" name="subject" placeholder="Feature request, bug report, general…" />
+                <input class="form-input" type="text" id="subject" name="subject" placeholder="Feature request, bug report, general…" autocomplete="off" />
               </div>
               <div class="form-row">
                 <label class="form-label" for="message">Message</label>
-                <textarea class="form-input" id="message" name="message" placeholder="Tell us what's on your mind…"></textarea>
-                <div class="field-error" id="message-error">Please enter a message.</div>
+                <textarea class="form-input" id="message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+                <div class="field-error" id="message-error" role="alert">Please enter a message.</div>
               </div>
               <button type="submit" class="form-submit" id="submit-btn">Send message →</button>
             </form>
@@ -254,10 +307,10 @@
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 Josh Bradley. All rights reserved.</span>
       <div class="footer-social">
-        <a href="https://www.reddit.com/r/BrinkBrowser/" target="_blank" rel="noopener" title="Reddit">
+        <a href="https://www.reddit.com/r/BrinkBrowser/" target="_blank" rel="noopener" title="Reddit" aria-label="Brink on Reddit">
           <svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
         </a>
-        <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener" title="Buy Me a Coffee">
+        <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener" title="Buy Me a Coffee" aria-label="Support Brink on Buy Me a Coffee">
           <svg viewBox="0 0 24 24"><path d="M7 22h10a1 1 0 00.997-.923l1-10A1 1 0 0018 10H6a1 1 0 00-.997 1.077l1 10A1 1 0 007 22zM21 6h-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v1H3a1 1 0 00-1 1v2a3 3 0 003 3h.078l.99 9.887A3 3 0 009.053 24h5.893a3 3 0 002.986-2.113L18.922 12H19a3 3 0 003-3V7a1 1 0 00-1-1zm-1 3a1 1 0 01-1 1h-.9l.1-1H19v1zm-4-4v1H8V5h8zM4 9V8h1.8l.1 1H5a1 1 0 01-1-1z"/></svg>
         </a>
       </div>
@@ -270,13 +323,6 @@
     window.addEventListener('scroll', () => {
       nav.style.background = window.scrollY > 40 ? 'rgba(248,249,251,0.96)' : 'rgba(248,249,251,0.88)';
     });
-
-    // Hamburger
-    const hamburger = document.getElementById('nav-hamburger');
-    const mobileMenu = document.getElementById('nav-mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-    window.addEventListener('scroll', () => mobileMenu.classList.remove('open'), { passive: true });
 
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
@@ -366,6 +412,38 @@
         submitBtn.textContent = 'Send message →';
       }
     });
+  
+    // Shared accessible mobile navigation
+    const menuButton = document.getElementById('nav-hamburger');
+    const menuPanel = document.getElementById('nav-mobile-menu');
+    if (menuButton && menuPanel) {
+      const setMenuOpen = (open) => {
+        menuPanel.hidden = !open;
+        menuPanel.classList.toggle('open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      menuButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+      });
+      menuPanel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('click', (event) => {
+        if (!menuPanel.hidden && !menuPanel.contains(event.target) && !menuButton.contains(event.target)) setMenuOpen(false);
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !menuPanel.hidden) {
+          setMenuOpen(false);
+          menuButton.focus();
+        }
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) setMenuOpen(false);
+      });
+      window.addEventListener('scroll', () => setMenuOpen(false), { passive: true });
+      setMenuOpen(false);
+    }
+
   </script>
 
 </body>
