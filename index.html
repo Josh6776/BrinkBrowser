@@ -168,11 +168,11 @@
 
 
     /* TESTIMONIALS */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-    .testimonial-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; align-items: start; }
+    .testimonial-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; display: flex; flex-direction: column; }
     .testimonial-stars { color: var(--accent); font-size: 15px; margin-bottom: 14px; letter-spacing: 2px; }
-    .testimonial-text { font-size: 15px; font-weight: 300; color: var(--text2); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-    .testimonial-attr { font-size: 12px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+    .testimonial-text { font-size: 15px; font-weight: 300; color: var(--text2); line-height: 1.7; margin-bottom: 20px; font-style: italic; flex: 1; }
+    .testimonial-attr { font-size: 12px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 16px; border-top: 1px solid var(--border); margin-top: auto; }
     @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
     /* FOOTER */
     .footer-logo-mark svg { width: 12px; height: 12px; fill: white; }
@@ -426,25 +426,40 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="content-section tinted">
+  <section class="content-section alt">
     <div class="container">
       <div class="section-label">What people are saying</div>
-      <h2 class="section-title">Students love <em>Brink</em></h2>
+      <h2 class="section-title">People love <em>Brink</em></h2>
       <div class="testimonials-grid">
         <div class="testimonial-card reveal">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Finally a browser that actually understands how students work. The folder system and citation tools have saved me hours."</p>
-          <div class="testimonial-attr">University student, UK</div>
+          <p class="testimonial-text">"Finally a browser that actually understands how students work. The folder system and citation tools have saved me hours of admin."</p>
+          <div class="testimonial-attr">Jamie — Beta tester &amp; University student</div>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"The focus timer keeps me on track during long sessions. I don't know how I studied without it."</p>
-          <div class="testimonial-attr">App Store review</div>
+          <p class="testimonial-text">"The workspace colours completely change the feel of studying. I switch between them depending on my mood and it genuinely helps me focus."</p>
+          <div class="testimonial-attr">Chris — Beta tester</div>
         </div>
         <div class="testimonial-card reveal reveal-delay-2">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Reader Mode and the ad blocker make research so much cleaner. Everything feels intentional."</p>
-          <div class="testimonial-attr">App Store review</div>
+          <p class="testimonial-text">"It feels so smooth. Everything animates cleanly, nothing feels clunky. You can tell a lot of care went into making it feel right."</p>
+          <div class="testimonial-attr">Mia — Beta tester</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The focus timer keeps me on track during long sessions. I've stopped opening Twitter mid-essay and that alone is worth it."</p>
+          <div class="testimonial-attr">Tom — Beta tester</div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Reader Mode and the ad blocker make every page feel clean. It's the first browser I've actually enjoyed using for research."</p>
+          <div class="testimonial-attr">Priya — Beta tester</div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The themes are beautiful. I put it on the dark green workspace and it feels like a proper study tool rather than just a browser."</p>
+          <div class="testimonial-attr">Alex — Beta tester</div>
         </div>
       </div>
     </div>
