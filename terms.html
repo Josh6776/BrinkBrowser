@@ -4,33 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms &amp; Conditions — Brink Browser</title>
+  <meta name="description" content="Terms and Conditions for Brink Browser, an independently developed iPad research browser." />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #f8f9fb;
-      --bg2: #ffffff;
-      --bg3: #f2f4f7;
-      --surface: #eaedf2;
-      --border: rgba(0,0,0,0.07);
-      --border2: rgba(0,0,0,0.12);
-      --accent: #1ec490;
-      --accent2: #17a376;
-      --text: #0f1117;
-      --text2: #5a6275;
-      --text3: #9aa3b2;
-      --serif: 'Instrument Serif', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-      --radius: 14px;
-      --radius-lg: 22px;
+      --bg:#f8f9fb;
+      --bg2:#ffffff;
+      --bg3:#f2f4f7;
+      --surface:#eaedf2;
+      --border:rgba(0,0,0,0.07);
+      --accent:#1ec490;
+      --text:#0f1117;
+      --text2:#5a6275;
+      --text3:#9aa3b2;
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'DM Sans',sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -40,31 +40,27 @@
       color: var(--text);
       font-family: var(--sans);
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      display: flex;
-      align-items: center;
       height: calc(62px + env(safe-area-inset-top));
       padding-top: env(safe-area-inset-top);
-      background: rgba(248,249,251,0.88);
+      background: rgba(248,249,251,0.9);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
       border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
+      display: flex;
+      align-items: center;
     }
 
     .nav-inner {
-      max-width: 860px;
       width: 100%;
+      max-width: 860px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -84,7 +80,6 @@
       height: 32px;
       border-radius: 8px;
       overflow: hidden;
-      flex-shrink: 0;
     }
 
     .nav-logo-mark img {
@@ -95,15 +90,13 @@
     }
 
     .nav-logo-text {
+      color: var(--text);
       font-size: 15px;
       font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.01em;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 6px;
       list-style: none;
     }
@@ -115,295 +108,281 @@
       font-weight: 500;
       padding: 6px 14px;
       border-radius: 8px;
-      transition: color 0.2s, background 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(0,0,0,0.05);
-    }
+    .nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--text); }
 
-    .nav-links a.active {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* Hidden on desktop; shown only at mobile width */
     .nav-hamburger {
       display: none;
       width: 44px;
       height: 44px;
       padding: 11px;
       border: 0;
-      border-radius: 10px;
       background: transparent;
-      cursor: pointer;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 5px;
-      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
     }
 
     .nav-hamburger span {
-      display: block;
       width: 22px;
       height: 2px;
-      border-radius: 999px;
       background: var(--text);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .nav-hamburger[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav-hamburger[aria-expanded="true"] span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      border-radius: 2px;
     }
 
     .nav-mobile-menu {
       position: fixed;
       top: calc(62px + env(safe-area-inset-top));
-      left: 0;
-      right: 0;
+      left: 0; right: 0;
       z-index: 99;
       display: flex;
       flex-direction: column;
       gap: 4px;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      padding-left: max(24px, env(safe-area-inset-left));
-      padding-right: max(24px, env(safe-area-inset-right));
+      padding: 12px 24px 16px;
       background: rgba(248,249,251,0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
     }
 
-    .nav-mobile-menu[hidden] {
-      display: none !important;
-    }
+    .nav-mobile-menu[hidden] { display: none !important; }
 
     .nav-mobile-menu a {
-      display: block;
-      padding: 12px 14px;
-      border-radius: 10px;
       color: var(--text2);
+      text-decoration: none;
       font-size: 15px;
       font-weight: 500;
-      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
     }
 
-    .nav-mobile-menu a:hover {
-      color: var(--text);
-      background: rgba(0,0,0,0.05);
-    }
+    .nav-mobile-menu a:hover { color: var(--accent); background: rgba(30,196,144,0.06); }
 
     .page-hero {
-      padding: 140px 24px 60px;
-      text-align: center;
+      padding: calc(132px + env(safe-area-inset-top)) 24px 62px;
       background: var(--bg2);
+      text-align: center;
       border-bottom: 1px solid var(--border);
     }
 
-    .section-label {
+    .eyebrow {
+      color: var(--accent);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
+      margin-bottom: 13px;
     }
 
     .page-hero h1 {
       font-family: var(--serif);
-      font-size: clamp(36px, 5vw, 58px);
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.05;
       font-weight: 400;
-      line-height: 1.07;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      max-width: 680px;
-      margin: 0 auto 16px;
-    }
-
-    .page-hero .meta {
-      font-size: 14px;
-      color: var(--text3);
-    }
-
-    .legal-section {
-      padding: 72px 24px 100px;
-    }
-
-    .legal-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .legal-inner h2 {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin: 48px 0 16px;
-      padding-top: 48px;
-      border-top: 1px solid var(--border);
-    }
-
-    .legal-inner h2:first-of-type {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-    }
-
-    .legal-inner p {
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--text2);
-      line-height: 1.8;
+      letter-spacing: -.02em;
       margin-bottom: 16px;
     }
 
-    .legal-inner p:last-child {
-      margin-bottom: 0;
-    }
-
-    .legal-inner ul {
-      margin: 12px 0 16px 0;
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .legal-inner ul li {
-      font-size: 16px;
-      font-weight: 300;
+    .page-hero p {
       color: var(--text2);
-      line-height: 1.7;
-      padding-left: 20px;
-      position: relative;
+      font-size: 15px;
     }
 
-    .legal-inner ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
+    .legal-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 72px 24px 90px;
     }
 
-    .legal-inner a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .legal-inner a:hover {
-      text-decoration: underline;
-    }
-
-    .legal-inner strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .legal-notice {
-      background: var(--bg3);
-      border: 1px solid var(--border2);
-      border-radius: var(--radius-lg);
-      padding: 24px 28px;
+    .notice {
+      padding: 26px 28px;
       margin-bottom: 48px;
+      background: rgba(30,196,144,0.06);
+      border: 1px solid rgba(30,196,144,0.16);
+      border-radius: 18px;
     }
 
-    .legal-notice p {
-      font-size: 14px;
+    .notice h2 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .notice p {
       color: var(--text2);
-      line-height: 1.7;
-      margin: 0;
+      font-size: 15px;
+      line-height: 1.75;
     }
 
-    img {
-      max-width: 100%;
+    .legal-section { margin-bottom: 44px; }
+
+    .legal-section h2 {
+      font-family: var(--serif);
+      font-size: 29px;
+      line-height: 1.2;
+      font-weight: 400;
+      margin-bottom: 14px;
     }
 
-    .nav-hamburger:focus-visible,
-    .nav-links a:focus-visible,
-    .nav-mobile-menu a:focus-visible,
-    .footer-links a:focus-visible,
-    .footer-social a:focus-visible {
-      outline: 3px solid rgba(30,196,144,0.35);
-      outline-offset: 3px;
+    .legal-section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 22px 0 8px;
     }
+
+    .legal-section p,
+    .legal-section li {
+      color: var(--text2);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .legal-section p { margin-bottom: 14px; }
+
+    .legal-section ul {
+      margin: 12px 0 16px 22px;
+    }
+
+    .legal-section li { margin-bottom: 6px; }
+
+    .legal-section a {
+      color: #148765;
+      text-underline-offset: 2px;
+    }
+
+    .note {
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-left: 3px solid var(--accent);
+      background: var(--bg3);
+      border-radius: 0 10px 10px 0;
+      color: var(--text2);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .updated {
+      margin-top: 58px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text3);
+      font-size: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 60px 24px 0;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .footer-logo-mark img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    .footer-logo-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text2);
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .footer-social { display: flex; gap: 8px; }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text3);
+    }
+
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .footer-col { display: flex; flex-direction: column; }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      font-size: 13px;
+      color: var(--text2);
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 0 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-copy { font-size: 12px; color: var(--text3); }
 
     @media (max-width: 768px) {
-      .nav-inner {
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .nav-hamburger {
-        display: flex;
-      }
-
-      .page-hero {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .page-hero { padding: calc(108px + env(safe-area-inset-top)) 20px 48px; }
+      .legal-wrap { padding: 52px 20px 70px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .notice { padding: 22px; }
     }
-
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); background: var(--bg2); padding: 60px 24px 0; }
-    .footer-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; }
-    .footer-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; margin-bottom: 12px; }
-    .footer-logo-mark { width: 28px; height: 28px; border-radius: 7px; overflow: hidden; flex-shrink: 0; }
-    .footer-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .footer-logo-text { font-size: 14px; font-weight: 600; color: var(--text2); }
-    .footer-tagline { font-size: 13px; color: var(--text3); line-height: 1.6; margin-bottom: 16px; }
-    .footer-social { display: flex; gap: 8px; }
-    .footer-social a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); color: var(--text3); text-decoration: none; transition: background 0.2s, color 0.2s; }
-    .footer-social a:hover { background: var(--surface); color: var(--text2); }
-    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
-    .footer-col { display: flex; flex-direction: column; }
-    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); margin-bottom: 14px; }
-    .footer-col a { font-size: 13px; color: var(--text2); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--accent); }
-    .footer-bottom { max-width: 860px; margin: 0 auto; padding: 20px 0 28px; border-top: 1px solid var(--border); }
-    .footer-copy { font-size: 12px; color: var(--text3); }
-    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; } }
-    @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; } }
   </style>
 </head>
-<body>
 
-  <nav id="main-nav">
+<body>
+  <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
@@ -416,102 +395,192 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-      <button
-        class="nav-hamburger"
-        id="nav-hamburger"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="nav-mobile-menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation" hidden>
+  <div class="nav-mobile-menu" id="nav-mobile-menu" hidden>
     <a href="features.html">Features</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
 
-  <div class="page-hero">
-    <div class="section-label">Legal</div>
+  <header class="page-hero">
+    <div class="eyebrow">Legal</div>
     <h1>Terms &amp; Conditions</h1>
-    <p class="meta">Last updated: August 2026 &nbsp;·&nbsp; Governing law: England and Wales</p>
-  </div>
+    <p>Last updated: October 2026 · Governing law: England and Wales</p>
+  </header>
 
-  <section class="legal-section">
-    <div class="legal-inner">
-
-      <div class="legal-notice">
-        <p>Please read these Terms and Conditions carefully before downloading or using Brink Browser. By downloading, installing or using the app, you agree to be bound by these terms. If you do not agree, do not use the app.</p>
-      </div>
-
-      <h2>1. About Brink</h2>
-      <p>Brink Browser ("Brink", "the app") is a research browser developed and maintained by Josh Bradley, an independent developer based in the United Kingdom. The app is available on the Apple App Store for iPad.</p>
-
-      <h2>2. Acceptance of Terms</h2>
-      <p>By downloading, installing or using Brink, you agree to these Terms and Conditions in full. If you are under 16 years of age, you must not use Brink.</p>
-      <p>I reserve the right to update these Terms at any time. If significant changes are made, you'll be notified via an in-app prompt. Continued use of the app after changes are posted constitutes your acceptance of the revised Terms.</p>
-
-      <h2>3. Licence to Use</h2>
-      <p>Subject to these Terms, you are granted a limited, non-exclusive, non-transferable, revocable licence to use Brink for your personal, non-commercial use on Apple devices you own or control.</p>
-      <p>You may not:</p>
-      <ul>
-        <li>Copy, modify, distribute or sell any part of the app</li>
-        <li>Reverse engineer or attempt to extract the source code</li>
-        <li>Use the app for any unlawful purpose</li>
-        <li>Attempt to gain unauthorised access to any systems connected to the app</li>
-      </ul>
-
-      <h2>4. Purchase and Payment</h2>
-      <p>Brink is available as a <strong>one-time purchase</strong> through the Apple App Store. There are no subscriptions, recurring charges or in-app purchases at this time.</p>
-      <p>All purchases are processed by Apple and are subject to Apple's own Terms of Sale. We do not handle payment information directly. Refund requests are governed by Apple's refund policy and should be directed to Apple.</p>
-
-      <h2>5. App Availability and Updates</h2>
-      <p>I aim to keep Brink available and functioning, but I cannot guarantee uninterrupted access. The app may be temporarily unavailable due to maintenance, updates or circumstances beyond my control.</p>
-      <p>Updates may be released from time to time. Some updates may be required to continue using certain features. I reserve the right to modify, suspend or discontinue any feature at any time.</p>
-
-      <h2>6. Intellectual Property</h2>
-      <p>All content, design, code, graphics and branding within Brink Browser are the intellectual property of Josh Bradley unless otherwise stated. The Brink name, logo and app icon are proprietary marks.</p>
-      <p>Nothing in these Terms grants you any right to use our intellectual property other than as permitted by the licence above.</p>
-
-      <h2>7. User Responsibilities</h2>
-      <p>You are responsible for how you use Brink and for any content you save, note or record within the app. Brink is intended for personal study and research use. You agree not to use the app in any way that is unlawful, harmful or in violation of any third party's rights.</p>
-
-      <h2>8. Third-Party Websites</h2>
-      <p>Brink is a web browser. When you browse websites through the app, you are subject to those websites' own terms and privacy policies. We are not responsible for the content, availability or practices of any third-party websites you visit.</p>
-
-      <h2>9. Downloads and Third-Party Content</h2>
-      <p>Brink allows you to download files and content from third-party websites, including documents, images and other media. Any files you download originate from third parties and not from Brink.</p>
-      <p>Brink does not scan, verify or guarantee the safety, integrity or legality of any content you download. Files downloaded from the internet may contain viruses, malware or other harmful components. You download and open files entirely at your own risk, and you are solely responsible for ensuring that any content you download is safe and that you have the right to download and use it.</p>
-      <p>To support local file management and backup, Brink enables iOS file sharing (`UIFileSharingEnabled`). This feature allows you to access, manage, or transfer your locally stored application documents via the native Files app or a connected computer. You are solely responsible for managing and safeguarding any files stored locally or exported through this sharing feature.</p>
-      <p>To the fullest extent permitted by law, Josh Bradley accepts no liability for any loss, damage or harm to your device or data arising from files or content you download or manage through the app. We recommend only downloading content from sources you trust and keeping appropriate security software on your device where relevant.</p>
-      <p>Downloaded files are saved to a location of your choosing through your device's system file picker or designated local directories. Brink does not access your photo library and does not itself store or retain copies of the files you download outside of its core app storage.</p>
-
-      <h2>10. Disclaimers</h2>
-      <p>Brink is provided "as is" without any warranties, express or implied. To the fullest extent permitted by law, I disclaim all warranties including fitness for a particular purpose and non-infringement.</p>
-      <p>I cannot warrant that the app will be error-free, secure or uninterrupted at all times.</p>
-
-      <h2>11. Limitation of Liability</h2>
-      <p>To the maximum extent permitted by applicable law, Josh Bradley shall not be liable for any indirect, incidental, special or consequential damages arising from your use of Brink, including but not limited to loss of data, loss of research, or loss of productivity.</p>
-      <p>Our total liability to you for any claim arising from these Terms or your use of the app shall not exceed the amount you paid for the app.</p>
-      <p>Nothing in these Terms excludes or limits liability where it would be unlawful to do so, including liability for death or personal injury caused by negligence, or for fraud. Your statutory rights as a consumer are not affected.</p>
-
-      <h2>12. Age Requirement</h2>
-      <p>Brink is designed for users aged 16 and over. By using the app, you confirm that you are at least 16 years old. Brink is not intended for and must not be used by anyone under the age of 16, regardless of any parental or guardian consent.</p>
-
-      <h2>13. Governing Law</h2>
-      <p>These Terms and Conditions are governed by and construed in accordance with the laws of England and Wales. Any disputes arising under these Terms will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
-
-      <h2>14. Contact</h2>
-      <p>If you have any questions about these Terms, feel free to get in touch at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a> or via the <a href="contact.html">contact page</a>.</p>
-
+  <main class="legal-wrap">
+    <div class="notice">
+      <h2>Before using Brink</h2>
+      <p>These Terms &amp; Conditions govern your use of Brink Browser. By downloading, installing or using Brink, you agree to these terms. Nothing in these terms is intended to exclude or restrict rights that cannot lawfully be excluded or restricted under applicable consumer law.</p>
     </div>
-  </section>
+
+    <section class="legal-section">
+      <h2>1. About Brink</h2>
+      <p>Brink Browser (“Brink”, “the app”, “I”, “me” or “my”) is an independently developed research browser for iPad, created by Josh Bradley in the United Kingdom.</p>
+      <p>Brink is designed to combine web browsing with research tools including Research Projects, folders, saved research, notes, citations, PDFs, highlighting, Lecture Capture and focus features.</p>
+      <p>You can contact me at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a>.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>2. Acceptance and eligibility</h2>
+      <p>You must be at least 16 years old to use Brink. If you are under 16, you must not download or use the app.</p>
+      <p>By downloading, installing or using Brink, you confirm that you meet the age requirement and agree to these Terms &amp; Conditions and the applicable <a href="privacy.html">Privacy Policy</a>.</p>
+      <p>Brink may ask you to review and acknowledge an updated version of these terms when material changes are made. If an update requires your acknowledgement, the app may require you to review the new version before continuing to use relevant features.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>3. Licence to use Brink</h2>
+      <p>Subject to these terms and the applicable rules of Apple's App Store, you are granted a limited, non-exclusive, non-transferable and revocable licence to use Brink for personal and lawful purposes on Apple devices that you own or control, as permitted by Apple's usage rules.</p>
+      <p>You must not:</p>
+      <ul>
+        <li>copy, redistribute, rent, lease, sell or sublicense Brink except where applicable law expressly permits it;</li>
+        <li>modify, reverse engineer, decompile or attempt to derive Brink's source code except to the extent that such restriction is prohibited by applicable law;</li>
+        <li>use Brink to gain unauthorised access to systems, accounts, networks or data;</li>
+        <li>use Brink in a way that violates applicable law or the rights of another person; or</li>
+        <li>deliberately interfere with Brink's operation or security.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>4. Purchase and payment</h2>
+      <p>Brink is currently offered as a one-time paid download through Apple's App Store. Brink does not currently require a subscription to use the app.</p>
+      <p>Purchases, billing, payment processing and applicable refunds are handled by Apple under the terms that apply to your App Store account and territory. Brink does not receive your payment-card details.</p>
+      <p>The price of Brink may change for future purchases. A future price change does not create an additional charge for a purchase you have already completed unless you separately choose to purchase another product or service.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>5. Updates and app availability</h2>
+      <p>I may release updates to Brink to add features, improve compatibility, fix bugs, address security issues or make other changes.</p>
+      <p>Some updates may be required for continued use where an older version is no longer compatible, supported or considered safe to operate. Brink may use version information to notify you that an update is available or, where necessary, require a newer version.</p>
+      <p>I do not guarantee that Brink, every feature, or compatibility with every website will remain available indefinitely or operate without interruption. Features may be changed, replaced, suspended or discontinued where reasonably necessary.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>6. Research Projects and locally stored content</h2>
+      <p>Brink allows you to create and organise content such as Research Projects, folders, notes, saved webpages, PDFs, images, highlights, citations and lecture recordings.</p>
+      <p>You are responsible for the content you create, save, download, record, import or organise using Brink and for ensuring that your use of that content is lawful.</p>
+      <p>Brink does not currently provide an account-based cloud backup or synchronisation service for your research workspace. You are responsible for maintaining any backups or exported copies that are important to you.</p>
+      <div class="note">Deleting Brink, deleting locally stored content, changing devices or other device-level events may result in loss of locally stored research where no separate backup or exported copy exists.</div>
+    </section>
+
+    <section class="legal-section">
+      <h2>7. Citations and research tools</h2>
+      <p>Brink can help generate citations and extract source metadata such as titles, authors, publications and dates where that information is available. Citation tools are provided as research aids.</p>
+      <p>Webpage metadata can be incomplete, inconsistent or incorrect, and citation conventions can vary between institutions, publishers and individual assignments. You are responsible for reviewing generated citations and ensuring they meet the requirements that apply to your work before submission or publication.</p>
+      <p>Brink does not guarantee the academic accuracy, completeness or suitability of a generated citation for a particular institution or citation guide.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>8. Lecture Capture and recordings</h2>
+      <p>If you use Lecture Capture or another recording feature, you are responsible for ensuring that you have permission to record the people, teaching, conversation or other audio involved.</p>
+      <p>Laws, institutional rules and expectations around recording can vary. Brink's availability of a recording feature does not itself give you permission to record, retain or distribute material.</p>
+      <p>You must not use Brink's recording features in a way that infringes another person's privacy, confidentiality, intellectual property or other legal rights.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>9. Downloads, PDFs and other files</h2>
+      <p>Brink may allow you to open, save, edit, export or download webpages, PDFs, images and other material.</p>
+      <p>You are responsible for deciding whether a file or download is trustworthy and whether you have the right to store, edit, share or otherwise use it. Files and content obtained from third-party websites can be malicious, corrupted, misleading or unlawful.</p>
+      <p>Brink does not guarantee the safety, integrity, legality or accuracy of files supplied by third parties. You should use reasonable care when opening or sharing downloaded material.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>10. Third-party websites and services</h2>
+      <p>Brink is a web browser and therefore provides access to websites, content and services operated by third parties. Those third parties are independent from Brink and may have their own terms, privacy policies, cookies, accounts, payment systems and security practices.</p>
+      <p>I do not control and am not responsible for the content, availability, accuracy, security or conduct of third-party websites or services merely because they can be accessed through Brink.</p>
+      <p>Your use of a third-party website or service is governed by the terms and policies that apply to that third party.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>11. Website blocking, ad blocking and Reader Mode</h2>
+      <p>Features such as website blocking, content or ad blocking, Reader Mode, dark-mode adjustments and other webpage modifications depend on the structure and behaviour of third-party websites.</p>
+      <p>These features may not work on every website and may stop working when a website changes. Blocking features may also occasionally block content that you intended to view or fail to block particular content.</p>
+      <p>Brink does not guarantee that ad blocking, website blocking or similar features will remove or prevent every advertisement, tracker, popup, distraction or other item.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>12. Intellectual property</h2>
+      <p>Brink's software, branding, interface, original website content, logo, icon and other original materials are owned by Josh Bradley or used under an applicable licence, unless otherwise stated.</p>
+      <p>These terms do not transfer ownership of Brink or its intellectual property to you.</p>
+      <p>Third-party websites, articles, images, PDFs, trademarks and other content accessed through Brink remain the property of their respective owners. Saving or accessing material through Brink does not grant you ownership of that material.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>13. Acceptable use</h2>
+      <p>You must use Brink lawfully and responsibly. You must not knowingly use the app to:</p>
+      <ul>
+        <li>infringe copyright, privacy, confidentiality or other legal rights;</li>
+        <li>distribute malicious software or deliberately harmful content;</li>
+        <li>harass, threaten, defraud or impersonate another person;</li>
+        <li>circumvent access controls or gain unauthorised access to systems or information; or</li>
+        <li>carry out activity that would be unlawful if performed without Brink.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>14. Privacy</h2>
+      <p>Your use of Brink is also subject to the <a href="privacy.html">Brink Privacy Policy</a>, which explains how the app handles locally stored research content, diagnostics, analytics, permissions and information submitted through the Brink website.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>15. No academic or professional guarantee</h2>
+      <p>Brink is a productivity and research tool. It does not provide academic, legal, financial or other professional advice.</p>
+      <p>Use of Brink does not guarantee a particular academic result, grade, research outcome, citation acceptance, productivity level or uninterrupted access to third-party information.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>16. App performance and warranties</h2>
+      <p>Brink is provided with the level of care and skill required by applicable law. However, because software and third-party websites change, I cannot promise that Brink will always be uninterrupted, completely error-free, compatible with every website or device configuration, or free from every defect.</p>
+      <p>Nothing in these terms affects any warranty, remedy or statutory right that you are entitled to under applicable consumer law and that cannot lawfully be excluded.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>17. Liability</h2>
+      <p>Nothing in these terms excludes or limits liability where doing so would be unlawful, including liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot lawfully be excluded or limited.</p>
+      <p>Subject to those protections, I am not responsible for losses that are not reasonably foreseeable when you begin using Brink, losses caused by third-party websites or services outside my control, or business losses arising from use of Brink for commercial purposes where the app is being used as a consumer product.</p>
+      <p>You remain responsible for protecting important locally stored research, checking generated citations before relying on them, and deciding whether third-party downloads or websites are appropriate to use.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>18. Ending your use of Brink</h2>
+      <p>You may stop using Brink at any time and may remove the app from your device.</p>
+      <p>I may restrict access to a version of Brink where reasonably necessary for security, legal compliance, serious misuse or technical compatibility. Where practical, an update or other reasonable route to continued lawful use will be provided.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>19. Changes to these terms</h2>
+      <p>These terms may be updated to reflect changes to Brink, the law, App Store requirements or the services used to operate the app.</p>
+      <p>Where a change is material, Brink may display an in-app notice or require you to review and acknowledge the current version. The “Last updated” date at the top of this page identifies the current version.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>20. Governing law and disputes</h2>
+      <p>These terms are governed by the laws of England and Wales, subject to any mandatory rights you may have under the law that applies where you live.</p>
+      <p>If you are a consumer living elsewhere in the United Kingdom or in another territory, nothing in these terms is intended to deprive you of mandatory consumer protections or any right to bring proceedings in a court available to you under applicable law.</p>
+      <p>If a dispute arises, please contact me first at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a> so there is an opportunity to resolve the issue directly.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>21. Apple</h2>
+      <p>Brink is distributed through Apple's App Store. Your use of the app is also subject to applicable Apple Media Services and App Store terms.</p>
+      <p>Apple is not responsible for Brink's development, operation or support except to the extent required by Apple's applicable terms or by law. Nothing in these terms is intended to conflict with mandatory terms imposed by Apple for apps distributed through the App Store.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>22. Contact</h2>
+      <p>Questions about these Terms &amp; Conditions can be sent to:</p>
+      <p><strong>Josh Bradley</strong><br />
+      Email: <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a><br />
+      Website: <a href="contact.html">Brink contact page</a></p>
+    </section>
+
+    <p class="updated">Last updated: October 2026.</p>
+  </main>
 
   <footer>
     <div class="footer-inner">
@@ -520,91 +589,73 @@
           <div class="footer-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
           <span class="footer-logo-text">Brink Browser</span>
         </a>
-        <p class="footer-tagline">A research browser for students.<br>Built independently by Josh Bradley.</p>
+
+        <p class="footer-tagline">A research browser for students.<br />Built independently by Josh Bradley.</p>
+
         <div class="footer-social">
           <a href="https://www.reddit.com/r/BrinkBrowser/" target="_blank" rel="noopener" title="Reddit" aria-label="Brink on Reddit">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+            </svg>
           </a>
         </div>
       </div>
+
       <div class="footer-col">
         <div class="footer-col-title">Product</div>
         <a href="features.html">Features</a>
-        <a href="index.html#changelog">Changelog</a>
       </div>
+
       <div class="footer-col">
         <div class="footer-col-title">About</div>
         <a href="about.html">Why Brink</a>
         <a href="contact.html">Support</a>
       </div>
+
       <div class="footer-col">
         <div class="footer-col-title">Legal</div>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
     </div>
+
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 Josh Bradley. All rights reserved.</span>
     </div>
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="JoshBradley" data-description="Support me on Buy me a coffee!" data-message="Thanks for visiting, support me here :)" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
   </footer>
 
   <script>
-    const nav = document.getElementById('main-nav');
+    const button = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
 
-    window.addEventListener('scroll', () => {
-      nav.style.background = window.scrollY > 40
-        ? 'rgba(248,249,251,0.96)'
-        : 'rgba(248,249,251,0.88)';
-    }, { passive: true });
-
-    const menuButton = document.getElementById('nav-hamburger');
-    const menuPanel = document.getElementById('nav-mobile-menu');
-
-    if (menuButton && menuPanel) {
-      const setMenuOpen = (open) => {
-        menuPanel.hidden = !open;
-        menuButton.setAttribute('aria-expanded', String(open));
-        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (button && menu) {
+      const setOpen = open => {
+        menu.hidden = !open;
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       };
 
-      menuButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+      button.addEventListener('click', e => {
+        e.stopPropagation();
+        setOpen(button.getAttribute('aria-expanded') !== 'true');
       });
 
-      menuPanel.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => setMenuOpen(false));
+      document.addEventListener('click', e => {
+        if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) setOpen(false);
       });
 
-      document.addEventListener('click', (event) => {
-        if (
-          !menuPanel.hidden &&
-          !menuPanel.contains(event.target) &&
-          !menuButton.contains(event.target)
-        ) {
-          setMenuOpen(false);
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && !menuPanel.hidden) {
-          setMenuOpen(false);
-          menuButton.focus();
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !menu.hidden) {
+          setOpen(false);
+          button.focus();
         }
       });
 
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          setMenuOpen(false);
-        }
+        if (window.innerWidth > 768) setOpen(false);
       });
 
-      window.addEventListener('scroll', () => {
-        setMenuOpen(false);
-      }, { passive: true });
-
-      setMenuOpen(false);
+      setOpen(false);
     }
   </script>
 </body>
