@@ -4,33 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Brink Browser</title>
+  <meta name="description" content="Privacy Policy for Brink Browser, an independently developed iPad research browser." />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #f8f9fb;
-      --bg2: #ffffff;
-      --bg3: #f2f4f7;
-      --surface: #eaedf2;
-      --border: rgba(0,0,0,0.07);
-      --border2: rgba(0,0,0,0.12);
-      --accent: #1ec490;
-      --accent2: #17a376;
-      --text: #0f1117;
-      --text2: #5a6275;
-      --text3: #9aa3b2;
-      --serif: 'Instrument Serif', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-      --radius: 14px;
-      --radius-lg: 22px;
+      --bg:#f8f9fb;
+      --bg2:#ffffff;
+      --bg3:#f2f4f7;
+      --surface:#eaedf2;
+      --border:rgba(0,0,0,0.07);
+      --accent:#1ec490;
+      --text:#0f1117;
+      --text2:#5a6275;
+      --text3:#9aa3b2;
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'DM Sans',sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -40,31 +40,27 @@
       color: var(--text);
       font-family: var(--sans);
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      display: flex;
-      align-items: center;
       height: calc(62px + env(safe-area-inset-top));
       padding-top: env(safe-area-inset-top);
-      background: rgba(248,249,251,0.88);
+      background: rgba(248,249,251,0.9);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
       border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
+      display: flex;
+      align-items: center;
     }
 
     .nav-inner {
-      max-width: 860px;
       width: 100%;
+      max-width: 860px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -84,7 +80,6 @@
       height: 32px;
       border-radius: 8px;
       overflow: hidden;
-      flex-shrink: 0;
     }
 
     .nav-logo-mark img {
@@ -95,15 +90,13 @@
     }
 
     .nav-logo-text {
+      color: var(--text);
       font-size: 15px;
       font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.01em;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 6px;
       list-style: none;
     }
@@ -115,384 +108,318 @@
       font-weight: 500;
       padding: 6px 14px;
       border-radius: 8px;
-      transition: color 0.2s, background 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(0,0,0,0.05);
-    }
+    .nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--text); }
 
-    .nav-links a.active {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* Hidden on desktop; shown only at mobile width */
     .nav-hamburger {
       display: none;
       width: 44px;
       height: 44px;
       padding: 11px;
       border: 0;
-      border-radius: 10px;
       background: transparent;
-      cursor: pointer;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 5px;
-      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
     }
 
     .nav-hamburger span {
-      display: block;
       width: 22px;
       height: 2px;
-      border-radius: 999px;
       background: var(--text);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .nav-hamburger[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav-hamburger[aria-expanded="true"] span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      border-radius: 2px;
     }
 
     .nav-mobile-menu {
       position: fixed;
       top: calc(62px + env(safe-area-inset-top));
-      left: 0;
-      right: 0;
+      left: 0; right: 0;
       z-index: 99;
       display: flex;
       flex-direction: column;
       gap: 4px;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      padding-left: max(24px, env(safe-area-inset-left));
-      padding-right: max(24px, env(safe-area-inset-right));
+      padding: 12px 24px 16px;
       background: rgba(248,249,251,0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
     }
 
-    .nav-mobile-menu[hidden] {
-      display: none !important;
-    }
+    .nav-mobile-menu[hidden] { display: none !important; }
 
     .nav-mobile-menu a {
-      display: block;
-      padding: 12px 14px;
-      border-radius: 10px;
       color: var(--text2);
+      text-decoration: none;
       font-size: 15px;
       font-weight: 500;
-      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
     }
 
-    .nav-mobile-menu a:hover {
-      color: var(--text);
-      background: rgba(0,0,0,0.05);
-    }
+    .nav-mobile-menu a:hover { color: var(--accent); background: rgba(30,196,144,0.06); }
 
     .page-hero {
-      padding: 140px 24px 60px;
-      text-align: center;
+      padding: calc(132px + env(safe-area-inset-top)) 24px 62px;
       background: var(--bg2);
+      text-align: center;
       border-bottom: 1px solid var(--border);
     }
 
-    .section-label {
+    .eyebrow {
+      color: var(--accent);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
+      margin-bottom: 13px;
     }
 
     .page-hero h1 {
       font-family: var(--serif);
-      font-size: clamp(36px, 5vw, 58px);
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.05;
       font-weight: 400;
-      line-height: 1.07;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      max-width: 680px;
-      margin: 0 auto 16px;
-    }
-
-    .page-hero .meta {
-      font-size: 14px;
-      color: var(--text3);
-    }
-
-    .legal-section {
-      padding: 72px 24px 100px;
-    }
-
-    .legal-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .legal-inner h2 {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin: 48px 0 16px;
-      padding-top: 48px;
-      border-top: 1px solid var(--border);
-    }
-
-    .legal-inner h2:first-of-type {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-    }
-
-    .legal-inner p {
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--text2);
-      line-height: 1.8;
+      letter-spacing: -.02em;
       margin-bottom: 16px;
     }
 
-    .legal-inner p:last-child {
-      margin-bottom: 0;
-    }
-
-    .legal-inner ul {
-      margin: 12px 0 16px 0;
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .legal-inner ul li {
-      font-size: 16px;
-      font-weight: 300;
+    .page-hero p {
       color: var(--text2);
-      line-height: 1.7;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .legal-inner ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .legal-inner a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .legal-inner a:hover {
-      text-decoration: underline;
-    }
-
-    .legal-inner strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .legal-notice {
-      background: var(--bg3);
-      border: 1px solid var(--border2);
-      border-radius: var(--radius-lg);
-      padding: 24px 28px;
-      margin-bottom: 48px;
-    }
-
-    .legal-notice p {
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .privacy-highlight {
-      background: rgba(30,196,144,0.06);
-      border: 1px solid rgba(30,196,144,0.2);
-      border-radius: var(--radius-lg);
-      padding: 24px 28px;
-      margin: 24px 0;
-    }
-
-    .privacy-highlight p {
       font-size: 15px;
-      color: var(--text);
+    }
+
+    .legal-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 72px 24px 90px;
+    }
+
+    .summary {
+      padding: 26px 28px;
+      margin-bottom: 48px;
+      background: rgba(30,196,144,0.06);
+      border: 1px solid rgba(30,196,144,0.16);
+      border-radius: 18px;
+    }
+
+    .summary h2 {
+      font-family: var(--serif);
+      font-size: 28px;
       font-weight: 400;
-      margin: 0;
-      line-height: 1.7;
+      margin-bottom: 8px;
     }
 
-    .privacy-highlight strong {
-      color: var(--accent2);
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border2);
-    }
-
-    .data-table th {
-      background: var(--bg3);
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    .summary p {
       color: var(--text2);
-      padding: 12px 16px;
-      text-align: left;
-      border-bottom: 1px solid var(--border2);
+      font-size: 15px;
+      line-height: 1.75;
     }
 
-    .data-table td {
-      font-size: 14px;
+    .legal-section {
+      margin-bottom: 44px;
+    }
+
+    .legal-section h2 {
+      font-family: var(--serif);
+      font-size: 29px;
+      line-height: 1.2;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .legal-section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 22px 0 8px;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      color: var(--text2);
+      font-size: 15px;
       font-weight: 300;
-      color: var(--text2);
-      padding: 12px 16px;
+      line-height: 1.8;
+    }
+
+    .legal-section p { margin-bottom: 14px; }
+
+    .legal-section ul {
+      margin: 12px 0 16px 22px;
+    }
+
+    .legal-section li { margin-bottom: 6px; }
+
+    .legal-section a {
+      color: #148765;
+      text-underline-offset: 2px;
+    }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg2);
+    }
+
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
       border-bottom: 1px solid var(--border);
-      line-height: 1.6;
+      vertical-align: top;
+      font-size: 13px;
     }
 
-    .data-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .data-table td strong {
-      font-weight: 500;
+    th {
+      background: var(--bg3);
       color: var(--text);
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 11px;
       font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 20px;
     }
 
-    .badge-linked {
-      background: rgba(255,160,0,0.12);
-      color: #b37400;
+    td {
+      color: var(--text2);
+      font-weight: 300;
     }
 
-    .badge-notlinked {
-      background: rgba(30,196,144,0.10);
-      color: var(--accent2);
+    tr:last-child td { border-bottom: 0; }
+
+    .note {
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-left: 3px solid var(--accent);
+      background: var(--bg3);
+      border-radius: 0 10px 10px 0;
+      color: var(--text2);
+      font-size: 14px;
+      line-height: 1.75;
     }
 
-    img {
-      max-width: 100%;
+    .updated {
+      margin-top: 58px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text3);
+      font-size: 12px;
     }
 
-    .nav-hamburger:focus-visible,
-    .nav-links a:focus-visible,
-    .nav-mobile-menu a:focus-visible,
-    .footer-links a:focus-visible,
-    .footer-social a:focus-visible {
-      outline: 3px solid rgba(30,196,144,0.35);
-      outline-offset: 3px;
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 60px 24px 0;
     }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .footer-logo-mark img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    .footer-logo-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text2);
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .footer-social { display: flex; gap: 8px; }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text3);
+    }
+
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .footer-col { display: flex; flex-direction: column; }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      font-size: 13px;
+      color: var(--text2);
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 0 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-copy { font-size: 12px; color: var(--text3); }
 
     @media (max-width: 768px) {
-      .nav-inner {
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .nav-hamburger {
-        display: flex;
-      }
-
-      .page-hero {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .data-table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .data-table th,
-      .data-table td {
-        padding: 10px 12px;
-        white-space: nowrap;
-      }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .page-hero { padding: calc(108px + env(safe-area-inset-top)) 20px 48px; }
+      .legal-wrap { padding: 52px 20px 70px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .summary { padding: 22px; }
     }
-
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); background: var(--bg2); padding: 60px 24px 0; }
-    .footer-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; }
-    .footer-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; margin-bottom: 12px; }
-    .footer-logo-mark { width: 28px; height: 28px; border-radius: 7px; overflow: hidden; flex-shrink: 0; }
-    .footer-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .footer-logo-text { font-size: 14px; font-weight: 600; color: var(--text2); }
-    .footer-tagline { font-size: 13px; color: var(--text3); line-height: 1.6; margin-bottom: 16px; }
-    .footer-social { display: flex; gap: 8px; }
-    .footer-social a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); color: var(--text3); text-decoration: none; transition: background 0.2s, color 0.2s; }
-    .footer-social a:hover { background: var(--surface); color: var(--text2); }
-    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
-    .footer-col { display: flex; flex-direction: column; }
-    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); margin-bottom: 14px; }
-    .footer-col a { font-size: 13px; color: var(--text2); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--accent); }
-    .footer-bottom { max-width: 860px; margin: 0 auto; padding: 20px 0 28px; border-top: 1px solid var(--border); }
-    .footer-copy { font-size: 12px; color: var(--text3); }
-    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; } }
-    @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; } }
   </style>
 </head>
-<body>
 
-  <nav id="main-nav">
+<body>
+  <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
@@ -505,159 +432,191 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-      <button
-        class="nav-hamburger"
-        id="nav-hamburger"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="nav-mobile-menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation" hidden>
+  <div class="nav-mobile-menu" id="nav-mobile-menu" hidden>
     <a href="features.html">Features</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
 
-  <div class="page-hero">
-    <div class="section-label">Legal</div>
+  <header class="page-hero">
+    <div class="eyebrow">Legal</div>
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: August 2026 &nbsp;·&nbsp; Governing law: England and Wales</p>
-  </div>
+    <p>Last updated: October 2026 · Brink Browser</p>
+  </header>
 
-  <section class="legal-section">
-    <div class="legal-inner">
-
-      <div class="legal-notice">
-        <p>This Privacy Policy explains how Brink Browser ("Brink", "we", "us") handles your data. We believe privacy should be the default, not a feature. Please read this carefully.</p>
-      </div>
-
-      <h2>1. Who We Are</h2>
-      <p>Brink Browser is developed and operated by Josh Bradley, an independent developer based in the United Kingdom. If you have any questions about this Privacy Policy, you can contact us at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a>.</p>
-
-      <h2>2. The Short Version</h2>
-      <div class="privacy-highlight">
-        <p><strong>Brink uses Firebase — Google's app development platform — to collect anonymous crash reports, performance diagnostics and usage analytics.</strong> This helps us fix bugs and improve the app. We never collect your browsing content, research notes, saved pages or recordings. Everything you create in Brink stays on your device.</p>
-      </div>
-
-      <h2>3. Data We Collect</h2>
-      <p>Brink uses <strong>Firebase</strong> (provided by Google LLC) for crash reporting, performance monitoring, push notifications and analytics. This data is used solely to improve app stability and your experience. The following data types are collected:</p>
-
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Data Type</th>
-            <th>Purpose</th>
-            <th>Linked to You?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Diagnostics</strong></td>
-            <td>Crash Data</td>
-            <td>Analytics, App Functionality</td>
-            <td><span class="badge badge-notlinked">Not linked</span></td>
-          </tr>
-          <tr>
-            <td><strong>Diagnostics</strong></td>
-            <td>Performance Data</td>
-            <td>Analytics, App Functionality</td>
-            <td><span class="badge badge-notlinked">Not linked</span></td>
-          </tr>
-          <tr>
-            <td><strong>Diagnostics</strong></td>
-            <td>Other Diagnostic Data</td>
-            <td>Analytics, App Functionality</td>
-            <td><span class="badge badge-notlinked">Not linked</span></td>
-          </tr>
-          <tr>
-            <td><strong>Identifiers</strong></td>
-            <td>Device ID</td>
-            <td>Analytics, App Functionality</td>
-            <td><span class="badge badge-notlinked">Not linked</span></td>
-          </tr>
-          <tr>
-            <td><strong>Usage Data</strong></td>
-            <td>Product Interaction</td>
-            <td>Analytics, App Functionality</td>
-            <td><span class="badge badge-notlinked">Not linked</span></td>
-          </tr>
-          <tr>
-            <td><strong>Location</strong></td>
-            <td>Coarse Location</td>
-            <td>Analytics, App Functionality</td>
-            <td><span class="badge badge-notlinked">Not linked</span></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>None of this data includes your browsing history, search queries, research folder contents, notes, recordings or any other content you create inside Brink. We do not link this data to your personal identity.</p>
-
-      <p><strong>Analytics collection begins only after you have accepted our Terms &amp; Conditions and this Privacy Policy during onboarding.</strong> Until you accept, analytics collection is disabled and no analytics data is gathered. You are confirming your consent to this collection when you accept during onboarding.</p>
-
-      <p>For full details on how Firebase handles data, see <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google's Firebase Privacy and Security documentation</a>.</p>
-
-      <h2>4. What We Do Not Collect</h2>
-      <p>Brink does not collect, store or transmit the following:</p>
-      <ul>
-        <li>Personal identifiers (name, email address, phone number)</li>
-        <li>Browsing history or visited URLs</li>
-        <li>Search queries entered in the URL bar</li>
-        <li>Research folder contents, saved pages or bookmarks</li>
-        <li>Quick notes or annotations</li>
-        <li>Lecture recordings or audio files</li>
-        <li>Precise location data</li>
-        <li>Advertising identifiers (IDFA)</li>
-      </ul>
-      <p>All content you create in the app — folders, notes, saved research, recordings — stays on your device and is never transmitted to me or any third party.</p>
-      <p>To support local file management and exporting, Brink enables iOS file sharing (`UIFileSharingEnabled`). This allows you to access or back up your locally stored application documents directly via the native Files app or a connected computer. These files remain entirely under your control on your device and are never accessed, uploaded, or transmitted by us.</p>
-
-      <h2>5. Microphone Access</h2>
-      <p>Brink requests access to your device microphone solely to support the <strong>Lecture Capture</strong> feature, which allows you to record audio directly within the app. This permission is only active while you are actively recording.</p>
-      <p>Microphone recordings are stored entirely on your device. They are never uploaded, transmitted or shared with us or any third party. You can revoke microphone access at any time in your device Settings.</p>
-
-      <h2>6. Push Notifications</h2>
-      <p>Brink uses Firebase Cloud Messaging (FCM) to deliver push notifications. If you grant notification permission, a Firebase-generated push token is used solely to route notifications to your device. This token is not linked to your personal identity and is not used for any other purpose.</p>
-
-      <h2>7. Data Apple May Collect</h2>
-      <p>Brink is distributed through the Apple App Store. Apple may collect certain data as part of the App Store experience, including purchase records and download information, in accordance with <a href="https://www.apple.com/uk/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We do not control or have access to this data.</p>
-
-      <h2>8. Contact Form (Website)</h2>
-      <p>If you use the contact form on this website, the information you submit (name, email address and message) is used solely to respond to your enquiry. It is not stored beyond the purpose of your enquiry and is not shared with anyone.</p>
-
-      <h2>9. Children's Privacy</h2>
-      <p>Brink is designed for users aged 16 and over. I do not knowingly collect any personal data from children under 16. If you believe a child under 16 has provided personal information, please get in touch and I'll take appropriate action.</p>
-
-      <h2>10. Your Rights Under UK GDPR</h2>
-      <p>As a UK-based product, Brink is committed to complying with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. Your rights include:</p>
-      <ul>
-        <li>The right to access any personal data we hold about you</li>
-        <li>The right to correct inaccurate personal data</li>
-        <li>The right to erasure ("right to be forgotten")</li>
-        <li>The right to restrict or object to processing</li>
-        <li>The right to data portability</li>
-      </ul>
-      <p>To exercise any of these rights, email <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a>.</p>
-
-      <h2>11. Data Security</h2>
-      <p>Data collected via Firebase is stored on Google's infrastructure and governed by Google's security practices. Content you create within the app is stored locally on your device, protected by your device passcode, Face ID or Touch ID. I recommend keeping your device and iOS up to date.</p>
-
-      <h2>12. Changes to This Policy</h2>
-      <p>This Privacy Policy may be updated from time to time. If significant changes are made, you'll be notified via an in-app prompt. The "Last updated" date at the top of this page will also reflect any changes.</p>
-
-      <h2>13. Contact</h2>
-      <p>If you have any questions about this Privacy Policy, feel free to get in touch at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a> or via the <a href="contact.html">contact page</a>.</p>
-
+  <main class="legal-wrap">
+    <div class="summary">
+      <h2>The short version</h2>
+      <p>Brink keeps the content of your research on your device. Your browsing history, search queries, research projects, folders, saved pages, notes and lecture recordings are not collected by Brink. Limited diagnostics and usage analytics may be processed to help understand app performance, identify crashes and improve Brink.</p>
     </div>
-  </section>
+
+    <section class="legal-section">
+      <h2>1. Who is responsible for Brink?</h2>
+      <p>Brink Browser (“Brink”, “the app”, “I”, “me” or “my”) is independently developed by Josh Bradley in the United Kingdom.</p>
+      <p>If you have a privacy question or wish to exercise a data protection right, you can contact me at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a>.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>2. Information Brink does not collect</h2>
+      <p>Brink is designed so that the content you create and the material you research remain local to your device. Brink does not collect the content of:</p>
+      <ul>
+        <li>your browsing history or the webpages you visit;</li>
+        <li>your search queries;</li>
+        <li>your Research Projects or project names;</li>
+        <li>your folders and folder structure;</li>
+        <li>saved webpages and research material;</li>
+        <li>notes and annotations;</li>
+        <li>webpage highlights;</li>
+        <li>PDFs, images or other research files you save;</li>
+        <li>lecture recordings or other recorded audio; or</li>
+        <li>the contents of citations you create.</li>
+      </ul>
+      <p>Brink does not use Apple's advertising identifier (IDFA) to build advertising profiles, and Brink does not sell your personal data.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>3. Diagnostics and usage analytics</h2>
+      <p>Brink uses Firebase services provided by Google to support app diagnostics and usage analytics. Depending on the Firebase services enabled in the version of Brink you use, technical information may be processed to help identify crashes, understand performance and understand how app features are used.</p>
+
+      <div class="data-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diagnostics</td>
+              <td>Crash information and technical diagnostic data</td>
+              <td>App stability, debugging and reliability</td>
+            </tr>
+            <tr>
+              <td>Usage data</td>
+              <td>Interactions with app features and events configured by Brink</td>
+              <td>Understanding feature usage and improving the app</td>
+            </tr>
+            <tr>
+              <td>Device / app information</td>
+              <td>Technical device, operating-system and app-version information made available through Firebase</td>
+              <td>Diagnostics, compatibility and analytics</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The analytics and diagnostic systems are not used by Brink to collect the contents of webpages you visit, your search queries, research projects, notes, saved research, PDFs or recordings.</p>
+
+      <p>Google processes information collected through Firebase under Google's applicable privacy and security terms. You can learn more through <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a>.</p>
+
+      <div class="note">Brink's privacy-sensitive research content is separate from its analytics and diagnostic events. The fact that a feature is used may be measurable where an analytics event has been configured, but the research content inside that feature is not sent as the event content.</div>
+    </section>
+
+    <section class="legal-section">
+      <h2>4. Terms and privacy acknowledgement</h2>
+      <p>Brink may ask you to review and acknowledge the current Terms &amp; Conditions and Privacy Policy during onboarding or when those documents are materially updated. Brink stores the version you have acknowledged so it can determine whether an updated notice needs to be shown again.</p>
+      <p>Where a feature or service requires a particular permission or consent under applicable law, Brink will request that permission or consent as required. You can also manage applicable system permissions through iPadOS Settings.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>5. Research Projects, saved research and local storage</h2>
+      <p>Research Projects, folders, saved research, notes, highlights, PDFs, images and lecture recordings are stored locally as part of Brink's app data or in locations you choose through Apple's file-management interfaces.</p>
+      <p>These items are not uploaded to a Brink account or Brink-operated cloud service because Brink does not currently provide an account-based research synchronisation service.</p>
+      <p>If you export, download, share or save material outside Brink, that copy is then handled by the destination you choose and by iPadOS or the third-party app or service involved.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>6. Microphone access and Lecture Capture</h2>
+      <p>Brink requests microphone access only when needed for features that record audio, such as Lecture Capture. Audio is recorded only when you start a recording.</p>
+      <p>Lecture recordings are stored locally with your research and are not uploaded by Brink to a Brink-operated server. You can revoke Brink's microphone permission at any time through iPadOS Settings, although recording features will no longer work while permission is disabled.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>7. Notifications</h2>
+      <p>If Brink offers notifications and you choose to enable them, Apple and any notification-delivery service used by Brink may process technical information required to deliver those notifications, such as a device or push-notification token.</p>
+      <p>Notification permission can be changed at any time in iPadOS Settings.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>8. App Store purchases</h2>
+      <p>Brink is distributed through Apple's App Store. Apple processes your purchase, payment method and App Store account information under Apple's own terms and privacy policy. Brink does not receive your payment-card details.</p>
+      <p>Apple may provide developers with sales, download, product and performance information through App Store Connect. This is separate from the research content stored inside Brink.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>9. Website contact form</h2>
+      <p>If you contact me through the Brink website's contact form, the information you submit may include your name, email address, selected subject and message. This information is used to receive and respond to your enquiry.</p>
+      <p>The website contact form is processed using Formspree, a third-party form-processing service. This means information submitted through the form is transmitted through Formspree in order to deliver your message.</p>
+      <p>Formspree processes information under its own privacy terms. You can review <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree's Privacy Policy</a>. If you prefer not to use the website form, you can contact me directly at <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a>.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>10. Other third-party website services</h2>
+      <p>The Brink website may load resources or widgets from third-party providers. For example, the website uses Google Fonts and may display a Buy Me a Coffee support widget. When your browser connects to a third-party service, that provider may receive technical information normally associated with a web request, such as your IP address, browser information and the page making the request.</p>
+      <p>If you choose to interact with an external service, the provider's own terms and privacy policy apply to that interaction.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>11. Third-party websites opened in Brink</h2>
+      <p>Brink is a web browser. Websites you visit can collect or process information under their own privacy policies, use cookies or similar technologies, and request permissions independently of Brink.</p>
+      <p>This Privacy Policy describes Brink's own handling of information. It does not control the privacy practices of websites or online services that you choose to visit through the browser.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>12. Data security</h2>
+      <p>Research content stored locally in Brink benefits from the security protections provided by iPadOS and your device. You should protect your iPad with an appropriate device passcode and, where available, Face ID or Touch ID.</p>
+      <p>No method of electronic storage or transmission can be guaranteed to be completely secure. Brink therefore cannot promise absolute security, but the app is designed to avoid unnecessarily transmitting the contents of your research.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>13. Data retention</h2>
+      <p>Research content stored locally remains on your device until you delete it, remove the app and its data, or otherwise manage that content through Brink or iPadOS.</p>
+      <p>Information processed through Firebase, Formspree, Apple or other third-party services is subject to the applicable provider's retention practices as well as any configuration or controls available to Brink.</p>
+      <p>Direct support correspondence may be retained for as long as reasonably necessary to respond to your enquiry, maintain a record of support provided, resolve disputes or meet legal obligations.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>14. Your data protection rights</h2>
+      <p>Depending on the circumstances and applicable law, including the UK GDPR and Data Protection Act 2018, you may have rights relating to personal data processed about you. These can include rights to request access, correction or erasure, to restrict or object to certain processing, and to request data portability where applicable.</p>
+      <p>Some information used by Brink's analytics or diagnostic providers may not be reasonably identifiable by me as belonging to a particular individual. If I cannot identify data as relating to you, I may not be able to fulfil a request in relation to that specific data.</p>
+      <p>To make a privacy request, contact <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a>.</p>
+      <p>You may also have the right to raise a concern with the UK's Information Commissioner's Office (ICO).</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>15. Children and age requirement</h2>
+      <p>Brink is intended for users aged 16 and over. The app is not intended for children under 16.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>16. International processing</h2>
+      <p>Some third-party service providers used by Brink or the Brink website may process information using infrastructure located outside the United Kingdom. Where personal data is transferred internationally, the relevant provider is responsible for applying the transfer mechanisms and safeguards required for its processing under applicable law.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>17. Changes to this Privacy Policy</h2>
+      <p>This Privacy Policy may be updated when Brink's features, services or legal obligations change. Where an update is significant, Brink may present an in-app notice or require you to review the current version before continuing to use relevant features.</p>
+      <p>The “Last updated” date at the top of this page identifies the current version of this policy.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>18. Contact</h2>
+      <p>For privacy questions, requests or concerns, contact:</p>
+      <p><strong>Josh Bradley</strong><br />
+      Email: <a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a><br />
+      Website: <a href="contact.html">Brink contact page</a></p>
+    </section>
+
+    <p class="updated">Last updated: October 2026.</p>
+  </main>
 
   <footer>
     <div class="footer-inner">
@@ -666,91 +625,73 @@
           <div class="footer-logo-mark"><img src="brink-icon.png" alt="Brink" /></div>
           <span class="footer-logo-text">Brink Browser</span>
         </a>
-        <p class="footer-tagline">A research browser for students.<br>Built independently by Josh Bradley.</p>
+
+        <p class="footer-tagline">A research browser for students.<br />Built independently by Josh Bradley.</p>
+
         <div class="footer-social">
           <a href="https://www.reddit.com/r/BrinkBrowser/" target="_blank" rel="noopener" title="Reddit" aria-label="Brink on Reddit">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+            </svg>
           </a>
         </div>
       </div>
+
       <div class="footer-col">
         <div class="footer-col-title">Product</div>
         <a href="features.html">Features</a>
-        <a href="index.html#changelog">Changelog</a>
       </div>
+
       <div class="footer-col">
         <div class="footer-col-title">About</div>
         <a href="about.html">Why Brink</a>
         <a href="contact.html">Support</a>
       </div>
+
       <div class="footer-col">
         <div class="footer-col-title">Legal</div>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
     </div>
+
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 Josh Bradley. All rights reserved.</span>
     </div>
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="JoshBradley" data-description="Support me on Buy me a coffee!" data-message="Thanks for visiting, support me here :)" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
   </footer>
 
   <script>
-    const nav = document.getElementById('main-nav');
+    const button = document.getElementById('nav-hamburger');
+    const menu = document.getElementById('nav-mobile-menu');
 
-    window.addEventListener('scroll', () => {
-      nav.style.background = window.scrollY > 40
-        ? 'rgba(248,249,251,0.96)'
-        : 'rgba(248,249,251,0.88)';
-    }, { passive: true });
-
-    const menuButton = document.getElementById('nav-hamburger');
-    const menuPanel = document.getElementById('nav-mobile-menu');
-
-    if (menuButton && menuPanel) {
-      const setMenuOpen = (open) => {
-        menuPanel.hidden = !open;
-        menuButton.setAttribute('aria-expanded', String(open));
-        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (button && menu) {
+      const setOpen = open => {
+        menu.hidden = !open;
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       };
 
-      menuButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+      button.addEventListener('click', e => {
+        e.stopPropagation();
+        setOpen(button.getAttribute('aria-expanded') !== 'true');
       });
 
-      menuPanel.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => setMenuOpen(false));
+      document.addEventListener('click', e => {
+        if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) setOpen(false);
       });
 
-      document.addEventListener('click', (event) => {
-        if (
-          !menuPanel.hidden &&
-          !menuPanel.contains(event.target) &&
-          !menuButton.contains(event.target)
-        ) {
-          setMenuOpen(false);
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && !menuPanel.hidden) {
-          setMenuOpen(false);
-          menuButton.focus();
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !menu.hidden) {
+          setOpen(false);
+          button.focus();
         }
       });
 
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          setMenuOpen(false);
-        }
+        if (window.innerWidth > 768) setOpen(false);
       });
 
-      window.addEventListener('scroll', () => {
-        setMenuOpen(false);
-      }, { passive: true });
-
-      setMenuOpen(false);
+      setOpen(false);
     }
   </script>
 </body>
