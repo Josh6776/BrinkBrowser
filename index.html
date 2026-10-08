@@ -35,6 +35,7 @@
       --sans: 'DM Sans', sans-serif;
       --radius: 14px;
       --radius-lg: 22px;
+      --announce-h: 44px;
     }
 
     html { scroll-behavior: smooth; }
@@ -152,7 +153,7 @@
 
     .nav-mobile-menu {
       position: fixed;
-      top: calc(62px + env(safe-area-inset-top));
+      top: calc(62px + var(--announce-h) + env(safe-area-inset-top));
       left: 0;
       right: 0;
       z-index: 99;
@@ -183,11 +184,288 @@
       background: rgba(0,0,0,0.05);
     }
 
+    /* Announcement bar */
+    .announce {
+      position: fixed;
+      top: calc(62px + env(safe-area-inset-top));
+      left: 0;
+      right: 0;
+      z-index: 98;
+      height: var(--announce-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 44px 0 16px;
+      background: linear-gradient(90deg, rgba(30,196,144,0.13), rgba(30,196,144,0.07));
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
+
+    html.announce-off { --announce-h: 0px; }
+    html.announce-off .announce { display: none; }
+
+    .announce-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 1080px;
+      min-width: 0;
+      justify-content: center;
+    }
+
+    .announce-badge {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .announce-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .announce-cta {
+      flex-shrink: 0;
+      border: 0;
+      background: transparent;
+      color: var(--accent2);
+      font-family: var(--sans);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 7px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .announce-cta:hover { color: var(--accent); }
+
+    .announce-close {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: transparent;
+      color: var(--text3);
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 7px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .announce-close:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+
+    /* What's new modal */
+    .whatsnew-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(15,17,23,0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .whatsnew-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .whatsnew {
+      position: relative;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 560px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 38px 34px 30px;
+      box-shadow: 0 40px 100px rgba(15,17,23,0.28);
+      transform: translateY(12px) scale(0.98);
+      transition: transform 0.25s ease;
+    }
+
+    .whatsnew-overlay.open .whatsnew {
+      transform: translateY(0) scale(1);
+    }
+
+    .whatsnew-x {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: var(--bg3);
+      color: var(--text2);
+      font-size: 15px;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 9px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .whatsnew-x:hover { background: var(--surface); color: var(--text); }
+
+    .whatsnew-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .whatsnew h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 5vw, 40px);
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      padding-right: 30px;
+    }
+
+    .whatsnew-lead {
+      color: var(--text2);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .whatsnew-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 24px;
+    }
+
+    .whatsnew-list li {
+      display: flex;
+      gap: 11px;
+      color: var(--text);
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .whatsnew-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin-top: 8px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .whatsnew-foot {
+      color: var(--text2);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .whatsnew-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .appstore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 50px;
+      padding: 0 18px;
+      border-radius: 11px;
+      background: #0f1117;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .appstore-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .appstore-btn svg { width: 22px; height: 22px; fill: currentColor; flex-shrink: 0; }
+
+    .appstore-txt {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+      text-align: left;
+    }
+
+    .appstore-txt small { font-size: 9px; font-weight: 500; letter-spacing: 0.02em; opacity: 0.85; }
+    .appstore-txt b { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+
+    .whatsnew-done {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid var(--border2);
+      border-radius: 11px;
+      background: var(--bg3);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .whatsnew-done:hover { background: var(--surface); }
+
+    body.modal-open { overflow: hidden; }
+
+    @media (max-width: 560px) {
+      .announce-badge { display: none; }
+      .announce-text { font-size: 12.5px; }
+      .announce-cta { font-size: 12.5px; }
+    }
+
     .hero {
       position: relative;
       overflow: hidden;
       background: var(--bg2);
-      padding: calc(150px + env(safe-area-inset-top)) 24px 88px;
+      padding: calc(150px + var(--announce-h) + env(safe-area-inset-top)) 24px 88px;
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
@@ -774,7 +1052,7 @@
       .nav-hamburger { display: flex; }
 
       .hero {
-        padding: calc(116px + env(safe-area-inset-top)) 20px 64px;
+        padding: calc(116px + var(--announce-h) + env(safe-area-inset-top)) 20px 64px;
       }
 
       .hero h1 {
@@ -845,6 +1123,10 @@
 </head>
 <body>
 
+  <script>
+    try { if (localStorage.getItem('brink-announce-v1') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
+  </script>
+
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -868,6 +1150,15 @@
     <a href="features.html">Features</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="announce" id="announce" role="region" aria-label="Site announcement">
+    <div class="announce-inner">
+      <span class="announce-badge">New</span>
+      <span class="announce-text">Brink’s research workspace just got a major upgrade.</span>
+      <button class="announce-cta" id="announce-more" type="button">See what’s new</button>
+    </div>
+    <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
   </div>
 
   <header class="hero">
@@ -1122,6 +1413,36 @@
     </div>
   </section>
 
+  <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
+    <div class="whatsnew">
+      <button class="whatsnew-x" id="whatsnew-x" type="button" aria-label="Close">✕</button>
+      <div class="whatsnew-label">Latest update</div>
+      <h2 id="whatsnew-title">What’s new in Brink</h2>
+      <p class="whatsnew-lead">Brink’s research workspace just got a major upgrade.</p>
+      <ul class="whatsnew-list">
+        <li>Organise your research into separate projects</li>
+        <li>Keep tabs, folders and saved research organised by project</li>
+        <li>Swipe between research projects from the sidebar</li>
+        <li>Improved citations, including Harvard, IEEE and Chicago styles</li>
+        <li>Improved user experience in the sidebar</li>
+        <li>Better folder organisation with nested folders</li>
+        <li>Press and hold New Tab to create a private one</li>
+        <li>Improved PDFs, images, notes and lecture captures</li>
+        <li>Smarter Brink Spotlight search across your research and tabs</li>
+        <li>Improved browser back and forward navigation</li>
+        <li>UI improvements and bug fixes throughout Brink</li>
+      </ul>
+      <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
+      <div class="whatsnew-actions">
+        <a class="appstore-btn" href="https://apps.apple.com/us/app/brink-browser/id6777463824" target="_blank" rel="noopener" aria-label="Download Brink on the App Store">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="appstore-txt"><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <button class="whatsnew-done" id="whatsnew-done" type="button">Got it</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-col">
@@ -1178,6 +1499,47 @@
   </footer>
 
   <script>
+    // Announcement bar + What's new modal
+    (function () {
+      const KEY = 'brink-announce-v1';
+      const closeBtn = document.getElementById('announce-close');
+      const moreBtn = document.getElementById('announce-more');
+      const overlay = document.getElementById('whatsnew');
+      const modalX = document.getElementById('whatsnew-x');
+      const modalDone = document.getElementById('whatsnew-done');
+
+      function dismissBar() {
+        document.documentElement.classList.add('announce-off');
+        try { localStorage.setItem(KEY, 'dismissed'); } catch (e) {}
+      }
+
+      let lastFocus = null;
+      function openModal() {
+        if (!overlay) return;
+        lastFocus = document.activeElement;
+        overlay.setAttribute('aria-hidden', 'false');
+        requestAnimationFrame(() => overlay.classList.add('open'));
+        document.body.classList.add('modal-open');
+        if (modalX) modalX.focus();
+      }
+      function closeModal() {
+        if (!overlay) return;
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', dismissBar);
+      if (moreBtn) moreBtn.addEventListener('click', openModal);
+      if (modalX) modalX.addEventListener('click', closeModal);
+      if (modalDone) modalDone.addEventListener('click', closeModal);
+      if (overlay) overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) closeModal();
+      });
+    })();
+
     const nav = document.getElementById('main-nav');
 
     window.addEventListener('scroll', () => {
