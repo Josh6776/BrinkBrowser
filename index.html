@@ -58,7 +58,7 @@
       z-index: 100;
       height: calc(62px + env(safe-area-inset-top));
       padding-top: env(safe-area-inset-top);
-      background: rgba(248,249,251,0.88);
+      background: var(--nav-bg);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
       border-bottom: 1px solid var(--border);
@@ -125,7 +125,7 @@
 
     .nav-links a:hover {
       color: var(--text);
-      background: rgba(0,0,0,0.05);
+      background: var(--hover);
     }
 
     .nav-hamburger {
@@ -161,7 +161,7 @@
       flex-direction: column;
       gap: 4px;
       padding: 12px max(24px, env(safe-area-inset-right)) 16px max(24px, env(safe-area-inset-left));
-      background: rgba(248,249,251,0.98);
+      background: var(--menu-bg);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -181,7 +181,7 @@
 
     .nav-mobile-menu a:hover {
       color: var(--text);
-      background: rgba(0,0,0,0.05);
+      background: var(--hover);
     }
 
     /* Announcement bar */
@@ -272,7 +272,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .announce-close:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+    .announce-close:hover { color: var(--text); background: var(--hover); }
 
     /* What's new modal */
     .whatsnew-overlay {
@@ -1155,6 +1155,53 @@
         transform: none;
       }
     }
+      /* ---- Theme: auto light / dark (follows device setting) ---- */
+    :root {
+      color-scheme: light dark;
+      --nav-bg: rgba(248,249,251,0.88);
+      --nav-bg-scrolled: rgba(248,249,251,0.96);
+      --menu-bg: rgba(248,249,251,0.98);
+      --hover: rgba(0,0,0,0.05);
+    }
+
+    nav.scrolled { background: var(--nav-bg-scrolled); }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d12;
+        --bg2: #14171f;
+        --bg3: #0f1218;
+        --surface: #20242e;
+        --border: rgba(255,255,255,0.09);
+        --border2: rgba(255,255,255,0.15);
+        --accent2: #35d6a4;
+        --text: #eceff5;
+        --text2: #a6b0c0;
+        --text3: #6e7789;
+        --nav-bg: rgba(12,14,19,0.82);
+        --nav-bg-scrolled: rgba(12,14,19,0.92);
+        --menu-bg: rgba(12,14,19,0.98);
+        --hover: rgba(255,255,255,0.07);
+      }
+
+      .appstore-btn { background: #0b0d12; border: 1px solid rgba(255,255,255,0.18); }
+
+      .hero-visual img,
+      .feature-image img,
+      .feature-row-image img {
+        box-shadow: 0 24px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        background: var(--bg2);
+      }
+
+      .form-status.success { color: #46d6a6; }
+      .form-status.error { color: #ec8f8d; }
+    }
+
   </style>
 </head>
 <body>
@@ -1598,9 +1645,7 @@
     const nav = document.getElementById('main-nav');
 
     window.addEventListener('scroll', () => {
-      nav.style.background = window.scrollY > 40
-        ? 'rgba(248,249,251,0.96)'
-        : 'rgba(248,249,251,0.88)';
+      nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
     const observer = new IntersectionObserver(entries => {
