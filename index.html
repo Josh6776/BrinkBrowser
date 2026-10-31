@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brink · Browse with purpose</title>
-  <meta name="description" content="Brink is an iPad research browser for students and deep thinkers. Browse, organise, save, cite and focus in one research workspace." />
+  <title>Brink · The iPad browser built for research</title>
+  <meta name="description" content="Brink is an iPad research browser. Projects, Harvard &amp; APA citations, PDF markup and lecture recording in one workspace. £4.99 once, no subscription." />
   <meta name="soloweave-verification" content="670ff6a91c5a63762ac2a944fad578d9" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -30,8 +30,8 @@
       --accent: #2563EB;
       --accent2: #1D4ED8;
       --text: #0f1117;
-      --text2: #565E70;
-      --text3: #636B7A;
+      --text2: #4B5365;
+      --text3: #5D6575;
       --serif: "New York", ui-serif, "Instrument Serif", Georgia, serif;
       --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "DM Sans", sans-serif;
       --radius: 14px;
@@ -462,341 +462,6 @@
       .announce-cta { font-size: 12.5px; }
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: var(--bg2);
-      padding: calc(150px + var(--announce-h) + env(safe-area-inset-top)) 24px 88px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      top: -410px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(37,99,235,0.12), rgba(37,99,235,0) 68%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      max-width: 820px;
-      margin: 0 auto;
-      z-index: 1;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      margin-bottom: 22px;
-      border-radius: 999px;
-      background: rgba(37,99,235,0.08);
-      border: 1px solid rgba(37,99,235,0.16);
-      color: var(--accent2);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .hero-kicker::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(58px, 9vw, 104px);
-      line-height: 0.96;
-      letter-spacing: -0.035em;
-      font-weight: 400;
-      margin-bottom: 26px;
-    }
-
-    .hero h1 em {
-      color: var(--accent-text);
-      font-style: italic;
-    }
-
-    .hero-copy {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: var(--text2);
-      font-size: clamp(17px, 2vw, 20px);
-      font-weight: 300;
-      line-height: 1.65;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 11px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: transform 0.2s, opacity 0.2s, background 0.2s;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 26px rgba(37,99,235,0.20);
-    }
-
-    .btn-primary:hover { opacity: 0.9; }
-
-    .btn-secondary {
-      color: var(--text);
-      background: var(--bg3);
-      border: 1px solid var(--border2);
-    }
-
-    .hero-price {
-      font-size: 13px;
-      color: var(--text3);
-    }
-
-    .hero-visual {
-      max-width: 800px;
-      margin: 64px auto 0;
-      position: relative;
-    }
-
-    .ipad-frame {
-      position: relative;
-      padding: 15px;
-      border-radius: 30px;
-      background: linear-gradient(145deg, #2a2d35, #15171d);
-      box-shadow: 0 34px 90px rgba(15,17,23,0.20), 0 0 0 1px rgba(0,0,0,0.10), inset 0 0 0 2px rgba(255,255,255,0.05);
-    }
-
-    .ipad-frame::after {
-      content: '';
-      position: absolute;
-      top: 7px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.28);
-    }
-
-    .ipad-frame img {
-      width: 100%;
-      display: block;
-      border-radius: 14px;
-    }
-
-    .section {
-      padding: 96px 24px;
-    }
-
-    .section.alt { background: var(--bg2); }
-    .section.tinted { background: var(--bg3); }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin-bottom: 58px;
-    }
-
-    .section-heading.center {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-text);
-      margin-bottom: 14px;
-    }
-
-    .section-heading h2 {
-      font-family: var(--serif);
-      font-size: clamp(38px, 5vw, 60px);
-      line-height: 1.08;
-      font-weight: 400;
-      letter-spacing: -0.025em;
-      margin-bottom: 16px;
-    }
-
-    .section-heading h2 em {
-      color: var(--accent-text);
-      font-style: italic;
-    }
-
-    .section-heading p {
-      color: var(--text2);
-      font-size: 17px;
-      line-height: 1.75;
-      font-weight: 300;
-    }
-
-    .feature-split {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .feature-split.reverse {
-      grid-template-columns: 1.08fr 0.92fr;
-    }
-
-    .feature-split.reverse .feature-image { order: -1; }
-
-    .feature-copy h3 {
-      font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .feature-copy p {
-      color: var(--text2);
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
-    .feature-copy p:last-child { margin-bottom: 0; }
-
-    .feature-points {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-top: 22px;
-    }
-
-    .feature-points li {
-      display: flex;
-      gap: 10px;
-      color: var(--text2);
-      font-size: 14px;
-    }
-
-    .feature-points li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      margin-top: 7px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .feature-image img {
-      width: 100%;
-      display: block;
-      border-radius: 20px;
-      box-shadow: 0 26px 70px rgba(15,17,23,0.13), 0 0 0 1px rgba(0,0,0,0.06);
-    }
-
-    .workflow {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .workflow-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 26px 20px;
-      min-height: 190px;
-    }
-
-    .workflow-number {
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 9px;
-      margin-bottom: 20px;
-      background: rgba(37,99,235,0.10);
-      color: var(--accent2);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .workflow-card h3 {
-      font-family: var(--serif);
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-
-    .workflow-card p {
-      color: var(--text2);
-      font-size: 13px;
-      font-weight: 300;
-      line-height: 1.65;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .mini-card {
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: var(--bg2);
-      border: 1px solid var(--border);
-    }
-
-    .mini-card h3 {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 400;
-      margin-bottom: 9px;
-    }
-
-    .mini-card p {
-      color: var(--text2);
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
     .about-strip {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -834,81 +499,6 @@
     }
 
     .text-link:hover { text-decoration: underline; }
-
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .quote-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-    }
-
-    .quote-card blockquote {
-      font-family: var(--serif);
-      font-size: 21px;
-      line-height: 1.45;
-      color: var(--text);
-      margin-bottom: 18px;
-    }
-
-    .quote-card cite {
-      margin-top: auto;
-      font-style: normal;
-      font-size: 12px;
-      color: var(--text3);
-      font-weight: 500;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--bg2);
-    }
-
-    .cta-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .cta h2 {
-      font-family: var(--serif);
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: 1.05;
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
-    }
-
-    .cta h2 em {
-      color: var(--accent-text);
-      font-style: italic;
-    }
-
-    .cta p {
-      color: var(--text2);
-      font-size: 17px;
-      font-weight: 300;
-      line-height: 1.7;
-      margin: 0 auto 28px;
-      max-width: 560px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     img { max-width: 100%; }
 
@@ -1074,9 +664,6 @@
     }
 
     @media (max-width: 900px) {
-      .workflow { grid-template-columns: repeat(2, 1fr); }
-      .feature-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -1088,32 +675,12 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
 
-      .hero {
-        padding: calc(116px + var(--announce-h) + env(safe-area-inset-top)) 20px 64px;
-      }
-
-      .hero h1 {
-        font-size: clamp(52px, 15vw, 76px);
-      }
-
-      .hero-visual { margin-top: 46px; }
-
-      .section { padding: 68px 20px; }
-
       .feature-split,
       .feature-split.reverse,
       .about-strip {
         grid-template-columns: 1fr;
         gap: 34px;
       }
-
-      .feature-split.reverse .feature-image {
-        order: 0;
-      }
-
-      .feature-image { order: -1; }
-
-      .section-heading { margin-bottom: 40px; }
 
       .footer-inner {
         grid-template-columns: 1fr 1fr;
@@ -1122,19 +689,6 @@
     }
 
     @media (max-width: 560px) {
-      .workflow,
-      .feature-grid,
-      .testimonials {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        width: min(100%, 320px);
-      }
     }
 
     @media (max-width: 480px) {
@@ -1149,11 +703,6 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
       }
     }
       /* ---- Theme: auto light / dark (follows device setting) ---- */
@@ -1187,12 +736,6 @@
       }
 
       .appstore-btn { background: #0b0d12; border: 1px solid rgba(255,255,255,0.18); }
-
-      .hero-visual img,
-      .feature-image img,
-      .feature-row-image img {
-        box-shadow: 0 24px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
-      }
 
       input:focus,
       select:focus,
@@ -1229,7 +772,750 @@
         scroll-behavior: auto !important;
       }
     }
-  </style>
+  
+    /* ================= Homepage (interactive redesign) ================= */
+    :root {
+      --glass: rgba(255,255,255,0.72);
+      --glass-border: rgba(0,0,0,0.08);
+      --glass-strong: rgba(255,255,255,0.94);
+      --paper-ink: #1b1d24;
+      --shadow-lift: 0 24px 60px rgba(15,17,23,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --glass: rgba(28,28,32,0.72);
+        --glass-border: rgba(255,255,255,0.1);
+        --glass-strong: rgba(28,28,32,0.95);
+        --paper-ink: #e9ebf0;
+        --shadow-lift: 0 24px 70px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+      }
+    }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    .band { padding: 112px 0; background: var(--bg); }
+    .band.paper { background: var(--bg2); }
+
+    .sec-head { max-width: 40rem; margin-bottom: 52px; }
+
+    .sec-head h2,
+    .about-strip h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(32px, 4.6vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+
+    .sec-head p {
+      margin-top: 16px;
+      max-width: 34rem;
+      color: var(--text2);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .glass {
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: calc(108px + var(--announce-h) + env(safe-area-inset-top)) 0 96px;
+      background: var(--bg);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(42px, 6.2vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      max-width: 13em;
+      text-wrap: balance;
+    }
+
+    .hero-sub {
+      margin-top: 26px;
+      max-width: 36rem;
+      color: var(--text2);
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+    }
+
+    .appstore-btn.lg { height: 58px; padding: 0 24px; gap: 12px; border-radius: 13px; }
+    .appstore-btn.lg svg { width: 26px; height: 26px; }
+    .appstore-btn.lg .appstore-txt small { font-size: 10px; }
+    .appstore-btn.lg .appstore-txt b { font-size: 19px; }
+
+    .req {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text2);
+    }
+
+    /* ---------- iPad stage ---------- */
+    .stage { margin: 56px auto 0; max-width: 980px; }
+
+    .ipad {
+      padding: 14px;
+      border-radius: 34px;
+      background: linear-gradient(145deg, #2b2e36, #14161b);
+      box-shadow: 0 34px 90px rgba(15,17,23,0.22), 0 0 0 1px rgba(0,0,0,0.12), inset 0 0 0 2px rgba(255,255,255,0.05);
+      position: relative;
+    }
+
+    .ipad::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      margin-left: -2.5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+    }
+
+    .st-screen {
+      container-type: inline-size;
+      position: relative;
+      aspect-ratio: 1.45 / 1;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--bg2);
+      color: var(--text);
+    }
+
+    .st-shell {
+      --sbw: 25%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: var(--sbw) 1fr;
+      font-size: clamp(8px, 1.42cqw, 15px);
+      transition: grid-template-columns 0.32s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .st-screen[data-sb="closed"] .st-shell { --sbw: 0%; }
+
+    .st-sb {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--bg3);
+      border-right: 1px solid var(--border);
+      padding: 1.6em 1.2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3em;
+      white-space: nowrap;
+    }
+
+    .st-sb h3 {
+      font-family: var(--sans);
+      font-size: 0.8em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--text3);
+    }
+
+    .st-list { list-style: none; display: flex; flex-direction: column; gap: 0.25em; margin-top: 0.6em; }
+
+    .st-list li {
+      padding: 0.55em 0.8em;
+      border-radius: 0.7em;
+      font-size: 1em;
+      color: var(--text2);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .st-list li.on { background: var(--bg2); color: var(--text); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+
+    .st-main { min-width: 0; display: flex; flex-direction: column; }
+
+    .st-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+      padding: 0.9em 1.2em;
+      border-bottom: 1px solid var(--border);
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+
+    .st-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45em;
+      min-height: 2.4em;
+      min-width: 2.4em;
+      padding: 0 0.8em;
+      border: 1px solid var(--border2);
+      border-radius: 0.8em;
+      background: var(--bg2);
+      color: var(--text);
+      font: 600 1em var(--sans);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .st-btn svg { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .st-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .st-url {
+      flex: 1;
+      min-width: 0;
+      padding: 0.6em 1em;
+      border-radius: 0.8em;
+      background: var(--surface);
+      color: var(--text2);
+      font-size: 0.95em;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .st-page {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      padding: 1.8em 2.6em;
+      transition: padding 0.35s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .st-doc { max-width: 100%; transition: max-width 0.35s cubic-bezier(.2,.7,.2,1); }
+
+    .st-distract {
+      max-height: 6em;
+      overflow: hidden;
+      transition: opacity 0.25s, max-height 0.35s, margin 0.35s;
+    }
+
+    .st-site {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85em;
+      color: var(--text3);
+      padding-bottom: 0.9em;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.4em;
+    }
+
+    .st-promo {
+      margin-bottom: 1.6em;
+      padding: 0.8em 1.1em;
+      border-radius: 0.8em;
+      background: var(--surface);
+      color: var(--text2);
+      font-size: 0.9em;
+    }
+
+    .st-doc h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2.5em;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .st-by { margin-top: 0.6em; color: var(--text2); font-size: 1em; }
+    .st-by small { display: block; margin-top: 0.2em; font-size: 0.9em; color: var(--text3); }
+
+    .st-body { margin-top: 1.3em; display: grid; grid-template-columns: 1fr 0.38fr; gap: 2em; }
+
+    .st-text p {
+      font-size: 1.02em;
+      line-height: 1.65;
+      color: var(--text2);
+      margin-bottom: 0.9em;
+      transition: font-size 0.35s, color 0.35s;
+    }
+
+    .st-aside { font-size: 0.9em; color: var(--text3); line-height: 1.5; max-height: 14em; overflow: hidden; transition: opacity 0.25s, max-height 0.35s; }
+    .st-aside b { display: block; margin-bottom: 0.5em; color: var(--text2); font-weight: 600; }
+    .st-aside span { display: block; padding: 0.5em 0; border-top: 1px solid var(--border); }
+
+    /* Reader Mode on */
+    .st-screen[data-reader="on"] .st-distract { opacity: 0; max-height: 0; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; border: 0; pointer-events: none; }
+    .st-screen[data-reader="on"] .st-aside { opacity: 0; max-height: 0; pointer-events: none; }
+    .st-screen[data-reader="on"] .st-body { grid-template-columns: 1fr; }
+    .st-screen[data-reader="on"] .st-page { padding: 2.2em 14%; }
+    .st-screen[data-reader="on"] .st-doc h2,
+    .st-screen[data-reader="on"] .st-text p { font-family: var(--serif); }
+    .st-screen[data-reader="on"] .st-text p { font-size: 1.28em; line-height: 1.7; color: var(--paper-ink); }
+    .st-screen[data-reader="on"] .st-doc h2 { font-size: 2.9em; }
+
+    /* Cite sheet */
+    .st-sheet {
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      bottom: 0;
+      z-index: 5;
+      padding: 1.5em 1.8em 1.8em;
+      border-radius: 1.6em 1.6em 0 0;
+      font-size: clamp(9px, 1.4cqw, 15px);
+      background: var(--glass-strong);
+      transform: translateY(104%);
+      transition: transform 0.38s cubic-bezier(.2,.8,.2,1);
+      box-shadow: 0 -20px 50px rgba(15,17,23,0.18);
+    }
+
+    .st-screen[data-cite="open"] .st-sheet { transform: none; }
+
+    .st-sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1em; }
+    .st-sheet-head h3 { font-family: var(--sans); font-size: 1.25em; font-weight: 600; }
+
+    .st-sheet .cite { font-size: 1em; }
+    .st-sheet .cite-ref { font-size: 1.15em; }
+
+    .stage-note { margin-top: 18px; text-align: center; font-size: 14px; color: var(--text2); }
+
+    @container (max-width: 600px) {
+      .st-shell { display: block; position: relative; font-size: 12px; }
+      .st-sb { position: absolute; z-index: 4; inset: 0 auto 0 0; width: 70%; transform: translateX(-102%); transition: transform 0.3s; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+      .st-screen[data-sb="open"] .st-sb { transform: none; }
+      .st-body { grid-template-columns: 1fr; }
+      .st-aside { display: none; }
+      .st-page { padding: 1.4em 1.4em; }
+      .st-sheet { font-size: 12px; left: 0; right: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .ipad { padding: 8px; border-radius: 24px; }
+      .st-screen { aspect-ratio: auto; min-height: 500px; border-radius: 16px; }
+      .st-shell { min-height: 500px; }
+    }
+
+    /* ---------- Segmented picker + citation ---------- */
+    .seg {
+      display: inline-flex;
+      gap: 2px;
+      padding: 3px;
+      max-width: 100%;
+      overflow-x: auto;
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .seg [role="tab"] {
+      border: 0;
+      background: transparent;
+      color: var(--text2);
+      font: 600 13px var(--sans);
+      padding: 9px 15px;
+      border-radius: 9px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .seg [role="tab"][aria-selected="true"] {
+      background: var(--bg2);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.14), 0 0 0 0.5px rgba(0,0,0,0.06);
+    }
+
+    .cite-label { margin-top: 1.1em; font-size: 0.8em; font-weight: 600; color: var(--text3); }
+
+    .cite-ref {
+      margin-top: 0.4em;
+      font-family: var(--serif);
+      font-size: 1.3em;
+      line-height: 1.5;
+      color: var(--text);
+      transition: opacity 0.18s;
+    }
+
+    .cite-in {
+      margin-top: 0.4em;
+      font-family: var(--serif);
+      font-size: 1.1em;
+      color: var(--text2);
+      transition: opacity 0.18s;
+    }
+
+    .cite [data-swap="1"] { opacity: 0; }
+
+    .cite-copy {
+      margin-top: 1.1em;
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.9em;
+      padding: 0 1.3em;
+      border: 0;
+      border-radius: 0.8em;
+      background: var(--accent);
+      color: #fff;
+      font: 600 1em var(--sans);
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .cite-copy:hover { opacity: 0.92; }
+    .cite-copy:active { transform: scale(0.98); }
+
+    .cite-demo {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .cite-source {
+      padding: 26px;
+      border-radius: 22px;
+      background: var(--bg);
+      box-shadow: var(--shadow-lift);
+    }
+
+    .cite-source h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.1; }
+    .cite-source p { margin-top: 10px; color: var(--text2); font-size: 15px; line-height: 1.6; }
+    .cite-source dl { margin-top: 20px; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 14px; }
+    .cite-source dt { color: var(--text3); }
+    .cite-source dd { color: var(--text); }
+
+    .cite-card {
+      padding: 30px;
+      border-radius: 26px;
+      font-size: 16px;
+      background: var(--bg);
+      box-shadow: var(--shadow-lift);
+    }
+
+    /* ---------- Project switcher ---------- */
+    .proj {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+      background: var(--bg2);
+    }
+
+    .proj-side {
+      padding: 22px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: var(--bg3);
+      border-right: 1px solid var(--border);
+    }
+
+    .proj-side [role="tab"] {
+      text-align: left;
+      border: 0;
+      background: transparent;
+      color: var(--text2);
+      font: 500 15px var(--sans);
+      padding: 14px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .proj-side [role="tab"] small { display: block; margin-top: 3px; font-size: 12.5px; font-weight: 400; color: var(--text3); }
+    .proj-side [role="tab"][aria-selected="true"] { background: var(--bg2); color: var(--text); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+    .proj-main { padding: 32px 36px; min-height: 360px; }
+    .proj-main [role="tabpanel"][hidden] { display: none; }
+
+    .proj-main h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; letter-spacing: -0.01em; margin-bottom: 22px; }
+
+    .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 36px; }
+
+    .proj-grid h4 { font: 600 13px var(--sans); color: var(--text3); margin-bottom: 10px; }
+    .proj-grid ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .proj-grid li {
+      padding: 11px 14px;
+      border-radius: 12px;
+      background: var(--bg3);
+      font-size: 14.5px;
+      color: var(--text);
+    }
+
+    .proj-grid li span { display: block; margin-top: 2px; font-size: 12.5px; color: var(--text2); }
+
+    .proj-main [role="tabpanel"].enter li { animation: rise 0.42s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i, 0) * 55ms); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* ---------- Bento ---------- */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(230px, auto);
+      gap: 18px;
+    }
+
+    .bt {
+      padding: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .bt h3 { font-family: var(--sans); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+    .bt > p { margin-top: -8px; color: var(--text2); font-size: 14.5px; line-height: 1.55; max-width: 30em; }
+
+    .bt-study { grid-column: span 2; grid-row: span 2; border-radius: 32px; }
+    .bt-lecture { grid-column: span 2; border-radius: 24px; }
+    .bt-pdf { grid-column: span 1; border-radius: 22px; }
+    .bt-spot { grid-column: span 1; border-radius: 22px; }
+
+    .study-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+    .sw {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font: 600 14px var(--sans);
+      cursor: pointer;
+      padding: 4px 0;
+    }
+
+    .sw i {
+      position: relative;
+      width: 46px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--border2);
+      transition: background 0.25s;
+    }
+
+    .sw i::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      transition: transform 0.25s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .sw[aria-checked="true"] i { background: var(--accent); }
+    .sw[aria-checked="true"] i::after { transform: translateX(18px); }
+
+    .study-doc p + p { margin-top: 12px; }
+    .focus-pill { margin-top: auto; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--text2); }
+
+    .study-doc {
+      flex: 0 0 auto;
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+    }
+
+    .study-doc h4 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.1; margin-bottom: 10px; }
+    .study-doc p { font-family: var(--serif); font-size: 17px; line-height: 1.65; color: var(--paper-ink); }
+
+    .sites { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .site {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      font-size: 13.5px;
+      color: var(--text);
+      transition: opacity 0.3s, filter 0.3s;
+    }
+
+    .site em { font-style: normal; font-size: 11.5px; font-weight: 600; color: var(--text3); }
+    .bt-study[data-on="true"] .site { opacity: 0.5; filter: grayscale(1); }
+    .bt-study[data-on="false"] .site em { color: var(--accent-text); }
+
+    .player { display: flex; align-items: center; gap: 16px; }
+
+    .play {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play svg { width: 20px; height: 20px; fill: currentColor; }
+    .play .i-pause { display: none; }
+    .play[aria-pressed="true"] .i-play { display: none; }
+    .play[aria-pressed="true"] .i-pause { display: block; }
+
+    .wave { flex: 1; height: 52px; display: flex; align-items: center; gap: 3px; }
+    .wave span { flex: 1; min-width: 2px; border-radius: 3px; background: var(--border2); height: calc(var(--h) * 1%); transform-origin: center; }
+    .wave span:nth-child(-n+11) { background: var(--accent); }
+    .bt-lecture[data-play="true"] .wave span { animation: pulse 1s ease-in-out infinite; animation-delay: calc(var(--d) * 1ms); }
+
+    @keyframes pulse { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(0.45); } }
+
+    .rec-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; color: var(--text2); }
+    .rec-meta b { color: var(--text); font-weight: 600; }
+
+    .pinned { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pinned span { padding: 6px 11px; border-radius: 9px; background: var(--bg3); font-size: 12.5px; color: var(--text2); }
+
+    .pdf-sheet { flex: 1; padding: 14px; border-radius: 12px; background: var(--bg2); border: 1px solid var(--border); font-size: 12.5px; }
+    .pdf-sheet mark { background: rgba(250,204,21,0.45); color: inherit; border-radius: 3px; padding: 0 2px; }
+    .pdf-sheet p { color: var(--text2); line-height: 1.55; margin-bottom: 10px; }
+    .pdf-sheet label { display: block; margin-top: 8px; font-size: 11.5px; font-weight: 600; color: var(--text3); }
+
+    .pdf-sheet input[type="text"],
+    .spot input[type="search"] {
+      width: 100%;
+      margin-top: 4px;
+      padding: 8px 10px;
+      border: 1px solid var(--border2);
+      border-radius: 9px;
+      background: var(--bg3);
+      color: var(--text);
+      font: 500 13.5px var(--sans);
+    }
+
+    .chk { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13px; color: var(--text2); }
+    .chk input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+    .spot { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .spot ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .spot li { padding: 8px 10px; border-radius: 10px; background: var(--bg3); font-size: 13px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .spot li span { display: block; font-size: 11.5px; color: var(--text2); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; }
+    .spot-count { font-size: 12.5px; color: var(--text2); }
+
+    /* ---------- Testimonials (editorial) ---------- */
+    .voices { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px 56px; align-items: start; }
+
+    .voice-lead blockquote {
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .voice-lead figcaption { margin-top: 22px; font-size: 15px; color: var(--text2); }
+
+    .voice-list { display: flex; flex-direction: column; gap: 22px; }
+
+    .voice-list figure { padding-top: 22px; border-top: 1px solid var(--border2); }
+    .voice-list figure:first-child { padding-top: 0; border-top: 0; }
+
+    .voice-list blockquote { font-family: var(--serif); font-size: 21px; line-height: 1.45; }
+    .voice-list figcaption { margin-top: 10px; font-size: 14px; color: var(--text2); }
+
+    /* ---------- Closing CTA ---------- */
+    .closer { padding: 120px 0; background: var(--bg); }
+    .closer h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 76px); line-height: 1; letter-spacing: -0.03em; max-width: 12em; text-wrap: balance; }
+    .closer p { margin-top: 20px; max-width: 30rem; color: var(--text2); font-size: 18px; line-height: 1.65; }
+    .closer .hero-cta { margin-top: 30px; }
+
+    /* about strip kept from the original page */
+    .about-strip { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: center; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(28px + env(safe-area-inset-bottom));
+      z-index: 1100;
+      transform: translate(-50%, 24px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: opacity 0.25s, transform 0.3s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (max-width: 960px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .bt-study { grid-column: span 2; grid-row: auto; }
+      .bt-lecture { grid-column: span 2; }
+      .bt-pdf, .bt-spot { grid-column: span 1; }
+      .cite-demo, .voices, .proj { grid-template-columns: minmax(0, 1fr); }
+      .proj-side { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+      .proj-side [role="tab"] { white-space: nowrap; }
+    }
+
+    @media (max-width: 768px) {
+      .band { padding: 76px 0; }
+      .hero { padding-top: calc(100px + var(--announce-h) + env(safe-area-inset-top)); padding-bottom: 72px; }
+      .stage { margin-top: 48px; }
+      .about-strip { grid-template-columns: 1fr; gap: 34px; }
+      .proj-main { padding: 24px 22px; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .closer { padding: 84px 0; }
+    }
+
+    @media (max-width: 600px) {
+      .bento { grid-template-columns: 1fr; }
+      .bt-study, .bt-lecture, .bt-pdf, .bt-spot { grid-column: auto; }
+      .wrap { padding: 0 20px; }
+    }
+
+
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+    .cite-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .cite-copy.alt {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border2);
+    }
+
+    .cite-copy.alt:hover { background: var(--surface); opacity: 1; }
+
+    .cite-demo > *, .voices > *, .proj > *, .proj-main, .bento > * { min-width: 0; }
+
+    @media (max-width: 600px) {
+      .seg [role="tab"] { padding: 9px 11px; font-size: 12.5px; }
+      .cite-card, .cite-source { padding: 22px; }
+    }
+</style>
 </head>
 <body>
 
@@ -1271,169 +1557,291 @@
     <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
   </div>
 
-  <header class="hero">
-    <div class="hero-inner">
-
-      <h1>Browse with<br><em>purpose.</em></h1>
-
-      <p class="hero-copy">
-        Brink is a research browser for students and deep thinkers.
-        Browse the web, collect sources, organise projects, create citations
-        and protect your focus without constantly switching apps.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://apps.apple.com/us/app/brink-browser/id6777463824" target="_blank" rel="noopener">Get Brink on the App Store</a>
-        <a class="btn btn-secondary" href="features.html">Explore features</a>
+    <header class="hero">
+    <div class="wrap">
+      <h1>The iPad browser built for research, not just browsing.</h1>
+      <p class="hero-sub">Projects, Harvard &amp; APA citations, PDF markup, and lecture recording in one workspace. £4.99 once. No subscriptions.</p>
+      <div class="hero-cta">
+        <a class="appstore-btn lg" href="https://apps.apple.com/us/app/brink-browser/id6777463824" target="_blank" rel="noopener" aria-label="Download Brink on the App Store">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="appstore-txt"><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <span class="req glass">Requires iPadOS 18.0 or later</span>
       </div>
-
-      <p class="hero-price">£4.99 one-time purchase · No subscription</p>
     </div>
 
-    <div class="hero-visual reveal">
-      <div class="ipad-frame">
-        <img src="hero-screenshot.webp" alt="Brink Browser research workspace on iPad" />
-      </div>
+    <div class="wrap">
+      <figure class="stage" aria-label="Interactive demo of Brink running on an iPad">
+        <div class="ipad">
+          <div class="st-screen" id="stage" data-sb="open" data-reader="off" data-cite="closed">
+            <div class="st-shell">
+              <aside class="st-sb" id="st-sb" aria-label="Projects sidebar">
+                <div>
+                  <h3>Projects</h3>
+                  <ul class="st-list">
+                    <li class="on">Cognitive Psychology</li>
+                    <li>History Essay</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Tabs</h3>
+                  <ul class="st-list">
+                    <li class="on">Working memory</li>
+                    <li>Capacity limits</li>
+                    <li>Central executive</li>
+                    <li>Dual-task methods</li>
+                  </ul>
+                </div>
+              </aside>
+
+              <div class="st-main">
+                <div class="st-bar">
+                  <button class="st-btn" id="st-sb-btn" type="button" aria-pressed="true" aria-controls="st-sb" aria-label="Toggle sidebar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M9 5v14"/></svg>
+                  </button>
+                  <div class="st-url" aria-hidden="true">example.edu/working-memory</div>
+                  <button class="st-btn" id="st-reader-btn" type="button" aria-pressed="false">Reader</button>
+                  <button class="st-btn" id="st-cite-btn" type="button" aria-haspopup="dialog" aria-controls="stage-sheet">Cite</button>
+                </div>
+
+                <div class="st-page">
+                  <article class="st-doc">
+                    <div class="st-site st-distract"><span>example.edu / Library</span><span>Sign in</span></div>
+                    <div class="st-promo st-distract">Get full access to the journal. Subscribe today.</div>
+                    <h2>Working Memory</h2>
+                    <p class="st-by">Alan D. Baddeley and Graham Hitch<small>1974. In The Psychology of Learning and Motivation, vol. 8</small></p>
+                    <div class="st-body">
+                      <div class="st-text">
+                        <p>This chapter proposes that short-term memory is not a single store. It describes a limited-capacity central executive that directs attention and coordinates two supporting systems.</p>
+                        <p>One system holds speech-based information and the other holds visual and spatial information. Dual-task experiments, where people reason or learn while remembering sequences of digits, are used to test whether the components compete for the same resources.</p>
+                      </div>
+                      <aside class="st-aside" aria-hidden="true">
+                        <b>Related</b>
+                        <span>Short-term memory and attention</span>
+                        <span>Dual-task methods explained</span>
+                        <span>Revision strategies</span>
+                      </aside>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="st-sheet glass" id="stage-sheet" role="dialog" aria-label="Citation" aria-hidden="true" inert>
+              <div class="st-sheet-head">
+                <h3>Citation</h3>
+                <button class="st-btn" id="st-sheet-close" type="button">Done</button>
+              </div>
+              <div data-cite-mount></div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="stage-note">A live demo with a sample article. Try the sidebar, Reader and Cite.</figcaption>
+      </figure>
     </div>
   </header>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="section-heading center reveal">
-        <div class="section-label">The Brink workflow</div>
-        <h2>From first search to<br><em>finished research</em></h2>
-        <p>Brink is designed around the work that happens after you open a webpage, not just the webpage itself.</p>
+  <section class="band paper" id="citations" aria-labelledby="cite-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="cite-h">Pick a style. Get the reference.</h2>
+        <p>Brink builds a full reference and an in-text citation in Harvard, APA, MLA, Chicago and IEEE. Choose a style to see it, then copy it.</p>
+      </div>
+      <div class="cite-demo">
+        <div class="cite-source">
+          <h3>Working memory</h3>
+          <p>A book chapter saved to your Cognitive Psychology project.</p>
+          <dl>
+            <dt>Authors</dt><dd>Alan D. Baddeley, Graham Hitch</dd>
+            <dt>Year</dt><dd>1974</dd>
+            <dt>Book</dt><dd>The Psychology of Learning and Motivation, vol. 8</dd>
+            <dt>Editor</dt><dd>Gordon H. Bower</dd>
+            <dt>Publisher</dt><dd>Academic Press</dd>
+            <dt>Pages</dt><dd>47–89</dd>
+          </dl>
+        </div>
+        <div class="cite-card" data-cite-mount id="cite-main"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="projects" aria-labelledby="proj-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="proj-h">Switch project, switch everything.</h2>
+        <p>Tabs, folders, PDFs, lecture recordings and notes stay with the project they belong to. Swipe between projects from the sidebar and nothing gets mixed together.</p>
       </div>
 
-      <div class="workflow">
-        <div class="workflow-card reveal">
-          <div class="workflow-number">01</div>
-          <h3>Browse</h3>
-          <p>Research the web in a browser designed around iPad study and research.</p>
+      <div class="proj" id="proj">
+        <div class="proj-side" role="tablist" aria-orientation="vertical" aria-label="Research projects">
+          <button type="button" role="tab" id="pt-1" aria-selected="true" aria-controls="pp-1">Cognitive Psychology<small>4 tabs, 2 PDFs</small></button>
+          <button type="button" role="tab" id="pt-2" aria-selected="false" tabindex="-1" aria-controls="pp-2">History Essay<small>3 tabs, 1 PDF</small></button>
         </div>
+        <div class="proj-main">
+          <div role="tabpanel" id="pp-1" aria-labelledby="pt-1" tabindex="0">
+            <h3>Cognitive Psychology</h3>
+            <div class="proj-grid">
+              <div>
+                <h4>Tabs</h4>
+                <ul>
+                  <li>Working memory: overview<span>example.edu</span></li>
+                  <li>Miller (1956): capacity limits<span>example.edu</span></li>
+                  <li>The central executive explained<span>example.edu</span></li>
+                  <li>Dual-task methods<span>example.edu</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4>PDFs</h4>
+                <ul>
+                  <li>Baddeley_Hitch_1974.pdf<span>Highlighted and annotated</span></li>
+                  <li>Lecture_4_slides.pdf<span>Saved with the project</span></li>
+                </ul>
+                <h4 style="margin-top:22px">Lecture recordings</h4>
+                <ul><li>Week 4: Memory models<span>48 min</span></li></ul>
+              </div>
+              <div>
+                <h4>Notes</h4>
+                <ul>
+                  <li>Compare the central executive and the phonological loop<span>Note</span></li>
+                  <li>Essay plan: working memory<span>Note</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-        <div class="workflow-card reveal">
-          <div class="workflow-number">02</div>
-          <h3>Collect</h3>
-          <p>Save websites, notes, images, PDFs and lecture recordings as your research grows.</p>
-        </div>
-
-        <div class="workflow-card reveal">
-          <div class="workflow-number">03</div>
-          <h3>Organise</h3>
-          <p>Separate work into projects, then structure each one with its own folders and research.</p>
-        </div>
-
-        <div class="workflow-card reveal">
-          <div class="workflow-number">04</div>
-          <h3>Cite</h3>
-          <p>Create Harvard, APA, MLA, IEEE or Chicago references without leaving the browser.</p>
-        </div>
-
-        <div class="workflow-card reveal">
-          <div class="workflow-number">05</div>
-          <h3>Focus</h3>
-          <p>Use Reader Mode, Study Mode and focus tools to stay with the work when it matters.</p>
+          <div role="tabpanel" id="pp-2" aria-labelledby="pt-2" tabindex="0" hidden>
+            <h3>History Essay</h3>
+            <div class="proj-grid">
+              <div>
+                <h4>Tabs</h4>
+                <ul>
+                  <li>Hobsbawm: The Age of Revolution<span>example.edu</span></li>
+                  <li>Industrial revolution: key dates<span>example.edu</span></li>
+                  <li>Primary sources from 1789<span>example.edu</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4>PDFs</h4>
+                <ul><li>Hobsbawm_ch1.pdf<span>Highlighted and annotated</span></li></ul>
+                <h4 style="margin-top:22px">Lecture recordings</h4>
+                <ul><li>Week 7: Revolutions, 1789 to 1848<span>52 min</span></li></ul>
+              </div>
+              <div>
+                <h4>Notes</h4>
+                <ul>
+                  <li>Thesis draft: economic or political causes?<span>Note</span></li>
+                  <li>Quotes to cite<span>Note</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section tinted">
-    <div class="container">
-      <div class="feature-split reveal">
-        <div class="feature-copy">
-          <div class="section-label">Research Projects</div>
-          <h3>A workspace for every piece of work</h3>
-          <p>Research for an essay shouldn't be mixed into a dissertation, another module or the article you were reading last week. Brink Projects give different pieces of work their own space.</p>
-          <p>Each project keeps its own folders and saved research together. Switch projects from the sidebar and keep the context of one piece of work separate from another.</p>
-
-          <ul class="feature-points">
-            <li>Independent project workspaces</li>
-            <li>Project-specific folders and saved research</li>
-            <li>General workspace for everything else</li>
-            <li>Persistent across app launches</li>
-          </ul>
-        </div>
-
-        <div class="feature-image">
-          <img src="Sidebar_feature_image01.jpg" alt="Research projects and folders in Brink Browser" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="feature-split reverse reveal">
-        <div class="feature-copy">
-          <div class="section-label">Organise &amp; Cite</div>
-          <h3>Keep the source. Build the reference.</h3>
-          <p>Save webpages, notes, PDFs, images and recordings into the project you're working on, then turn the sources you find into properly structured references inside Brink.</p>
-          <p>Brink can retrieve useful source information such as titles, authors, publications and dates where available. Choose Harvard, APA, MLA, IEEE or Chicago, then copy the full reference or just the in-text citation.</p>
-
-          <ul class="feature-points">
-            <li>Harvard, APA, MLA, IEEE and Chicago</li>
-            <li>Automatic source metadata where available</li>
-            <li>Separate full-reference and in-text copying</li>
-            <li>Websites, PDFs, images, notes and audio together</li>
-          </ul>
-        </div>
-
-        <div class="feature-image">
-          <img src="citation-screenshot.webp" alt="Citation tools in Brink Browser" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section tinted">
-    <div class="container">
-      <div class="section-heading center reveal">
-        <div class="section-label">More than a research library</div>
-        <h2>Tools for the work<br><em>around your research</em></h2>
-        <p>Brink keeps the supporting tools close enough to use without turning the browser into a collection of separate apps.</p>
+  <section class="band paper" id="tools" aria-labelledby="tools-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="tools-h">Everything around the reading.</h2>
+        <p>The tools you reach for while you research live inside the browser, so you do not have to leave it.</p>
       </div>
 
-      <div class="feature-grid">
-        <div class="mini-card reveal">
-          <h3>Reader Mode</h3>
-          <p>Strip supported articles back to the content and adjust text size, spacing, width, contrast, themes and images for longer reading sessions.</p>
-        </div>
+      <div class="bento">
+        <article class="bt bt-study glass" id="study" data-on="true">
+          <div class="study-top">
+            <h3>Study Mode and focus</h3>
+            <button type="button" class="sw" id="study-sw" role="switch" aria-checked="true"><span>Study Mode</span><i aria-hidden="true"></i></button>
+          </div>
+          <p>Block the sites that pull you away and keep one clear page in front of you. Add a timed session when you want firmer boundaries.</p>
+          <div class="study-doc">
+            <h4>Chapter 3: Memory and attention</h4>
+            <p>Attention is the gate to memory. What you do not attend to is rarely encoded, which is why a quiet page and a clear start and end to each session matter more than another hour of study.</p>
+            <p>Close what you do not need. Keep the source you do.</p>
+          </div>
+          <div class="focus-pill glass" style="align-self:flex-start">Focus active, 19:47 remaining</div>
+          <div class="sites" role="list" aria-label="Sites in your block list">
+            <span class="site" role="listitem">instagram.com <em>Blocked</em></span>
+            <span class="site" role="listitem">x.com <em>Blocked</em></span>
+            <span class="site" role="listitem">youtube.com <em>Blocked</em></span>
+            <span class="site" role="listitem">reddit.com <em>Blocked</em></span>
+            <span class="site" role="listitem">tiktok.com <em>Blocked</em></span>
+          </div>
+        </article>
 
-        <div class="mini-card reveal">
-          <h3>PDFs</h3>
-          <p>Open PDFs from the web or saved research, work with supported interactive fields and keep edited documents with your project.</p>
-        </div>
-
-        <div class="mini-card reveal">
+        <article class="bt bt-lecture glass" id="lecture" data-play="false">
           <h3>Lecture Capture</h3>
-          <p>Record while you continue browsing, then keep the audio alongside the notes and sources from the same piece of research.</p>
-        </div>
+          <p>Record while you keep browsing. Recordings are saved next to your notes and sources.</p>
+          <div class="player">
+            <button type="button" class="play" id="play-btn" aria-pressed="false" aria-label="Play preview">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.5" height="14" rx="1.2"/><rect x="13.5" y="5" width="4.5" height="14" rx="1.2"/></svg>
+            </button>
+            <div class="wave" id="wave" aria-hidden="true"></div>
+          </div>
+          <div class="rec-meta"><b>Week 4: Memory models</b><span>48 min</span></div>
+          <div class="pinned"><span>3 notes</span><span>Baddeley_Hitch_1974.pdf</span></div>
+        </article>
 
-        <div class="mini-card reveal">
-          <h3>Study Mode</h3>
-          <p>Reduce access to distracting websites during focused work and combine it with timed sessions when you need stronger boundaries.</p>
-        </div>
+        <article class="bt bt-pdf glass">
+          <h3>Interactive PDFs</h3>
+          <p>Annotate and fill supported form fields.</p>
+          <div class="pdf-sheet">
+            <p>Dual-task studies <mark>load the central executive</mark> while participants reason.</p>
+            <label for="pdf-name">Name</label>
+            <input id="pdf-name" type="text" placeholder="Your name" autocomplete="off" />
+            <label for="pdf-date">Date</label>
+            <input id="pdf-date" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+            <label class="chk" for="pdf-ok"><input id="pdf-ok" type="checkbox" /> Consent given</label>
+          </div>
+        </article>
 
-        <div class="mini-card reveal">
-          <h3>Highlighting</h3>
-          <p>Mark useful passages directly on webpages and return to the parts of the source that mattered instead of finding them again.</p>
-        </div>
+        <article class="bt bt-spot glass">
+          <h3>Brink Spotlight</h3>
+          <p>Search tabs, saved research and notes together.</p>
+          <div class="spot">
+            <label class="sr-only" for="spot-q">Search your research</label>
+            <input id="spot-q" type="search" value="memory" autocomplete="off" />
+            <p class="spot-count" id="spot-count" aria-live="polite"></p>
+            <ul id="spot-list"></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <div class="mini-card reveal">
-          <h3>Your workspace</h3>
-          <p>Choose workspace colours, use light or dark appearances and shape Brink around the way you prefer to research on iPad.</p>
+  <section class="band" id="voices" aria-labelledby="voices-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="voices-h">In their words.</h2>
+      </div>
+      <div class="voices">
+        <figure class="voice-lead">
+          <blockquote>“Brink is like Zen and Arc, but on iPad.”</blockquote>
+          <figcaption>Lloyd, Brink user</figcaption>
+        </figure>
+        <div class="voice-list">
+          <figure>
+            <blockquote>“The folder system and citation tools make research feel much less scattered.”</blockquote>
+            <figcaption>Jamie, beta tester</figcaption>
+          </figure>
+          <figure>
+            <blockquote>“The focus timer stopped me opening Twitter halfway through an essay.”</blockquote>
+            <figcaption>Tom, beta tester</figcaption>
+          </figure>
+          <figure>
+            <blockquote>“At first I was sceptical, but I soon realised each feature is actually useful and not bloat. What a great browser.”</blockquote>
+            <figcaption>Sophie, Brink user</figcaption>
+          </figure>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="about-strip reveal">
+<section class="band paper">
+    <div class="wrap">
+      <div class="about-strip">
         <div>
-          <div class="section-label">Why Brink</div>
           <h2>Built out of<br><em>frustration.</em></h2>
         </div>
 
@@ -1447,83 +1855,21 @@
     </div>
   </section>
 
-  <section class="section tinted">
-    <div class="container">
-      <div class="section-heading center reveal">
-        <div class="section-label">From the Brink community</div>
-        <h2>Built with feedback,<br><em>not in isolation</em></h2>
-      </div>
-
-      <div class="testimonials">
-        <div class="quote-card reveal">
-          <blockquote>“The folder system and citation tools make research feel much less scattered.”</blockquote>
-          <cite>Jamie · Beta tester</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“The workspace colours make it feel more personal without getting in the way.”</blockquote>
-          <cite>Chris · Beta tester</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“The animations are smooth and the whole app feels considered.”</blockquote>
-          <cite>Mia · Beta tester</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“The focus timer stopped me opening Twitter halfway through an essay.”</blockquote>
-          <cite>Tom · Beta tester</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“Reader Mode and the ad blocker make long articles much easier to work through.”</blockquote>
-          <cite>Priya · Beta tester</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“I like that it feels like a workspace rather than just another browser.”</blockquote>
-          <cite>Alex · Beta tester</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“I actually stopped using Safari because I found Brink. It’s a powerhouse of a browser.”</blockquote>
-          <cite>Nathan · Brink user</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“At first I was sceptical, but I soon realised each feature is actually useful and not bloat. What a great browser.”</blockquote>
-          <cite>Sophie · Brink user</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“I find it really useful to be able to pin, protect and block websites to stop my children accessing them when they’re doing school work. Keep it up!”</blockquote>
-          <cite>Angela &amp; Morgan · Brink user</cite>
-        </div>
-
-        <div class="quote-card reveal">
-          <blockquote>“Brink is like Zen and Arc, but on iPad.”</blockquote>
-          <cite>Lloyd · Brink user</cite>
-        </div>
+  <section class="closer" id="download" aria-labelledby="dl-h">
+    <div class="wrap">
+      <h2 id="dl-h">Research without the mess.</h2>
+      <p>One iPad browser for finding sources, organising projects, building citations and staying focused. £4.99 once. No subscription.</p>
+      <div class="hero-cta">
+        <a class="appstore-btn lg" href="https://apps.apple.com/us/app/brink-browser/id6777463824" target="_blank" rel="noopener" aria-label="Download Brink on the App Store">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="appstore-txt"><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <span class="req glass">Requires iPadOS 18.0 or later</span>
       </div>
     </div>
   </section>
 
-  <section class="section cta">
-    <div class="cta-inner reveal">
-      <div class="section-label">Brink Browser for iPad</div>
-      <h2>Research without<br><em>the mess.</em></h2>
-      <p>One iPad browser for finding sources, organising projects, building citations and staying focused.</p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://apps.apple.com/us/app/brink-browser/id6777463824" target="_blank" rel="noopener">Get Brink on the App Store</a>
-        <a class="btn btn-secondary" href="features.html">See every feature</a>
-      </div>
-
-      <p class="hero-price">£4.99 one-time purchase · No subscription</p>
-    </div>
-  </section>
-
-  <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
+<div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
     <div class="whatsnew">
       <button class="whatsnew-x" id="whatsnew-x" type="button" aria-label="Close">✕</button>
       <div class="whatsnew-label">Latest update</div>
@@ -1737,6 +2083,293 @@
 
       setMenuOpen(false);
     }
+  </script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const $ = (s, r) => (r || document).querySelector(s);
+      const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+      const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---------- Toast (polite live region) ---------- */
+      const toast = document.createElement('div');
+      toast.className = 'toast glass';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      document.body.appendChild(toast);
+      let toastTimer;
+      function say(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+      }
+
+      /* ---------- Accessible tablist with arrow-key navigation ---------- */
+      function tabs(list, onSelect) {
+        const items = $$('[role="tab"]', list);
+        const vertical = list.getAttribute('aria-orientation') === 'vertical';
+        function select(index, focus) {
+          items.forEach((tab, i) => {
+            const on = i === index;
+            tab.setAttribute('aria-selected', String(on));
+            tab.tabIndex = on ? 0 : -1;
+          });
+          if (focus) items[index].focus();
+          onSelect(index, items[index]);
+        }
+        items.forEach((tab, i) => {
+          tab.addEventListener('click', () => select(i, false));
+          tab.addEventListener('keydown', (e) => {
+            const prev = vertical ? 'ArrowUp' : 'ArrowLeft';
+            const next = vertical ? 'ArrowDown' : 'ArrowRight';
+            let n = null;
+            if (e.key === next) n = (i + 1) % items.length;
+            else if (e.key === prev) n = (i - 1 + items.length) % items.length;
+            else if (e.key === 'Home') n = 0;
+            else if (e.key === 'End') n = items.length - 1;
+            if (n !== null) { e.preventDefault(); select(n, true); }
+          });
+        });
+        return { select, items };
+      }
+
+      /* ---------- Clipboard + haptics ---------- */
+      async function copyText(text) {
+        try { await navigator.clipboard.writeText(text); return true; } catch (e) { /* fall through */ }
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand('copy');
+          ta.remove();
+          return ok;
+        } catch (e) { return false; }
+      }
+
+      function haptic() { if (navigator.vibrate) navigator.vibrate(12); }
+
+      /* ---------- Citation formats (sample source: Baddeley and Hitch, 1974) ---------- */
+      const STYLES = [
+        { label: 'Harvard',
+          ref: "Baddeley, A.D. and Hitch, G. (1974) 'Working memory', in Bower, G.H. (ed.) <i>The psychology of learning and motivation</i>. Vol. 8. New York: Academic Press, pp. 47–89.",
+          inText: '(Baddeley and Hitch, 1974)' },
+        { label: 'APA 7',
+          ref: 'Baddeley, A. D., &amp; Hitch, G. (1974). Working memory. In G. H. Bower (Ed.), <i>The psychology of learning and motivation</i> (Vol. 8, pp. 47–89). Academic Press.',
+          inText: '(Baddeley &amp; Hitch, 1974)' },
+        { label: 'MLA 9',
+          ref: 'Baddeley, Alan D., and Graham Hitch. “Working Memory.” <i>The Psychology of Learning and Motivation</i>, edited by Gordon H. Bower, vol. 8, Academic Press, 1974, pp. 47–89.',
+          inText: '(Baddeley and Hitch 47–89)' },
+        { label: 'Chicago',
+          ref: 'Baddeley, Alan D., and Graham Hitch. 1974. “Working Memory.” In <i>The Psychology of Learning and Motivation</i>, edited by Gordon H. Bower, 8:47–89. New York: Academic Press.',
+          inText: '(Baddeley and Hitch 1974)' },
+        { label: 'IEEE',
+          ref: '[1] A. D. Baddeley and G. Hitch, “Working memory,” in <i>The Psychology of Learning and Motivation</i>, vol. 8, G. H. Bower, Ed. New York, NY, USA: Academic, 1974, pp. 47–89.',
+          inText: '[1]' }
+      ];
+
+      function plain(html) {
+        return new DOMParser().parseFromString(html, 'text/html').body.textContent;
+      }
+
+      let uid = 0;
+      function mountCite(mount) {
+        if (!mount) return null;
+        const n = ++uid;
+        mount.innerHTML =
+          '<div class="cite">' +
+            '<div class="seg" role="tablist" aria-label="Citation style">' +
+              STYLES.map((s, i) =>
+                '<button type="button" role="tab" id="ct' + n + '-' + i + '" aria-selected="' + (i === 0) +
+                '" aria-controls="cp' + n + '" tabindex="' + (i === 0 ? 0 : -1) + '">' + s.label + '</button>'
+              ).join('') +
+            '</div>' +
+            '<div id="cp' + n + '" role="tabpanel" aria-labelledby="ct' + n + '-0" tabindex="-1">' +
+              '<p class="cite-label">Full reference</p><p class="cite-ref"></p>' +
+              '<p class="cite-label">In-text citation</p><p class="cite-in"></p>' +
+              '<div class="cite-actions">' +
+                '<button type="button" class="cite-copy" data-copy="ref">Copy citation</button>' +
+                '<button type="button" class="cite-copy alt" data-copy="in">Copy in-text</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+        const root = $('.cite', mount);
+        const panel = $('[role="tabpanel"]', root);
+        const refEl = $('.cite-ref', root);
+        const inEl = $('.cite-in', root);
+        let current = 0;
+
+        function paint(i, animate) {
+          current = i;
+          panel.setAttribute('aria-labelledby', 'ct' + n + '-' + i);
+          const fill = () => {
+            refEl.innerHTML = STYLES[i].ref;
+            inEl.innerHTML = STYLES[i].inText;
+            refEl.removeAttribute('data-swap');
+            inEl.removeAttribute('data-swap');
+          };
+          if (animate && !reduceMotion()) {
+            refEl.setAttribute('data-swap', '1');
+            inEl.setAttribute('data-swap', '1');
+            setTimeout(fill, 140);
+          } else {
+            fill();
+          }
+        }
+
+        paint(0, false);
+        tabs($('.seg', root), (i) => paint(i, true));
+
+        $$('.cite-copy', root).forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            const isRef = btn.dataset.copy === 'ref';
+            const text = plain(isRef ? STYLES[current].ref : STYLES[current].inText);
+            const ok = await copyText(text);
+            if (ok) {
+              haptic();
+              say(STYLES[current].label + (isRef ? ' reference copied' : ' in-text citation copied'));
+            } else {
+              say('Copy is not available here. Select the text instead.');
+            }
+          });
+        });
+        return root;
+      }
+
+      /* ---------- Hero iPad stage ---------- */
+      const stage = $('#stage');
+      if (stage) {
+        const sbBtn = $('#st-sb-btn');
+        const rdBtn = $('#st-reader-btn');
+        const ciBtn = $('#st-cite-btn');
+        const sheet = $('#stage-sheet');
+        const closeBtn = $('#st-sheet-close');
+
+        mountCite($('[data-cite-mount]', sheet));
+
+        stage.dataset.sb = stage.clientWidth < 600 ? 'closed' : 'open';
+        sbBtn.setAttribute('aria-pressed', String(stage.dataset.sb === 'open'));
+
+        sbBtn.addEventListener('click', () => {
+          const open = stage.dataset.sb !== 'open';
+          stage.dataset.sb = open ? 'open' : 'closed';
+          sbBtn.setAttribute('aria-pressed', String(open));
+        });
+
+        rdBtn.addEventListener('click', () => {
+          const on = stage.dataset.reader !== 'on';
+          stage.dataset.reader = on ? 'on' : 'off';
+          rdBtn.setAttribute('aria-pressed', String(on));
+        });
+
+        function openSheet() {
+          stage.dataset.cite = 'open';
+          sheet.inert = false;
+          sheet.setAttribute('aria-hidden', 'false');
+          ciBtn.setAttribute('aria-expanded', 'true');
+          setTimeout(() => { const first = $('[role="tab"][aria-selected="true"]', sheet); if (first) first.focus(); }, reduceMotion() ? 0 : 120);
+        }
+        function closeSheet() {
+          stage.dataset.cite = 'closed';
+          sheet.inert = true;
+          sheet.setAttribute('aria-hidden', 'true');
+          ciBtn.setAttribute('aria-expanded', 'false');
+          ciBtn.focus();
+        }
+
+        ciBtn.addEventListener('click', () => (stage.dataset.cite === 'open' ? closeSheet() : openSheet()));
+        closeBtn.addEventListener('click', closeSheet);
+        sheet.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.stopPropagation(); closeSheet(); } });
+      }
+
+      /* ---------- Live citation widget ---------- */
+      mountCite($('#cite-main'));
+
+      /* ---------- Project switcher ---------- */
+      const proj = $('#proj');
+      if (proj) {
+        const panels = $$('[role="tabpanel"]', proj);
+        const stagger = (panel) => $$('li', panel).forEach((li, k) => li.style.setProperty('--i', k));
+        panels.forEach(stagger);
+        tabs($('[role="tablist"]', proj), (i) => {
+          panels.forEach((p, j) => { p.hidden = i !== j; });
+          const p = panels[i];
+          p.classList.remove('enter');
+          void p.offsetWidth;
+          p.classList.add('enter');
+        });
+      }
+
+      /* ---------- Study Mode switch ---------- */
+      const study = $('#study');
+      const sw = $('#study-sw');
+      if (study && sw) {
+        sw.addEventListener('click', () => {
+          const on = sw.getAttribute('aria-checked') !== 'true';
+          sw.setAttribute('aria-checked', String(on));
+          study.dataset.on = String(on);
+          $$('.site em', study).forEach((em) => { em.textContent = on ? 'Blocked' : 'Open'; });
+        });
+      }
+
+      /* ---------- Lecture waveform ---------- */
+      const wave = $('#wave');
+      const lecture = $('#lecture');
+      const play = $('#play-btn');
+      if (wave && lecture && play) {
+        const bars = 36;
+        let html = '';
+        for (let i = 0; i < bars; i++) {
+          const h = 22 + Math.round(Math.abs(Math.sin(i * 0.9) * 46 + Math.cos(i * 0.37) * 24));
+          html += '<span style="--h:' + Math.min(h, 100) + ';--d:' + ((i * 53) % 700) + '"></span>';
+        }
+        wave.innerHTML = html;
+        play.addEventListener('click', () => {
+          const on = play.getAttribute('aria-pressed') !== 'true';
+          play.setAttribute('aria-pressed', String(on));
+          play.setAttribute('aria-label', on ? 'Pause preview' : 'Play preview');
+          lecture.dataset.play = String(on);
+        });
+      }
+
+      /* ---------- Spotlight search ---------- */
+      const spotQ = $('#spot-q');
+      const spotList = $('#spot-list');
+      const spotCount = $('#spot-count');
+      if (spotQ && spotList && spotCount) {
+        const ITEMS = [
+          { t: 'Working memory: overview', k: 'Tab', p: 'Cognitive Psychology' },
+          { t: 'Baddeley_Hitch_1974.pdf', k: 'PDF', p: 'Cognitive Psychology' },
+          { t: 'Working memory: central executive notes', k: 'Note', p: 'Cognitive Psychology' },
+          { t: 'Week 4: Memory models', k: 'Recording', p: 'Cognitive Psychology' },
+          { t: 'Hobsbawm: The Age of Revolution', k: 'Tab', p: 'History Essay' },
+          { t: 'Thesis draft: economic or political causes?', k: 'Note', p: 'History Essay' },
+          { t: 'Week 7: Revolutions, 1789 to 1848', k: 'Recording', p: 'History Essay' }
+        ];
+        function render() {
+          const q = spotQ.value.trim().toLowerCase();
+          const hits = ITEMS.filter((x) => !q || (x.t + ' ' + x.k + ' ' + x.p).toLowerCase().includes(q));
+          spotList.textContent = '';
+          hits.slice(0, 4).forEach((h) => {
+            const li = document.createElement('li');
+            li.textContent = h.t;
+            const sub = document.createElement('span');
+            sub.textContent = h.k + ' in ' + h.p;
+            li.appendChild(sub);
+            spotList.appendChild(li);
+          });
+          spotCount.textContent = hits.length + (hits.length === 1 ? ' result' : ' results');
+        }
+        spotQ.addEventListener('input', render);
+        render();
+      }
+    })();
   </script>
 
 </body>
