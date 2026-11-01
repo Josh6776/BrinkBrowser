@@ -915,6 +915,8 @@
     }
 
     .st-screen[data-sb="closed"] .st-shell { --sbw: 0%; }
+    .st-sb { transition: padding 0.32s cubic-bezier(.2,.7,.2,1), border-color 0.32s, visibility 0s 0s; }
+    .st-screen[data-sb="closed"] .st-sb { padding-left: 0; padding-right: 0; border-right-color: transparent; visibility: hidden; transition: padding 0.32s cubic-bezier(.2,.7,.2,1), border-color 0.32s, visibility 0s 0.32s; }
 
     .st-sb {
       min-width: 0;

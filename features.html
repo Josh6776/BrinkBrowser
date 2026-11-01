@@ -1087,6 +1087,79 @@
       .legal-wrap, .contact-section { padding-left: 20px; padding-right: 20px; padding-bottom: 80px; }
       .cta h2 { font-size: clamp(38px, 11vw, 56px); }
     }
+  
+    /* ================= Features: tabbed carousels ================= */
+    .fx-wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 112px; }
+    .fx-tabs {
+      display: flex; gap: 4px; padding: 4px; margin-bottom: 56px;
+      width: max-content; max-width: 100%; overflow-x: auto; scrollbar-width: none;
+      border-radius: 16px; background: var(--bg3); border: 1px solid var(--border);
+    }
+    .fx-tabs::-webkit-scrollbar { display: none; }
+    .fx-tab {
+      flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px;
+      min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px;
+      background: transparent; color: var(--text2); font: 600 15px var(--sans); cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .fx-tab svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .fx-tab[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.14), 0 0 0 1px var(--border); }
+    .fx-tab:focus-visible, .fx-pill:focus-visible, .fx-arrow:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+    .fx-panel[hidden] { display: none; }
+    .fx-intro { max-width: 40rem; margin-bottom: 40px; }
+    .fx-intro h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 4.6vw, 54px); line-height: 1.05; letter-spacing: -0.025em; text-wrap: balance; }
+    .fx-intro p { margin-top: 16px; color: var(--text2); font-size: 17px; line-height: 1.7; }
+
+    .fx-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+    .fx-pills { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; margin: -2px; }
+    .fx-pills::-webkit-scrollbar { display: none; }
+    .fx-pill {
+      flex: 0 0 auto; min-height: 40px; padding: 0 16px; border-radius: 999px; cursor: pointer;
+      border: 1px solid var(--border2); background: transparent; color: var(--text2); font: 500 14px var(--sans);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .fx-pill[aria-selected="true"] { background: var(--text); border-color: var(--text); color: var(--bg); }
+    .fx-nav { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+    .fx-count { font-size: 14px; color: var(--text2); font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: right; }
+    .fx-arrow {
+      width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%; border: 1px solid var(--border2); background: var(--surface); color: var(--text); cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .fx-arrow:hover { background: var(--bg3); }
+    .fx-arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .fx-slide { display: none; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; align-items: center; }
+    .fx-slide.is-active { display: grid; animation: fxIn 0.45s cubic-bezier(.2,.7,.2,1); }
+    @keyframes fxIn { from { opacity: 0; transform: translateX(var(--fx-dir, 24px)); } to { opacity: 1; transform: none; } }
+    .fx-text .feature-tag { display: inline-block; margin-bottom: 14px; }
+    .fx-text h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; text-wrap: balance; }
+    .fx-text p { color: var(--text2); font-size: 16px; line-height: 1.7; margin-bottom: 14px; }
+    .fx-text .feature-bullets { margin-top: 18px; }
+    .fx-shot {
+      height: clamp(300px, 44vw, 560px); padding: 18px; border-radius: 28px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg3); border: 1px solid var(--border);
+      touch-action: pan-y; user-select: none;
+    }
+    .fx-shot picture { display: contents; }
+    .fx-shot img {
+      display: block; width: auto; height: auto; max-width: 100%; max-height: 100%;
+      object-fit: contain; border-radius: 14px; box-shadow: var(--shadow-lift);
+    }
+
+    @media (max-width: 860px) {
+      .fx-slide, .fx-slide.is-active { gap: 28px; }
+      .fx-slide.is-active { grid-template-columns: minmax(0, 1fr); }
+      .fx-shot { order: -1; height: clamp(240px, 62vw, 420px); padding: 12px; border-radius: 22px; }
+      .fx-head { flex-direction: column; align-items: stretch; }
+      .fx-nav { justify-content: space-between; }
+      .fx-count { text-align: left; }
+      .fx-wrap { padding: 0 20px 72px; }
+      .fx-tabs { margin-bottom: 36px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .fx-slide.is-active { animation: none; } }
   </style>
 </head>
 <body>
@@ -1135,271 +1208,154 @@
     <p>Browse, collect, organise, cite and focus without breaking your flow. Brink brings the tools around your research into one iPad workspace.</p>
   </div>
 
-  <div class="anchor-bar-wrapper">
-    <div class="anchor-bar">
-      <a href="#workspace" class="anchor-btn active">
-        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
-        Research Workspace
-      </a>
-      <a href="#reading" class="anchor-btn">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
-        Reader &amp; PDFs
-      </a>
-      <a href="#productivity" class="anchor-btn">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Focus &amp; Capture
-      </a>
-      <a href="#privacy" class="anchor-btn">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Privacy &amp; Design
-      </a>
-    </div>
-  </div>
-
-  <section class="features-section alt" id="workspace">
-    <div class="container">
-      <div class="feature-section-heading reveal">
-        <h2>Your research has a place to actually live</h2>
-        <p>Brink goes beyond bookmarks. Build separate research projects, organise sources into folders, save different types of material and create citations without leaving your browser.</p>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Research Projects</span>
-          <h3>Separate workspaces<br>for every project</h3>
-          <p>Create dedicated research projects for different assignments, modules, papers or topics. Each project keeps its own folders and saved research separate, so the material for one piece of work never has to get mixed into another.</p>
-          <p>Switch between projects directly from the sidebar, while General stays available as your default workspace for everything else.</p>
-          <ul class="feature-bullets">
+  <main class="fx-wrap">
+    <div class="fx-tabs" role="tablist" aria-label="Feature categories"><button class="fx-tab" role="tab" id="tab-workspace" data-panel="workspace" aria-controls="workspace" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Research Workspace</button><button class="fx-tab" role="tab" id="tab-reading" data-panel="reading" aria-controls="reading" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Reader &amp; PDFs</button><button class="fx-tab" role="tab" id="tab-productivity" data-panel="productivity" aria-controls="productivity" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Focus &amp; Capture</button><button class="fx-tab" role="tab" id="tab-privacy" data-panel="privacy" aria-controls="privacy" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy &amp; Design</button></div>
+    <section class="fx-panel" id="workspace" role="tabpanel" aria-labelledby="tab-workspace">
+        <div class="fx-intro"><h2>Your research has a place to actually live</h2><p>Brink goes beyond bookmarks. Build separate research projects, organise sources into folders, save different types of material and create citations without leaving your browser.</p></div>
+        <div class="fx-car" role="region" aria-roledescription="carousel" aria-label="Research Workspace features">
+          <div class="fx-head">
+            <div class="fx-pills" role="tablist" aria-label="Choose a feature"><button class="fx-pill" role="tab" type="button" aria-selected="false">Research Projects</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Sidebar &amp; Folders</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Research Saving</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Citations</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Highlighting</button></div>
+            <div class="fx-nav"><span class="fx-count" aria-live="polite"></span>
+              <button class="fx-arrow fx-prev" type="button" aria-label="Previous feature"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+          </div>
+          <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+            <div class="fx-text"><span class="feature-tag">Research Projects</span><h3>Separate workspaces for every project</h3><p>Create dedicated research projects for different assignments, modules, papers or topics. Each project keeps its own folders and saved research separate, so the material for one piece of work never has to get mixed into another.</p><p>Switch between projects directly from the sidebar, while General stays available as your default workspace for everything else.</p><ul class="feature-bullets">
             <li>Independent research workspaces</li>
             <li>Project-specific folders and saved research</li>
             <li>Quick project switching from the sidebar</li>
             <li>General workspace always available</li>
             <li>Projects persist across app launches</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="Sidebar_feature_image01.avif" type="image/avif"><img width="1269" height="1640" loading="lazy" decoding="async" src="Sidebar_feature_image01.jpg" alt="Brink research workspace sidebar" class="match-index" /></picture>
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
-        <div class="feature-row-text">
-          <span class="feature-tag">Sidebar &amp; Folders</span>
-          <h3>Organise research<br>the way you think</h3>
-          <p>Inside each project, use folders and subfolders to structure your work around subjects, chapters, assignments or whatever makes sense to you. Expand and collapse sections as your research grows, while keeping the browser and your material side by side.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="Sidebar_feature_image01.avif" type="image/avif"><img width="1269" height="1640" loading="lazy" decoding="async" src="Sidebar_feature_image01.jpg" alt="Brink research workspace sidebar" /></picture></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+            <div class="fx-text"><span class="feature-tag">Sidebar &amp; Folders</span><h3>Organise research the way you think</h3><p>Inside each project, use folders and subfolders to structure your work around subjects, chapters, assignments or whatever makes sense to you. Expand and collapse sections as your research grows, while keeping the browser and your material side by side.</p><ul class="feature-bullets">
             <li>Nested folders and subfolders</li>
             <li>Project-specific organisation</li>
             <li>Expand and collapse folders</li>
             <li>Persistent across sessions</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="folders-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="folders-screenshot.webp" alt="Folders and saved research in the Brink sidebar" /></picture>
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Research Saving</span>
-          <h3>Keep more than links<br>with your research</h3>
-          <p>Save websites, notes, images, PDFs and lecture recordings alongside each other. When you save from inside a project, Brink keeps that material with the project you're already working in, helping the whole research trail stay together.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="folders-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="folders-screenshot.webp" alt="Folders and saved research in the Brink sidebar" /></picture></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+            <div class="fx-text"><span class="feature-tag">Research Saving</span><h3>Keep more than links with your research</h3><p>Save websites, notes, images, PDFs and lecture recordings alongside each other. When you save from inside a project, Brink keeps that material with the project you're already working in, helping the whole research trail stay together.</p><ul class="feature-bullets">
             <li>Websites and articles</li>
             <li>Quick notes and research notes</li>
             <li>Images and PDFs</li>
             <li>Lecture recordings</li>
             <li>Organised inside project folders</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="save-research-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="save-research-screenshot.webp" alt="Saving research in Brink Browser" /></picture>
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
-        <div class="feature-row-text">
-          <span class="feature-tag">Citations</span>
-          <h3>Turn sources into<br>ready-to-use references</h3>
-          <p>Brink can pull useful source details from the page you're researching, including information such as the article title, author, publication and date, then build the citation inside the browser.</p>
-          <p>Choose Harvard, APA, MLA, IEEE or Chicago and copy either the full reference or the in-text citation when you need it.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="save-research-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="save-research-screenshot.webp" alt="Saving research in Brink Browser" /></picture></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+            <div class="fx-text"><span class="feature-tag">Citations</span><h3>Turn sources into ready-to-use references</h3><p>Brink can pull useful source details from the page you're researching, including information such as the article title, author, publication and date, then build the citation inside the browser.</p><p>Choose Harvard, APA, MLA, IEEE or Chicago and copy either the full reference or the in-text citation when you need it.</p><ul class="feature-bullets">
             <li>Harvard, APA, MLA, IEEE and Chicago styles</li>
             <li>Automatic source metadata where available</li>
             <li>Copy full references separately</li>
             <li>Copy in-text citations separately</li>
             <li>IEEE numbered in-text citations</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="citation-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="citation-screenshot.webp" alt="Citation tools in Brink Browser" /></picture>
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Highlighting</span>
-          <h3>Highlight what matters,<br>without losing the source</h3>
-          <p>Select important text on a webpage and highlight it in yellow, green, blue or red. Highlights stay associated with the page so you can return to the material you've already picked out instead of starting again.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="citation-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="citation-screenshot.webp" alt="Citation tools in Brink Browser" /></picture></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+            <div class="fx-text"><span class="feature-tag">Highlighting</span><h3>Highlight what matters, without losing the source</h3><p>Select important text on a webpage and highlight it in yellow, green, blue or red. Highlights stay associated with the page so you can return to the material you've already picked out instead of starting again.</p><ul class="feature-bullets">
             <li>Four highlight colours</li>
             <li>Highlights persist when you return</li>
             <li>Useful for extracting key research points</li>
-          </ul>
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="highlight-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="highlight-screenshot.webp" alt="Webpage highlighting in Brink Browser" /></picture></div>
+          </article>
         </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="highlight-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="highlight-screenshot.webp" alt="Webpage highlighting in Brink Browser" /></picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features-section tinted" id="reading">
-    <div class="container">
-      <div class="feature-section-heading reveal">
-        <h2>Make difficult material easier to work through</h2>
-        <p>Strip away webpage clutter, tune the reading experience to suit you, and work with PDFs without constantly jumping between apps.</p>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Reader Mode</span>
-          <h3>A cleaner way to<br>read long-form research</h3>
-          <p>Reader Mode turns supported pages into a focused reading view and gives you control over how the content is presented. Adjust the typography, spacing, width, contrast and images until the page is comfortable to work through.</p>
-          <ul class="feature-bullets">
+      </section><section class="fx-panel" id="reading" role="tabpanel" aria-labelledby="tab-reading">
+        <div class="fx-intro"><h2>Make difficult material easier to work through</h2><p>Strip away webpage clutter, tune the reading experience to suit you, and work with PDFs without constantly jumping between apps.</p></div>
+        <div class="fx-car" role="region" aria-roledescription="carousel" aria-label="Reader &amp; PDFs features">
+          <div class="fx-head">
+            <div class="fx-pills" role="tablist" aria-label="Choose a feature"><button class="fx-pill" role="tab" type="button" aria-selected="false">Reader Mode</button><button class="fx-pill" role="tab" type="button" aria-selected="false">PDF Viewer</button></div>
+            <div class="fx-nav"><span class="fx-count" aria-live="polite"></span>
+              <button class="fx-arrow fx-prev" type="button" aria-label="Previous feature"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+          </div>
+          <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
+            <div class="fx-text"><span class="feature-tag">Reader Mode</span><h3>A cleaner way to read long-form research</h3><p>Reader Mode turns supported pages into a focused reading view and gives you control over how the content is presented. Adjust the typography, spacing, width, contrast and images until the page is comfortable to work through.</p><ul class="feature-bullets">
             <li>Text size and typography controls</li>
             <li>Line spacing and content width</li>
             <li>Contrast and theme controls</li>
             <li>Image visibility toggle</li>
             <li>Focused full-screen reading</li>
             <li>Reading progress and time estimates</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <img src="readermode.png" alt="Reader Mode in Brink Browser" />
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
-        <div class="feature-row-text">
-          <span class="feature-tag">PDF Viewer</span>
-          <h3>Work with PDFs<br>without leaving Brink</h3>
-          <p>Open PDFs directly from the web or from saved research. Fill supported form fields, work with interactive controls and save your changes back with your research so the document is ready when you return.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><img src="readermode.png" alt="Reader Mode in Brink Browser" /></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
+            <div class="fx-text"><span class="feature-tag">PDF Viewer</span><h3>Work with PDFs without leaving Brink</h3><p>Open PDFs directly from the web or from saved research. Fill supported form fields, work with interactive controls and save your changes back with your research so the document is ready when you return.</p><ul class="feature-bullets">
             <li>Open PDFs from the web or saved research</li>
             <li>Fill supported interactive form fields</li>
             <li>Use check boxes and radio buttons</li>
             <li>Save edits back with your research</li>
             <li>Reopen saved PDFs across sessions</li>
-          </ul>
+          </ul></div>
+            <div class="fx-shot"><img src="pdfviewer-screenshot.png" alt="PDF viewer in Brink Browser" /></div>
+          </article>
         </div>
-        <div class="feature-row-image portrait">
-          <img src="pdfviewer-screenshot.png" alt="PDF viewer in Brink Browser" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features-section alt" id="productivity">
-    <div class="container">
-      <div class="feature-section-heading reveal">
-        <h2>Stay with the work, capture what matters</h2>
-        <p>Reduce distractions when you need to concentrate, keep quick notes close by and record lectures without leaving the browser you're already working in.</p>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Website Blocking</span>
-          <h3>Put distracting sites<br>out of reach while you work</h3>
-          <p>Add distracting domains to your blocked list and choose when Brink should keep them out of the way. Use blocking as part of Study Mode when you want a more focused browsing session.</p>
-          <ul class="feature-bullets">
+      </section><section class="fx-panel" id="productivity" role="tabpanel" aria-labelledby="tab-productivity">
+        <div class="fx-intro"><h2>Stay with the work, capture what matters</h2><p>Reduce distractions when you need to concentrate, keep quick notes close by and record lectures without leaving the browser you're already working in.</p></div>
+        <div class="fx-car" role="region" aria-roledescription="carousel" aria-label="Focus &amp; Capture features">
+          <div class="fx-head">
+            <div class="fx-pills" role="tablist" aria-label="Choose a feature"><button class="fx-pill" role="tab" type="button" aria-selected="false">Website Blocking</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Focus Sessions</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Lecture Capture</button></div>
+            <div class="fx-nav"><span class="fx-count" aria-live="polite"></span>
+              <button class="fx-arrow fx-prev" type="button" aria-label="Previous feature"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+          </div>
+          <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="fx-text"><span class="feature-tag">Website Blocking</span><h3>Put distracting sites out of reach while you work</h3><p>Add distracting domains to your blocked list and choose when Brink should keep them out of the way. Use blocking as part of Study Mode when you want a more focused browsing session.</p><ul class="feature-bullets">
             <li>Block chosen domains</li>
             <li>Study-focused blocking controls</li>
             <li>PIN protection for supported controls</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <img src="blocking-screenshot.png" alt="Website blocking controls in Brink Browser" />
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
-        <div class="feature-row-text">
-          <span class="feature-tag">Focus Sessions</span>
-          <h3>Give a study session<br>a clear beginning and end</h3>
-          <p>Start a timed focus session and keep the remaining time visible while you browse. Brink can apply your Study Mode restrictions during the session, helping you stay inside the environment you set up for focused work.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><img src="blocking-screenshot.png" alt="Website blocking controls in Brink Browser" /></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+            <div class="fx-text"><span class="feature-tag">Focus Sessions</span><h3>Give a study session a clear beginning and end</h3><p>Start a timed focus session and keep the remaining time visible while you browse. Brink can apply your Study Mode restrictions during the session, helping you stay inside the environment you set up for focused work.</p><ul class="feature-bullets">
             <li>Customisable focus duration</li>
             <li>Study Mode integration</li>
             <li>Persistent countdown while studying</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="focus-session-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="focus-session-screenshot.webp" alt="Focus session timer in Brink Browser" /></picture>
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Lecture Capture</span>
-          <h3>Record lectures without<br>leaving your research</h3>
-          <p>Start a lecture recording inside Brink and continue browsing while it runs. Save the recording with your research, rename it and play it back later alongside the notes, sources and documents from the same project.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="focus-session-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="focus-session-screenshot.webp" alt="Focus session timer in Brink Browser" /></picture></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+            <div class="fx-text"><span class="feature-tag">Lecture Capture</span><h3>Record lectures without leaving your research</h3><p>Start a lecture recording inside Brink and continue browsing while it runs. Save the recording with your research, rename it and play it back later alongside the notes, sources and documents from the same project.</p><ul class="feature-bullets">
             <li>Record while continuing to browse</li>
             <li>Rename and replay recordings</li>
             <li>Save recordings with research</li>
             <li>Keep audio alongside notes and sources</li>
-          </ul>
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="lecture-capture-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="lecture-capture-screenshot.webp" alt="Lecture Capture in Brink Browser" /></picture></div>
+          </article>
         </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="lecture-capture-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="lecture-capture-screenshot.webp" alt="Lecture Capture in Brink Browser" /></picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features-section tinted" id="privacy">
-    <div class="container">
-      <div class="feature-section-heading reveal">
-        <h2>Your research stays yours, your workspace feels yours</h2>
-        <p>Your browsing content, notes, saved research and recordings aren't collected by Brink. Limited analytics and diagnostics help improve the app, while the work you create stays on your device.</p>
-      </div>
-
-      <div class="feature-row portrait-row reveal">
-        <div class="feature-row-text">
-          <span class="feature-tag">Ad Blocking</span>
-          <h3>Cleaner pages with<br>fewer distractions</h3>
-          <p>Brink includes built-in ad blocking to reduce unwanted page clutter while you browse. There's no separate extension to install, helping research pages stay cleaner and easier to read.</p>
-          <ul class="feature-bullets">
+      </section><section class="fx-panel" id="privacy" role="tabpanel" aria-labelledby="tab-privacy">
+        <div class="fx-intro"><h2>Your research stays yours, your workspace feels yours</h2><p>Your browsing content, notes, saved research and recordings aren't collected by Brink. Limited analytics and diagnostics help improve the app, while the work you create stays on your device.</p></div>
+        <div class="fx-car" role="region" aria-roledescription="carousel" aria-label="Privacy &amp; Design features">
+          <div class="fx-head">
+            <div class="fx-pills" role="tablist" aria-label="Choose a feature"><button class="fx-pill" role="tab" type="button" aria-selected="false">Ad Blocking</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Workspace Themes</button></div>
+            <div class="fx-nav"><span class="fx-count" aria-live="polite"></span>
+              <button class="fx-arrow fx-prev" type="button" aria-label="Previous feature"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+          </div>
+          <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
+            <div class="fx-text"><span class="feature-tag">Ad Blocking</span><h3>Cleaner pages with fewer distractions</h3><p>Brink includes built-in ad blocking to reduce unwanted page clutter while you browse. There's no separate extension to install, helping research pages stay cleaner and easier to read.</p><ul class="feature-bullets">
             <li>Built directly into Brink</li>
             <li>Reduces distracting page content</li>
             <li>No separate extension required</li>
             <li>Can be controlled from Brink settings</li>
-          </ul>
-        </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="adblock-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="adblock-screenshot.webp" alt="Ad blocking in Brink Browser" /></picture>
-        </div>
-      </div>
-
-      <div class="feature-row portrait-row reverse reveal reveal-delay-1">
-        <div class="feature-row-text">
-          <span class="feature-tag">Workspace Themes</span>
-          <h3>Make the workspace<br>feel like your own</h3>
-          <p>Personalise Brink with workspace colours and light or dark appearances. The interface adapts around your chosen look while Reader Mode keeps its own controls for the page you're reading.</p>
-          <ul class="feature-bullets">
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="adblock-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="adblock-screenshot.webp" alt="Ad blocking in Brink Browser" /></picture></div>
+          </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
+            <div class="fx-text"><span class="feature-tag">Workspace Themes</span><h3>Make the workspace feel like your own</h3><p>Personalise Brink with workspace colours and light or dark appearances. The interface adapts around your chosen look while Reader Mode keeps its own controls for the page you're reading.</p><ul class="feature-bullets">
             <li>Multiple workspace colour choices</li>
             <li>Light and dark appearances</li>
             <li>System-aware theme behaviour</li>
             <li>Separate Reader Mode controls</li>
-          </ul>
+          </ul></div>
+            <div class="fx-shot"><picture><source srcset="theme-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="theme-screenshot.webp" alt="Workspace themes in Brink Browser" /></picture></div>
+          </article>
         </div>
-        <div class="feature-row-image portrait">
-          <picture><source srcset="theme-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="theme-screenshot.webp" alt="Workspace themes in Brink Browser" /></picture>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
+  </main>
+
 
   <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
     <div class="whatsnew">
@@ -1540,55 +1496,6 @@
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const sections = document.querySelectorAll('section[id]');
-    const anchorBtns = document.querySelectorAll('.anchor-btn');
-
-    function getOffset() {
-      const navHeight = nav ? nav.getBoundingClientRect().height : 62;
-      const anchorWrapper = document.querySelector('.anchor-bar-wrapper');
-      const anchorHeight = anchorWrapper ? anchorWrapper.getBoundingClientRect().height : 52;
-      return navHeight + anchorHeight + 16;
-    }
-
-    function updateActive() {
-      const offset = getOffset();
-      let current = sections.length ? sections[0].id : '';
-
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - offset) {
-          current = section.id;
-        }
-      });
-
-      anchorBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('href') === '#' + current);
-      });
-    }
-
-    window.addEventListener('scroll', updateActive, { passive: true });
-    window.addEventListener('resize', updateActive);
-    updateActive();
-
-    anchorBtns.forEach(btn => {
-      btn.addEventListener('click', event => {
-        event.preventDefault();
-        const target = document.querySelector(btn.getAttribute('href'));
-
-        if (target) {
-          const top = target.getBoundingClientRect().top + window.scrollY - getOffset() + 1;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
-
     const menuButton = document.getElementById('nav-hamburger');
     const menuPanel = document.getElementById('nav-mobile-menu');
 
@@ -1636,5 +1543,78 @@
     }
   </script>
 
+  <script>
+    /* ---- Features: tabs + carousels ---- */
+    (function () {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.fx-tab'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.fx-panel'));
+      if (!tabs.length) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function showPanel(id, focus) {
+        tabs.forEach(function (t) {
+          var on = t.dataset.panel === id;
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+          if (on && focus) t.focus();
+        });
+        panels.forEach(function (p) { p.hidden = p.id !== id; });
+        try { history.replaceState(null, '', '#' + id); } catch (e) {}
+      }
+      tabs.forEach(function (t, i) {
+        t.addEventListener('click', function () { showPanel(t.dataset.panel); });
+        t.addEventListener('keydown', function (e) {
+          var n = null;
+          if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+          else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+          else if (e.key === 'Home') n = 0;
+          else if (e.key === 'End') n = tabs.length - 1;
+          if (n !== null) { e.preventDefault(); showPanel(tabs[n].dataset.panel, true); }
+        });
+      });
+      var start = location.hash.slice(1);
+      showPanel(tabs.some(function (t) { return t.dataset.panel === start; }) ? start : tabs[0].dataset.panel);
+
+      panels.forEach(function (panel) {
+        var slides = Array.prototype.slice.call(panel.querySelectorAll('.fx-slide'));
+        var pills = Array.prototype.slice.call(panel.querySelectorAll('.fx-pill'));
+        var count = panel.querySelector('.fx-count');
+        var cur = 0;
+        function go(n, dir, focus) {
+          n = (n + slides.length) % slides.length;
+          slides[cur].classList.remove('is-active');
+          cur = n;
+          slides[cur].style.setProperty('--fx-dir', (dir < 0 ? -24 : 24) + 'px');
+          slides[cur].classList.add('is-active');
+          pills.forEach(function (p, i) {
+            p.setAttribute('aria-selected', String(i === cur));
+            p.tabIndex = i === cur ? 0 : -1;
+          });
+          if (pills[cur] && pills[cur].scrollIntoView && !reduce) pills[cur].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+          if (focus) pills[cur].focus();
+          count.textContent = (cur + 1) + ' / ' + slides.length;
+        }
+        panel.querySelector('.fx-prev').addEventListener('click', function () { go(cur - 1, -1); });
+        panel.querySelector('.fx-next').addEventListener('click', function () { go(cur + 1, 1); });
+        pills.forEach(function (p, i) {
+          p.addEventListener('click', function () { go(i, i < cur ? -1 : 1); });
+          p.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1, 1, true); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1, -1, true); }
+          });
+        });
+        // swipe
+        var x0 = null;
+        panel.addEventListener('pointerdown', function (e) { if (e.target.closest('.fx-shot')) x0 = e.clientX; });
+        panel.addEventListener('pointerup', function (e) {
+          if (x0 === null) return;
+          var dx = e.clientX - x0; x0 = null;
+          if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+        });
+        panel.addEventListener('pointercancel', function () { x0 = null; });
+        go(0, 1);
+      });
+    })();
+  </script>
 </body>
 </html>
