@@ -992,6 +992,101 @@
     .appstore-badge:hover { transform: translateY(-1px); opacity: 0.92; }
     .appstore-badge img { display: block; height: 54px; width: auto; }
     .appstore-badge.lg img { height: 62px; }
+  
+    /* ================= Inner pages: homepage design language ================= */
+    .page-hero {
+      padding: calc(128px + env(safe-area-inset-top)) 24px 72px;
+      text-align: left;
+      background: var(--bg);
+      border-bottom: 0;
+    }
+    .page-hero > * { max-width: 1072px; margin-left: auto; margin-right: auto; }
+    .page-hero h1 {
+      font-size: clamp(42px, 6.2vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+      margin-bottom: 26px;
+    }
+    .page-hero h1, .page-hero p { max-width: 1072px; }
+    .page-hero h1 { padding-right: 18%; }
+    .page-hero p {
+      max-width: 1072px;
+      padding-right: 40%;
+      font-size: clamp(17px, 1.8vw, 21px);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    h1 em, h2 em { font-style: normal; color: inherit; }
+
+    .section, .features-section { padding: 112px 24px; }
+    .section.alt, .features-section.alt { background: var(--bg2); }
+    .section.tinted, .features-section.tinted { background: var(--bg); }
+    .container { max-width: 1072px; }
+
+    .story-heading h2, .values-heading h2, .independent h2, .feature-section-heading h2, .contact-copy h2 {
+      font-size: clamp(32px, 4.6vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+    .cta { text-align: left; }
+    .cta h2 {
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      max-width: 12em;
+      text-wrap: balance;
+    }
+    .cta p { max-width: 30rem; margin: 0 0 30px; font-size: 18px; font-weight: 400; line-height: 1.65; }
+    .quote { max-width: none; margin: 0; text-align: left; }
+    .quote blockquote { max-width: 20em; text-wrap: balance; }
+    .values-heading { margin: 0 0 52px; text-align: left; max-width: 40rem; }
+    .values-heading p, .story-copy p, .independent p { font-weight: 400; }
+    .values-heading p { font-size: 17px; }
+    .feature-section-heading { text-align: left; border-bottom: 0; padding-bottom: 0; margin-bottom: 64px; max-width: 40rem; }
+    .feature-section-heading p { margin-left: 0; margin-right: 0; font-weight: 400; }
+
+    .value-card, .independent-card, .form-card, .summary {
+      background: var(--surface);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lift);
+    }
+    .value-icon { border-radius: 12px; }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 26px;
+      border-radius: 14px;
+      font-size: 15px;
+      box-shadow: none;
+    }
+
+    .anchor-bar-wrapper {
+      top: calc(62px + var(--announce-h) + env(safe-area-inset-top));
+      background: var(--bg);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .anchor-bar { max-width: 1072px; margin: 0 auto; justify-content: flex-start; padding: 0; }
+    .feature-row-image img, .feature-image img { border-radius: 20px; box-shadow: var(--shadow-lift); }
+
+    .footer-inner { max-width: 1072px; }
+    .footer-bottom { max-width: 1072px; }
+    .legal-wrap { max-width: 1072px; padding: 24px 24px 120px; }
+    .legal-wrap > * { max-width: 46rem; }
+    .legal-section h2 { font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -0.015em; }
+
+    .contact-section { padding: 24px 24px 120px; }
+    .contact-inner { max-width: 1072px; }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: calc(104px + env(safe-area-inset-top)) 20px 44px; }
+      .page-hero h1, .page-hero p { padding-right: 0; }
+      .section, .features-section { padding: 72px 20px; }
+      .legal-wrap, .contact-section { padding-left: 20px; padding-right: 20px; padding-bottom: 80px; }
+      .cta h2 { font-size: clamp(38px, 11vw, 56px); }
+    }
   </style>
 </head>
 <body>
@@ -1036,8 +1131,7 @@
 
 
   <div class="page-hero">
-    <div class="section-label">Features</div>
-    <h1>One browser for your<br><em>entire research workflow</em></h1>
+    <h1>One browser for your entire research workflow</h1>
     <p>Browse, collect, organise, cite and focus without breaking your flow. Brink brings the tools around your research into one iPad workspace.</p>
   </div>
 
@@ -1065,8 +1159,7 @@
   <section class="features-section alt" id="workspace">
     <div class="container">
       <div class="feature-section-heading reveal">
-        <div class="section-label">Research Workspace</div>
-        <h2>Your research has a place<br><em>to actually live</em></h2>
+        <h2>Your research has a place to actually live</h2>
         <p>Brink goes beyond bookmarks. Build separate research projects, organise sources into folders, save different types of material and create citations without leaving your browser.</p>
       </div>
 
@@ -1164,8 +1257,7 @@
   <section class="features-section tinted" id="reading">
     <div class="container">
       <div class="feature-section-heading reveal">
-        <div class="section-label">Reader &amp; PDFs</div>
-        <h2>Make difficult material<br><em>easier to work through</em></h2>
+        <h2>Make difficult material easier to work through</h2>
         <p>Strip away webpage clutter, tune the reading experience to suit you, and work with PDFs without constantly jumping between apps.</p>
       </div>
 
@@ -1211,8 +1303,7 @@
   <section class="features-section alt" id="productivity">
     <div class="container">
       <div class="feature-section-heading reveal">
-        <div class="section-label">Focus &amp; Capture</div>
-        <h2>Stay with the work,<br><em>capture what matters</em></h2>
+        <h2>Stay with the work, capture what matters</h2>
         <p>Reduce distractions when you need to concentrate, keep quick notes close by and record lectures without leaving the browser you're already working in.</p>
       </div>
 
@@ -1270,8 +1361,7 @@
   <section class="features-section tinted" id="privacy">
     <div class="container">
       <div class="feature-section-heading reveal">
-        <div class="section-label">Privacy &amp; Design</div>
-        <h2>Your research stays yours,<br><em>your workspace feels yours</em></h2>
+        <h2>Your research stays yours, your workspace feels yours</h2>
         <p>Your browsing content, notes, saved research and recordings aren't collected by Brink. Limited analytics and diagnostics help improve the app, while the work you create stays on your device.</p>
       </div>
 
