@@ -1091,6 +1091,22 @@
       .legal-wrap, .contact-section { padding-left: 20px; padding-right: 20px; padding-bottom: 80px; }
       .cta h2 { font-size: clamp(38px, 11vw, 56px); }
     }
+  
+    /* ---- Contact refinements ---- */
+    .contact-inner { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 80px; align-items: start; }
+    .contact-method { display: block; padding: 22px 0; margin: 0; border-top: 1px solid var(--border2); }
+    .contact-copy > p:first-child { font-size: 19px; line-height: 1.65; color: var(--text2); max-width: 30rem; }
+    .contact-method:first-of-type { margin-top: 36px; }
+    .contact-method h3 { font: 600 13px var(--sans); color: var(--text2); margin: 0 0 8px; }
+    .contact-method p { font-size: 16px; line-height: 1.65; color: var(--text2); margin: 0; }
+    .contact-method a.big-mail { font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.015em; color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+    .contact-method a.big-mail:hover { color: var(--accent-text); }
+    .store-card { background: transparent; border: 0; border-top: 1px solid var(--border2); border-radius: 0; padding: 22px 0 0; margin: 0; }
+    .store-card h3 { font: 600 13px var(--sans); color: var(--text2); margin: 0 0 8px; }
+    .form-card { background: transparent; border: 0; box-shadow: none; padding: 0; border-radius: 0; }
+    .form-card h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.015em; }
+    .field input, .field select, .field textarea { border-radius: 12px; background: var(--surface); border: 1px solid var(--border2); }
+    @media (max-width: 768px) { .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 48px; } }
   </style>
 </head>
 
@@ -1144,23 +1160,16 @@
     <div class="contact-inner">
 
       <section class="contact-copy reveal">
-        <h2>I'd love to hear from you.</h2>
         <p>If something isn't working, you've found a rough edge, or you have an idea that could make Brink better, send it over. Useful feedback has shaped Brink from the beginning.</p>
 
         <div class="contact-method">
-          <div class="contact-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
-          </div>
           <div>
             <h3>Email</h3>
-            <p><a href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a></p>
+            <p><a class="big-mail" href="mailto:hello@brinkbrowser.app">hello@brinkbrowser.app</a></p>
           </div>
         </div>
 
         <div class="contact-method">
-          <div class="contact-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-          </div>
           <div>
             <h3>Inside Brink</h3>
             <p>You can also send feedback from Settings inside the app.</p>
@@ -1168,9 +1177,6 @@
         </div>
 
         <div class="contact-method">
-          <div class="contact-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
           <div>
             <h3>Bug reports</h3>
             <p>If possible, include what you were doing, what you expected to happen and what happened instead. Your Brink version and iPadOS version can also help.</p>
