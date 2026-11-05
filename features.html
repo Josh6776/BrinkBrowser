@@ -1108,8 +1108,12 @@
     .fx-tab[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.14), 0 0 0 1px var(--border); }
     .fx-tab:focus-visible, .fx-pill:focus-visible, .fx-arrow:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
+    .fx-tabbar { position: sticky; top: calc(62px + var(--announce-h) + env(safe-area-inset-top)); z-index: 40; margin: 0 -24px 40px; padding: 12px 24px; background: var(--bg); }
+    .fx-tabbar .fx-tabs { margin-bottom: 0; }
+    .fx-panel { scroll-margin-top: calc(62px + var(--announce-h) + 96px); }
+    @media (max-width: 860px) { .fx-tabbar { margin: 0 -20px 28px; padding: 10px 20px; } }
     .fx-panel[hidden] { display: none; }
-    .fx-intro { max-width: 40rem; margin-bottom: 40px; }
+    .fx-intro { max-width: 40rem; margin: 24px 0 40px; }
     .fx-intro h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 4.6vw, 54px); line-height: 1.05; letter-spacing: -0.025em; text-wrap: balance; }
     .fx-intro p { margin-top: 16px; color: var(--text2); font-size: 17px; line-height: 1.7; }
 
@@ -1211,7 +1215,7 @@
   </div>
 
   <main class="fx-wrap">
-    <div class="fx-tabs" role="tablist" aria-label="Feature categories"><button class="fx-tab" role="tab" id="tab-workspace" data-panel="workspace" aria-controls="workspace" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Research Workspace</button><button class="fx-tab" role="tab" id="tab-reading" data-panel="reading" aria-controls="reading" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Reader &amp; PDFs</button><button class="fx-tab" role="tab" id="tab-productivity" data-panel="productivity" aria-controls="productivity" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Focus &amp; Capture</button><button class="fx-tab" role="tab" id="tab-privacy" data-panel="privacy" aria-controls="privacy" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy &amp; Design</button></div>
+    <div class="fx-tabbar"><div class="fx-tabs" role="tablist" aria-label="Feature categories"><button class="fx-tab" role="tab" id="tab-workspace" data-panel="workspace" aria-controls="workspace" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Research Workspace</button><button class="fx-tab" role="tab" id="tab-reading" data-panel="reading" aria-controls="reading" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Reader &amp; PDFs</button><button class="fx-tab" role="tab" id="tab-productivity" data-panel="productivity" aria-controls="productivity" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Focus &amp; Capture</button><button class="fx-tab" role="tab" id="tab-privacy" data-panel="privacy" aria-controls="privacy" aria-selected="false" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy &amp; Design</button></div></div>
     <section class="fx-panel" id="workspace" role="tabpanel" aria-labelledby="tab-workspace">
         <div class="fx-intro"><h2>Your research has a place to actually live</h2><p>Brink goes beyond bookmarks. Build separate research projects, organise sources into folders, save different types of material and create citations without leaving your browser.</p></div>
         <div class="fx-car" role="region" aria-roledescription="carousel" aria-label="Research Workspace features">
@@ -1553,7 +1557,7 @@
       if (!tabs.length) return;
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      function showPanel(id, focus) {
+      function showPanel(id, focus, write) {
         tabs.forEach(function (t) {
           var on = t.dataset.panel === id;
           t.setAttribute('aria-selected', String(on));
@@ -1561,18 +1565,22 @@
           if (on && focus) t.focus();
         });
         panels.forEach(function (p) { p.hidden = p.id !== id; });
-        try { history.replaceState(null, '', '#' + id); } catch (e) {}
+        if (write) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
       }
       tabs.forEach(function (t, i) {
-        t.addEventListener('click', function () { showPanel(t.dataset.panel); });
+        t.addEventListener('click', function () { showPanel(t.dataset.panel, false, true); });
         t.addEventListener('keydown', function (e) {
           var n = null;
           if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
           else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
           else if (e.key === 'Home') n = 0;
           else if (e.key === 'End') n = tabs.length - 1;
-          if (n !== null) { e.preventDefault(); showPanel(tabs[n].dataset.panel, true); }
+          if (n !== null) { e.preventDefault(); showPanel(tabs[n].dataset.panel, true, true); }
         });
+      });
+      window.addEventListener('hashchange', function () {
+        var h = location.hash.slice(1);
+        if (tabs.some(function (t) { return t.dataset.panel === h; })) showPanel(h);
       });
       var start = location.hash.slice(1);
       showPanel(tabs.some(function (t) { return t.dataset.panel === start; }) ? start : tabs[0].dataset.panel);
