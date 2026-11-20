@@ -20,15 +20,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:#F5F5F7;
-      --bg2:#ffffff;
-      --bg3:#ECECF0;
-      --surface:#E3E4EA;
+      --bg:#F7F6F2;
+      --bg2:#FDFCFA;
+      --bg3:#EFECE5;
+      --surface:#E6E2D8;
       --border:rgba(0,0,0,0.07);
-      --accent:#2563EB;
-      --text:#0f1117;
-      --text2:#4B5365;
-      --text3:#5D6575;
+      --accent:#1B365D;
+      --text:#16181C;
+      --text2:#4A4E58;
+      --text3:#686D78;
       --serif:"New York", ui-serif, "Instrument Serif", Georgia, serif;
       --sans:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "DM Sans", sans-serif;
     }
@@ -150,7 +150,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 44px 0 16px;
-      background: linear-gradient(90deg, rgba(37,99,235,0.13), rgba(37,99,235,0.07));
+      background: linear-gradient(90deg, rgba(27,54,93,0.13), rgba(27,54,93,0.07));
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -438,7 +438,7 @@
       border-radius: 8px;
     }
 
-    .nav-mobile-menu a:hover { color: var(--accent-text); background: rgba(37,99,235,0.06); }
+    .nav-mobile-menu a:hover { color: var(--accent-text); background: rgba(27,54,93,0.06); }
 
     .page-hero {
       padding: calc(132px + env(safe-area-inset-top)) 24px 62px;
@@ -479,8 +479,8 @@
     .notice {
       padding: 26px 28px;
       margin-bottom: 48px;
-      background: rgba(37,99,235,0.06);
-      border: 1px solid rgba(37,99,235,0.16);
+      background: rgba(27,54,93,0.06);
+      border: 1px solid rgba(27,54,93,0.16);
       border-radius: 18px;
     }
 
@@ -530,7 +530,7 @@
     .legal-section li { margin-bottom: 6px; }
 
     .legal-section a {
-      color: #148765;
+      color: var(--accent-text);
       text-underline-offset: 2px;
     }
 
@@ -660,9 +660,9 @@
       /* ---- Theme: auto light / dark (follows device setting) ---- */
     :root {
       color-scheme: light dark;
-      --nav-bg: rgba(245,245,247,0.88);
-      --nav-bg-scrolled: rgba(245,245,247,0.96);
-      --menu-bg: rgba(245,245,247,0.98);
+      --nav-bg: rgba(247,246,242,0.88);
+      --nav-bg-scrolled: rgba(247,246,242,0.96);
+      --menu-bg: rgba(247,246,242,0.98);
       --hover: rgba(0,0,0,0.05);
     }
 
@@ -670,20 +670,20 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0A0A0C;
-        --bg2: #131316;
-        --bg3: #0E0E11;
-        --surface: #1D1D22;
+        --bg: #0E0E0D;
+        --bg2: #161614;
+        --bg3: #121210;
+        --surface: #1F1F1C;
         --border: rgba(255,255,255,0.09);
         --border2: rgba(255,255,255,0.15);
-        --accent2: #7AA7FF;
-        --accent-text: #7AA7FF;
-        --text: #EEF0F4;
-        --text2: #A8AFBE;
-        --text3: #8A93A5;
-        --nav-bg: rgba(10,10,12,0.82);
-        --nav-bg-scrolled: rgba(10,10,12,0.92);
-        --menu-bg: rgba(10,10,12,0.98);
+        --accent2: #6B9AC4;
+        --accent-text: #82AFD6;
+        --text: #F2F0EA;
+        --text2: #B5B2A8;
+        --text3: #8C897F;
+        --nav-bg: rgba(14,14,13,0.84);
+        --nav-bg-scrolled: rgba(14,14,13,0.94);
+        --menu-bg: rgba(14,14,13,0.98);
         --hover: rgba(255,255,255,0.07);
       }
 
@@ -707,8 +707,8 @@
 
   
     /* ---- Foundation: focus, motion ---- */
-    :root { --accent-text: #1D4ED8; }
-    @media (prefers-color-scheme: dark) { :root { --accent-text: #7AA7FF; } }
+    :root { --accent-text: #1B365D; }
+    @media (prefers-color-scheme: dark) { :root { --accent-text: #82AFD6; } }
 
     a:focus-visible,
     button:focus-visible,
@@ -838,7 +838,7 @@
 
 <body>
   <script>
-    try { if (localStorage.getItem('brink-announce-v1') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
+    try { if (localStorage.getItem('brink-announce-v2') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
   </script>
 
   <nav>
@@ -869,7 +869,7 @@
   <div class="announce" id="announce" role="region" aria-label="Site announcement">
     <div class="announce-inner">
       <span class="announce-badge">New</span>
-      <span class="announce-text">Brink’s research workspace just got a major upgrade.</span>
+      <span class="announce-text">Brink 2.0 is here: Free to try on iPad, DOI auto-lookup, full project bibliographies &amp; Apple Pencil PDF markup.</span>
       <button class="announce-cta" id="announce-more" type="button">See what’s new</button>
     </div>
     <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
@@ -1053,21 +1053,15 @@
   <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
     <div class="whatsnew">
       <button class="whatsnew-x" id="whatsnew-x" type="button" aria-label="Close">✕</button>
-      <div class="whatsnew-label">Latest update</div>
-      <h2 id="whatsnew-title">What’s new in Brink</h2>
-      <p class="whatsnew-lead">Brink’s research workspace just got a major upgrade.</p>
+      <div class="whatsnew-label">Brink 2.0 Academic Release</div>
+      <h2 id="whatsnew-title">What’s new in Brink 2.0</h2>
+      <p class="whatsnew-lead">Now free to download on iPad, with one-tap Project Bibliographies, CrossRef DOI lookup, and Apple Pencil PDF markup.</p>
       <ul class="whatsnew-list">
-        <li>Organise your research into separate projects</li>
-        <li>Keep tabs, folders and saved research organised by project</li>
-        <li>Swipe between research projects from the sidebar</li>
-        <li>Improved citations, including Harvard, IEEE and Chicago styles</li>
-        <li>Improved user experience in the sidebar</li>
-        <li>Better folder organisation with nested folders</li>
-        <li>Press and hold New Tab to create a private one</li>
-        <li>Improved PDFs, images, notes and lecture captures</li>
-        <li>Smarter Brink Spotlight search across your research and tabs</li>
-        <li>Improved browser back and forward navigation</li>
-        <li>UI improvements and bug fixes throughout Brink</li>
+        <li><b>Free to Download + One-Time Brink Pro Unlock:</b> Try Brink free on iPad, then unlock unlimited projects, citations, and bibliography exports forever for <span data-brink-price>£4.99</span> once (no subscriptions). Previous paid buyers receive Brink Pro automatically.</li>
+        <li><b>One-Tap Project Bibliography Export:</b> Compile an entire research project or folder into an alphabetised Harvard, APA 7, MLA 9, or Chicago Reference List, or export numbered IEEE, BibTeX (.bib), or RIS (.ris) files.</li>
+        <li><b>Academic DOI &amp; CrossRef Auto-Lookup:</b> Paste any DOI or save directly from JSTOR, PubMed, Nature, IEEE, or ScienceDirect to pull verified authors, journal titles, and publication years.</li>
+        <li><b>True PDF Highlighting &amp; Apple Pencil Markup:</b> Highlight academic PDFs in four colours, underline key passages, and write freehand margin notes with Apple Pencil.</li>
+        <li><b>Editorial Oxford Ink &amp; Warm Paper Palette:</b> A calmer, warm-paper reading environment built for long university study sessions.</li>
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
@@ -1079,7 +1073,7 @@
 
   <script>
     (function () {
-      const KEY = 'brink-announce-v1';
+      const KEY = 'brink-announce-v2';
       const closeBtn = document.getElementById('announce-close');
       const moreBtn = document.getElementById('announce-more');
       const overlay = document.getElementById('whatsnew');
@@ -1204,5 +1198,28 @@
       setOpen(false);
     }
   </script>
+
+  <script>
+    (function () {
+      try {
+        var lang = (navigator.language || "").toLowerCase();
+        var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+        var price = "£4.99";
+        if (lang === "en-gb" || tz === "Europe/London") {
+          price = "£4.99";
+        } else if (lang.startsWith("en-us") || lang.startsWith("en-ca") || lang.startsWith("en-au") || tz.startsWith("America/")) {
+          price = "$4.99";
+        } else if (tz.startsWith("Europe/")) {
+          price = "€5.99";
+        }
+        document.querySelectorAll("[data-brink-price]").forEach(function (el) {
+          el.textContent = price;
+        });
+      } catch (e) {}
+    })();
+  </script>
+
 </body>
 </html>
+
+

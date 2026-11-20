@@ -16,17 +16,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:#F5F5F7;
-      --bg2:#ffffff;
-      --bg3:#ECECF0;
-      --surface:#E3E4EA;
+      --bg:#F7F6F2;
+      --bg2:#FDFCFA;
+      --bg3:#EFECE5;
+      --surface:#E6E2D8;
       --border:rgba(0,0,0,0.07);
       --border2:rgba(0,0,0,0.12);
-      --accent:#2563EB;
-      --accent2:#1D4ED8;
-      --text:#0f1117;
-      --text2:#4B5365;
-      --text3:#5D6575;
+      --accent:#1B365D;
+      --accent2:#152A4B;
+      --text:#16181C;
+      --text2:#4A4E58;
+      --text3:#686D78;
       --serif:"New York", ui-serif, "Instrument Serif", Georgia, serif;
       --sans:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "DM Sans", sans-serif;
       --radius:14px;
@@ -167,7 +167,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 44px 0 16px;
-      background: linear-gradient(90deg, rgba(37,99,235,0.13), rgba(37,99,235,0.07));
+      background: linear-gradient(90deg, rgba(27,54,93,0.13), rgba(27,54,93,0.07));
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -462,7 +462,7 @@
     .nav-mobile-menu a:hover,
     .nav-mobile-menu a.active {
       color: var(--accent-text);
-      background: rgba(37,99,235,0.06);
+      background: rgba(27,54,93,0.06);
     }
 
     .page-hero {
@@ -638,7 +638,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent-text);
-      background: rgba(37,99,235,0.08);
+      background: rgba(27,54,93,0.08);
       padding: 5px 12px;
       border-radius: 100px;
       margin-bottom: 16px;
@@ -727,7 +727,7 @@
     .footer-social a:focus-visible,
     .footer-col a:focus-visible,
     .anchor-btn:focus-visible {
-      outline: 3px solid rgba(37,99,235,0.35);
+      outline: 3px solid rgba(27,54,93,0.35);
       outline-offset: 3px;
     }
 
@@ -915,9 +915,9 @@
       /* ---- Theme: auto light / dark (follows device setting) ---- */
     :root {
       color-scheme: light dark;
-      --nav-bg: rgba(245,245,247,0.88);
-      --nav-bg-scrolled: rgba(245,245,247,0.96);
-      --menu-bg: rgba(245,245,247,0.98);
+      --nav-bg: rgba(247,246,242,0.88);
+      --nav-bg-scrolled: rgba(247,246,242,0.96);
+      --menu-bg: rgba(247,246,242,0.98);
       --hover: rgba(0,0,0,0.05);
     }
 
@@ -925,20 +925,20 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0A0A0C;
-        --bg2: #131316;
-        --bg3: #0E0E11;
-        --surface: #1D1D22;
+        --bg: #0E0E0D;
+        --bg2: #161614;
+        --bg3: #121210;
+        --surface: #1F1F1C;
         --border: rgba(255,255,255,0.09);
         --border2: rgba(255,255,255,0.15);
-        --accent2: #7AA7FF;
-        --accent-text: #7AA7FF;
-        --text: #EEF0F4;
-        --text2: #A8AFBE;
-        --text3: #8A93A5;
-        --nav-bg: rgba(10,10,12,0.82);
-        --nav-bg-scrolled: rgba(10,10,12,0.92);
-        --menu-bg: rgba(10,10,12,0.98);
+        --accent2: #6B9AC4;
+        --accent-text: #82AFD6;
+        --text: #F2F0EA;
+        --text2: #B5B2A8;
+        --text3: #8C897F;
+        --nav-bg: rgba(14,14,13,0.84);
+        --nav-bg-scrolled: rgba(14,14,13,0.94);
+        --menu-bg: rgba(14,14,13,0.98);
         --hover: rgba(255,255,255,0.07);
       }
 
@@ -962,8 +962,8 @@
 
   
     /* ---- Foundation: focus, motion ---- */
-    :root { --accent-text: #1D4ED8; }
-    @media (prefers-color-scheme: dark) { :root { --accent-text: #7AA7FF; } }
+    :root { --accent-text: #1B365D; }
+    @media (prefers-color-scheme: dark) { :root { --accent-text: #82AFD6; } }
 
     a:focus-visible,
     button:focus-visible,
@@ -1171,7 +1171,7 @@
 </head>
 <body>
   <script>
-    try { if (localStorage.getItem('brink-announce-v1') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
+    try { if (localStorage.getItem('brink-announce-v2') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
   </script>
 
 
@@ -1203,7 +1203,7 @@
   <div class="announce" id="announce" role="region" aria-label="Site announcement">
     <div class="announce-inner">
       <span class="announce-badge">New</span>
-      <span class="announce-text">Brink’s research workspace just got a major upgrade.</span>
+      <span class="announce-text">Brink 2.0 is here: Free to try on iPad, DOI auto-lookup, full project bibliographies &amp; Apple Pencil PDF markup.</span>
       <button class="announce-cta" id="announce-more" type="button">See what’s new</button>
     </div>
     <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
@@ -1234,7 +1234,7 @@
             <li>General workspace always available</li>
             <li>Projects persist across app launches</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="Sidebar_feature_image01.avif" type="image/avif"><img width="1269" height="1640" loading="lazy" decoding="async" src="Sidebar_feature_image01.jpg" alt="Brink research workspace sidebar" /></picture></div>
+            <div class="fx-shot"><img width="1280" height="880" loading="lazy" decoding="async" src="brink-screenshot.png" alt="Brink research workspace sidebar" /></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
             <div class="fx-text"><span class="feature-tag">Sidebar &amp; Folders</span><h3>Organise research the way you think</h3><p>Inside each project, use folders and subfolders to structure your work around subjects, chapters, assignments or whatever makes sense to you. Expand and collapse sections as your research grows, while keeping the browser and your material side by side.</p><ul class="feature-bullets">
             <li>Nested folders and subfolders</li>
@@ -1242,32 +1242,30 @@
             <li>Expand and collapse folders</li>
             <li>Persistent across sessions</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="folders-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="folders-screenshot.webp" alt="Folders and saved research in the Brink sidebar" /></picture></div>
+            <div class="fx-shot"><picture><source srcset="folders-screenshot.avif" type="image/avif"><img width="1263" height="1640" loading="lazy" decoding="async" src="folders-screenshot.webp" alt="Folders and saved research in the Brink sidebar" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
-            <div class="fx-text"><span class="feature-tag">Research Saving</span><h3>Keep more than links with your research</h3><p>Save websites, notes, images, PDFs and lecture recordings alongside each other. When you save from inside a project, Brink keeps that material with the project you're already working in, helping the whole research trail stay together.</p><ul class="feature-bullets">
-            <li>Websites and articles</li>
-            <li>Quick notes and research notes</li>
-            <li>Images and PDFs</li>
-            <li>Lecture recordings</li>
-            <li>Organised inside project folders</li>
+            <div class="fx-text"><span class="feature-tag">Research Saving &amp; DOI Lookup</span><h3>Auto-fill academic metadata by DOI or directly from the page</h3><p>Save journal articles, websites, notes, PDFs and lecture recordings inside your active project. Paste any DOI to pull verified authors, journal titles and publication years from CrossRef, or let Brink extract academic meta tags directly from JSTOR, PubMed, Nature, IEEE and ScienceDirect.</p><ul class="feature-bullets">
+            <li>CrossRef DOI auto-lookup for verified authors, journal &amp; year</li>
+            <li>Live DOM academic meta tag extraction (Highwire Press, Dublin Core &amp; JSON-LD)</li>
+            <li>Websites, journal papers, notes, images, PDFs &amp; lecture recordings</li>
+            <li>Organised automatically inside project folders</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="save-research-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="save-research-screenshot.webp" alt="Saving research in Brink Browser" /></picture></div>
+            <div class="fx-shot"><img width="1280" height="880" loading="lazy" decoding="async" src="save-research-screenshot.png" alt="Saving research with CrossRef DOI auto-lookup in Brink Browser" /></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
-            <div class="fx-text"><span class="feature-tag">Citations</span><h3>Turn sources into ready-to-use references</h3><p>Brink can pull useful source details from the page you're researching, including information such as the article title, author, publication and date, then build the citation inside the browser.</p><p>Choose Harvard, APA, MLA, IEEE or Chicago and copy either the full reference or the in-text citation when you need it.</p><ul class="feature-bullets">
-            <li>Harvard, APA, MLA, IEEE and Chicago styles</li>
-            <li>Automatic source metadata where available</li>
-            <li>Copy full references separately</li>
-            <li>Copy in-text citations separately</li>
-            <li>IEEE numbered in-text citations</li>
+            <div class="fx-text"><span class="feature-tag">Citations &amp; Bibliography Export</span><h3>One-tap references and complete project bibliographies</h3><p>Generate accurate in-text citations and full references in Harvard, APA 7, MLA 9, Chicago and IEEE. When it’s time to submit your essay or paper, export your entire project or folder as an alphabetised Reference List. or export standard BibTeX (.bib) and RIS (.ris) files for Overleaf, Zotero and Mendeley.</p><ul class="feature-bullets">
+            <li>Harvard, APA 7, MLA 9, Chicago and IEEE citation styles</li>
+            <li>One-tap Project &amp; Folder Bibliography compilation</li>
+            <li>Alphabetised Reference Lists or numbered [1]..[N] IEEE lists</li>
+            <li>Export BibTeX (.bib) and RIS (.ris) files or save as a Project Note</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="citation-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="citation-screenshot.webp" alt="Citation tools in Brink Browser" /></picture></div>
+            <div class="fx-shot"><img width="1280" height="880" loading="lazy" decoding="async" src="citation-screenshot.png" alt="Harvard, APA 7, MLA, Chicago, IEEE citations and project bibliography export in Brink Browser" /></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
             <div class="fx-text"><span class="feature-tag">Highlighting</span><h3>Highlight what matters, without losing the source</h3><p>Select important text on a webpage and highlight it in yellow, green, blue or red. Highlights stay associated with the page so you can return to the material you've already picked out instead of starting again.</p><ul class="feature-bullets">
             <li>Four highlight colours</li>
             <li>Highlights persist when you return</li>
             <li>Useful for extracting key research points</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="highlight-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="highlight-screenshot.webp" alt="Webpage highlighting in Brink Browser" /></picture></div>
+            <div class="fx-shot"><picture><source srcset="highlight-screenshot.avif" type="image/avif"><img width="2360" height="1640" loading="lazy" decoding="async" src="highlight-screenshot.webp" alt="Webpage highlighting in Brink Browser" /></picture></div>
           </article>
         </div>
       </section><section class="fx-panel" id="reading" role="tabpanel" aria-labelledby="tab-reading">
@@ -1290,12 +1288,11 @@
           </ul></div>
             <div class="fx-shot"><img src="readermode.png" alt="Reader Mode in Brink Browser" /></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
-            <div class="fx-text"><span class="feature-tag">PDF Viewer</span><h3>Work with PDFs without leaving Brink</h3><p>Open PDFs directly from the web or from saved research. Fill supported form fields, work with interactive controls and save your changes back with your research so the document is ready when you return.</p><ul class="feature-bullets">
-            <li>Open PDFs from the web or saved research</li>
-            <li>Fill supported interactive form fields</li>
-            <li>Use check boxes and radio buttons</li>
-            <li>Save edits back with your research</li>
-            <li>Reopen saved PDFs across sessions</li>
+            <div class="fx-text"><span class="feature-tag">PDF Highlighting &amp; Apple Pencil</span><h3>Highlight papers and annotate margins with Apple Pencil</h3><p>Open academic PDFs directly inside your research project. Highlight passages in four academic colour swatches (Yellow, Green, Blue, Rose), underline key arguments, draw freehand margin annotations with Apple Pencil, and save your annotated PDF straight back to your project.</p><ul class="feature-bullets">
+            <li>Four academic PDF highlight swatches &amp; text underlining</li>
+            <li>Freehand Apple Pencil &amp; ink margin annotations with undo support</li>
+            <li>Fill interactive PDF form fields, checkboxes &amp; radio buttons</li>
+            <li>Annotated PDFs persist locally inside your research project</li>
           </ul></div>
             <div class="fx-shot"><img src="pdfviewer-screenshot.png" alt="PDF viewer in Brink Browser" /></div>
           </article>
@@ -1322,42 +1319,42 @@
             <li>Study Mode integration</li>
             <li>Persistent countdown while studying</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="focus-session-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="focus-session-screenshot.webp" alt="Focus session timer in Brink Browser" /></picture></div>
+            <div class="fx-shot"><picture><source srcset="focus-session-screenshot.avif" type="image/avif"><img width="2360" height="1640" loading="lazy" decoding="async" src="focus-session-screenshot.webp" alt="Focus session timer in Brink Browser" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
-            <div class="fx-text"><span class="feature-tag">Lecture Capture</span><h3>Record lectures without leaving your research</h3><p>Start a lecture recording inside Brink and continue browsing while it runs. Save the recording with your research, rename it and play it back later alongside the notes, sources and documents from the same project.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Lecture Capture</span><h3>Record and transcribe lectures on device</h3><p>Start a lecture recording inside Brink and continue browsing while it runs. With Brink Pro, recordings automatically transcribe privately on your iPad into searchable text indexed in Brink Spotlight (⌘K).</p><ul class="feature-bullets">
             <li>Record while continuing to browse</li>
-            <li>Rename and replay recordings</li>
-            <li>Save recordings with research</li>
-            <li>Keep audio alongside notes and sources</li>
+            <li>100% on-device speech-to-text transcription</li>
+            <li>Search spoken transcripts in Brink Spotlight</li>
+            <li>Copy transcripts or save them as project notes</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="lecture-capture-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="lecture-capture-screenshot.webp" alt="Lecture Capture in Brink Browser" /></picture></div>
+            <div class="fx-shot"><picture><source srcset="lecture-capture-screenshot.avif" type="image/avif"><img width="2360" height="1640" loading="lazy" decoding="async" src="lecture-capture-screenshot.webp" alt="Lecture Capture in Brink Browser" /></picture></div>
           </article>
         </div>
       </section><section class="fx-panel" id="privacy" role="tabpanel" aria-labelledby="tab-privacy">
         <div class="fx-intro"><h2>Your research stays yours, your workspace feels yours</h2><p>Your browsing content, notes, saved research and recordings aren't collected by Brink. Limited analytics and diagnostics help improve the app, while the work you create stays on your device.</p></div>
         <div class="fx-car" role="region" aria-roledescription="carousel" aria-label="Privacy &amp; Design features">
           <div class="fx-head">
-            <div class="fx-pills" role="tablist" aria-label="Choose a feature"><button class="fx-pill" role="tab" type="button" aria-selected="false">Ad Blocking</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Workspace Themes</button></div>
+            <div class="fx-pills" role="tablist" aria-label="Choose a feature"><button class="fx-pill" role="tab" type="button" aria-selected="false">Brink Shield &amp; Lock</button><button class="fx-pill" role="tab" type="button" aria-selected="false">Workspace Themes</button></div>
             <div class="fx-nav"><span class="fx-count" aria-live="polite"></span>
               <button class="fx-arrow fx-prev" type="button" aria-label="Previous feature"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
               <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
           </div>
           <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
-            <div class="fx-text"><span class="feature-tag">Ad Blocking</span><h3>Cleaner pages with fewer distractions</h3><p>Brink includes built-in ad blocking to reduce unwanted page clutter while you browse. There's no separate extension to install, helping research pages stay cleaner and easier to read.</p><ul class="feature-bullets">
-            <li>Built directly into Brink</li>
-            <li>Reduces distracting page content</li>
-            <li>No separate extension required</li>
-            <li>Can be controlled from Brink settings</li>
+            <div class="fx-text"><span class="feature-tag">Brink Shield &amp; Security</span><h3>Cleaner pages and biometric privacy built in</h3><p>Tap the address-bar shield to see live HTTPS status, blocked trackers, cookie banner hiding, and tracking-parameter stripping. Lock Brink or Private Tabs with Face ID or Touch ID on shared iPads.</p><ul class="feature-bullets">
+            <li>70+ tracker networks &amp; 90+ cookie banners blocked</li>
+            <li>Automatic HTTPS upgrades &amp; tracking-parameter stripping</li>
+            <li>Face ID / Touch ID lock for Brink &amp; Private Tabs</li>
+            <li>Choose Google, DuckDuckGo, Ecosia, Brave, Kagi or Scholar</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="adblock-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="adblock-screenshot.webp" alt="Ad blocking in Brink Browser" /></picture></div>
+            <div class="fx-shot"><picture><source srcset="adblock-screenshot.avif" type="image/avif"><img width="2360" height="1640" loading="lazy" decoding="async" src="adblock-screenshot.webp" alt="Brink Shield in Brink Browser" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
-            <div class="fx-text"><span class="feature-tag">Workspace Themes</span><h3>Make the workspace feel like your own</h3><p>Personalise Brink with workspace colours and light or dark appearances. The interface adapts around your chosen look while Reader Mode keeps its own controls for the page you're reading.</p><ul class="feature-bullets">
-            <li>Multiple workspace colour choices</li>
-            <li>Light and dark appearances</li>
-            <li>System-aware theme behaviour</li>
+            <div class="fx-text"><span class="feature-tag">Workspace Themes</span><h3>Make the workspace feel like your own</h3><p>Personalise Brink with 13 editorial workspace colours, left or right sidebar placement, compact sidebar mode, and light or dark appearances with matching iPadOS icons.</p><ul class="feature-bullets">
+            <li>13 editorial workspace colour tints</li>
+            <li>Left or right sidebar + compact sidebar mode</li>
+            <li>Light, dark, and tinted iPadOS app icons</li>
             <li>Separate Reader Mode controls</li>
           </ul></div>
-            <div class="fx-shot"><picture><source srcset="theme-screenshot.avif" type="image/avif"><img width="2000" height="1390" loading="lazy" decoding="async" src="theme-screenshot.webp" alt="Workspace themes in Brink Browser" /></picture></div>
+            <div class="fx-shot"><picture><source srcset="theme-screenshot.avif" type="image/avif"><img width="2360" height="1640" loading="lazy" decoding="async" src="theme-screenshot.webp" alt="Workspace themes in Brink Browser" /></picture></div>
           </article>
         </div>
       </section>
@@ -1367,21 +1364,15 @@
   <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
     <div class="whatsnew">
       <button class="whatsnew-x" id="whatsnew-x" type="button" aria-label="Close">✕</button>
-      <div class="whatsnew-label">Latest update</div>
-      <h2 id="whatsnew-title">What’s new in Brink</h2>
-      <p class="whatsnew-lead">Brink’s research workspace just got a major upgrade.</p>
+      <div class="whatsnew-label">Brink 2.0 Academic Release</div>
+      <h2 id="whatsnew-title">What’s new in Brink 2.0</h2>
+      <p class="whatsnew-lead">Now free to download on iPad, with on-device lecture transcription, Project Bibliographies, CrossRef DOI lookup, and Brink Shield.</p>
       <ul class="whatsnew-list">
-        <li>Organise your research into separate projects</li>
-        <li>Keep tabs, folders and saved research organised by project</li>
-        <li>Swipe between research projects from the sidebar</li>
-        <li>Improved citations, including Harvard, IEEE and Chicago styles</li>
-        <li>Improved user experience in the sidebar</li>
-        <li>Better folder organisation with nested folders</li>
-        <li>Press and hold New Tab to create a private one</li>
-        <li>Improved PDFs, images, notes and lecture captures</li>
-        <li>Smarter Brink Spotlight search across your research and tabs</li>
-        <li>Improved browser back and forward navigation</li>
-        <li>UI improvements and bug fixes throughout Brink</li>
+        <li><b>Free to Download + One-Time Brink Pro Unlock:</b> Try Brink free on iPad, then unlock unlimited projects, citations, lecture transcripts, and bibliography exports forever for <span data-brink-price>£4.99</span> once (no subscriptions). Previous paid buyers receive Brink Pro automatically.</li>
+        <li><b>On-Device Lecture Transcription:</b> Automatically transcribe recorded lectures privately on your iPad into searchable text indexed in Brink Spotlight (⌘K).</li>
+        <li><b>One-Tap Project Bibliography Export:</b> Compile an entire research project or folder into an alphabetised Harvard, APA 7, MLA 9, or Chicago Reference List, or export numbered IEEE, BibTeX (.bib), or RIS (.ris) files.</li>
+        <li><b>Academic DOI Auto-Lookup &amp; Apple Pencil PDF Markup:</b> Pull verified metadata via CrossRef and highlight, underline, or annotate PDFs directly with Apple Pencil.</li>
+        <li><b>Brink Shield, Face ID / Touch ID Lock &amp; Custom Search Engines:</b> Tap the address-bar shield for live HTTPS status, 70+ tracker rules, and 90+ cookie-banner rules, lock Brink or Private Tabs with biometrics, and pick Google, DuckDuckGo, Ecosia, Brave, Kagi, or Google Scholar.</li>
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
@@ -1393,7 +1384,7 @@
 
   <script>
     (function () {
-      const KEY = 'brink-announce-v1';
+      const KEY = 'brink-announce-v2';
       const closeBtn = document.getElementById('announce-close');
       const moreBtn = document.getElementById('announce-more');
       const overlay = document.getElementById('whatsnew');
@@ -1489,7 +1480,7 @@
       data-id="JoshBradley"
       data-description="Support me on Buy me a coffee!"
       data-message="Thanks for visiting, support me here :)"
-      data-color="#2563EB"
+      data-color="#1B365D"
       data-position="Right"
       data-x_margin="18"
       data-y_margin="18">
@@ -1627,5 +1618,28 @@
       });
     })();
   </script>
+
+  <script>
+    (function () {
+      try {
+        var lang = (navigator.language || "").toLowerCase();
+        var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+        var price = "£4.99";
+        if (lang === "en-gb" || tz === "Europe/London") {
+          price = "£4.99";
+        } else if (lang.startsWith("en-us") || lang.startsWith("en-ca") || lang.startsWith("en-au") || tz.startsWith("America/")) {
+          price = "$4.99";
+        } else if (tz.startsWith("Europe/")) {
+          price = "€5.99";
+        }
+        document.querySelectorAll("[data-brink-price]").forEach(function (el) {
+          el.textContent = price;
+        });
+      } catch (e) {}
+    })();
+  </script>
+
 </body>
 </html>
+
+

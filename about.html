@@ -20,17 +20,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:#F5F5F7;
-      --bg2:#ffffff;
-      --bg3:#ECECF0;
-      --surface:#E3E4EA;
+      --bg:#F7F6F2;
+      --bg2:#FDFCFA;
+      --bg3:#EFECE5;
+      --surface:#E6E2D8;
       --border:rgba(0,0,0,0.07);
       --border2:rgba(0,0,0,0.12);
-      --accent:#2563EB;
-      --accent2:#1D4ED8;
-      --text:#0f1117;
-      --text2:#4B5365;
-      --text3:#5D6575;
+      --accent:#1B365D;
+      --accent2:#152A4B;
+      --text:#16181C;
+      --text2:#4A4E58;
+      --text3:#686D78;
       --serif:"New York", ui-serif, "Instrument Serif", Georgia, serif;
       --sans:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "DM Sans", sans-serif;
     }
@@ -169,7 +169,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 44px 0 16px;
-      background: linear-gradient(90deg, rgba(37,99,235,0.13), rgba(37,99,235,0.07));
+      background: linear-gradient(90deg, rgba(27,54,93,0.13), rgba(27,54,93,0.07));
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -461,7 +461,7 @@
     .nav-mobile-menu a:hover,
     .nav-mobile-menu a.active {
       color: var(--accent-text);
-      background: rgba(37,99,235,0.06);
+      background: rgba(27,54,93,0.06);
     }
 
     .page-hero {
@@ -624,7 +624,7 @@
       justify-content: center;
       margin-bottom: 20px;
       border-radius: 11px;
-      background: rgba(37,99,235,0.09);
+      background: rgba(27,54,93,0.09);
       color: var(--accent2);
     }
 
@@ -748,7 +748,7 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      box-shadow: 0 10px 26px rgba(37,99,235,0.20);
+      box-shadow: 0 10px 26px rgba(27,54,93,0.20);
       transition: transform 0.2s, opacity 0.2s;
     }
 
@@ -775,7 +775,7 @@
     .btn:focus-visible,
     .footer-social a:focus-visible,
     .footer-col a:focus-visible {
-      outline: 3px solid rgba(37,99,235,0.35);
+      outline: 3px solid rgba(27,54,93,0.35);
       outline-offset: 3px;
     }
 
@@ -951,9 +951,9 @@
       /* ---- Theme: auto light / dark (follows device setting) ---- */
     :root {
       color-scheme: light dark;
-      --nav-bg: rgba(245,245,247,0.88);
-      --nav-bg-scrolled: rgba(245,245,247,0.96);
-      --menu-bg: rgba(245,245,247,0.98);
+      --nav-bg: rgba(247,246,242,0.88);
+      --nav-bg-scrolled: rgba(247,246,242,0.96);
+      --menu-bg: rgba(247,246,242,0.98);
       --hover: rgba(0,0,0,0.05);
     }
 
@@ -961,20 +961,20 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0A0A0C;
-        --bg2: #131316;
-        --bg3: #0E0E11;
-        --surface: #1D1D22;
+        --bg: #0E0E0D;
+        --bg2: #161614;
+        --bg3: #121210;
+        --surface: #1F1F1C;
         --border: rgba(255,255,255,0.09);
         --border2: rgba(255,255,255,0.15);
-        --accent2: #7AA7FF;
-        --accent-text: #7AA7FF;
-        --text: #EEF0F4;
-        --text2: #A8AFBE;
-        --text3: #8A93A5;
-        --nav-bg: rgba(10,10,12,0.82);
-        --nav-bg-scrolled: rgba(10,10,12,0.92);
-        --menu-bg: rgba(10,10,12,0.98);
+        --accent2: #6B9AC4;
+        --accent-text: #82AFD6;
+        --text: #F2F0EA;
+        --text2: #B5B2A8;
+        --text3: #8C897F;
+        --nav-bg: rgba(14,14,13,0.84);
+        --nav-bg-scrolled: rgba(14,14,13,0.94);
+        --menu-bg: rgba(14,14,13,0.98);
         --hover: rgba(255,255,255,0.07);
       }
 
@@ -998,8 +998,8 @@
 
   
     /* ---- Foundation: focus, motion ---- */
-    :root { --accent-text: #1D4ED8; }
-    @media (prefers-color-scheme: dark) { :root { --accent-text: #7AA7FF; } }
+    :root { --accent-text: #1B365D; }
+    @media (prefers-color-scheme: dark) { :root { --accent-text: #82AFD6; } }
 
     a:focus-visible,
     button:focus-visible,
@@ -1132,6 +1132,7 @@
     .story-copy p { font-size: 17px; line-height: 1.75; max-width: 38rem; }
     .values-list { border-top: 1px solid var(--border2); }
     .value-row { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 72px; padding: 36px 0; border-bottom: 1px solid var(--border2); }
+    .value-num { display:block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 6px; }
     .value-row h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.15; letter-spacing: -0.015em; margin: 0; }
     .value-row p { color: var(--text2); font-size: 17px; line-height: 1.7; max-width: 38rem; margin: 0; }
     .independent { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); align-items: start; }
@@ -1149,7 +1150,7 @@
 
 <body>
   <script>
-    try { if (localStorage.getItem('brink-announce-v1') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
+    try { if (localStorage.getItem('brink-announce-v2') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
   </script>
 
 
@@ -1181,7 +1182,7 @@
   <div class="announce" id="announce" role="region" aria-label="Site announcement">
     <div class="announce-inner">
       <span class="announce-badge">New</span>
-      <span class="announce-text">Brink’s research workspace just got a major upgrade.</span>
+      <span class="announce-text">Brink 2.0 is here: Free to try on iPad, DOI auto-lookup, full project bibliographies &amp; Apple Pencil PDF markup.</span>
       <button class="announce-cta" id="announce-more" type="button">See what’s new</button>
     </div>
     <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
@@ -1253,22 +1254,22 @@
 
       <div class="values-list">
         <div class="value-row reveal">
-          <h3>Your research stays on your device</h3>
+          <h3><span class="value-num">01 · PRIVACY</span>Your research stays on your device</h3>
           <p>Your browsing history, searches, projects, saved pages, notes and lecture recordings aren't collected by Brink. Limited analytics and diagnostics help me fix crashes and improve the app. What you make stays on your device.</p>
         </div>
 
         <div class="value-row reveal">
-          <h3>Built for research</h3>
+          <h3><span class="value-num">02 · PURPOSE</span>Built for research</h3>
           <p>Projects, folders, citations, Reader Mode, PDFs, notes and recording are there to help with research. If a feature doesn't do that, it doesn't go in.</p>
         </div>
 
         <div class="value-row reveal">
-          <h3>Room to focus</h3>
+          <h3><span class="value-num">03 · CALM</span>Room to focus</h3>
           <p>Focus sessions, Study Mode and website blocking are there for when you need to get something finished.</p>
         </div>
 
         <div class="value-row reveal">
-          <h3>I read the feedback</h3>
+          <h3><span class="value-num">04 · CRAFT</span>I read the feedback</h3>
           <p>Brink is independently developed. The feedback I get decides what I improve, simplify or build next.</p>
         </div>
       </div>
@@ -1279,9 +1280,9 @@
     <div class="container">
       <div class="independent reveal">
         <div>
-          <h2>One developer. One paid app.</h2>
-          <p>Brink has no investors and no ads. It's paid for by the people who buy it, which is what keeps it independent.</p>
-          <p>Your £4.99 helps fund development, maintenance and improvements.</p>
+          <h2>One developer. Free to try, pay once to own forever.</h2>
+          <p>Brink has no investors, no data harvesting, and no subscriptions. You can download Brink and start researching for free, then unlock Brink Pro forever with a single one-time purchase.</p>
+          <p>Your one-time <span data-brink-price>£4.99</span> unlock directly funds independent development, maintenance and academic features.</p>
         </div>
 
         <div class="independent-card">
@@ -1305,21 +1306,15 @@
   <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
     <div class="whatsnew">
       <button class="whatsnew-x" id="whatsnew-x" type="button" aria-label="Close">✕</button>
-      <div class="whatsnew-label">Latest update</div>
-      <h2 id="whatsnew-title">What’s new in Brink</h2>
-      <p class="whatsnew-lead">Brink’s research workspace just got a major upgrade.</p>
+      <div class="whatsnew-label">Brink 2.0 Academic Release</div>
+      <h2 id="whatsnew-title">What’s new in Brink 2.0</h2>
+      <p class="whatsnew-lead">Now free to download on iPad, with one-tap Project Bibliographies, CrossRef DOI lookup, and Apple Pencil PDF markup.</p>
       <ul class="whatsnew-list">
-        <li>Organise your research into separate projects</li>
-        <li>Keep tabs, folders and saved research organised by project</li>
-        <li>Swipe between research projects from the sidebar</li>
-        <li>Improved citations, including Harvard, IEEE and Chicago styles</li>
-        <li>Improved user experience in the sidebar</li>
-        <li>Better folder organisation with nested folders</li>
-        <li>Press and hold New Tab to create a private one</li>
-        <li>Improved PDFs, images, notes and lecture captures</li>
-        <li>Smarter Brink Spotlight search across your research and tabs</li>
-        <li>Improved browser back and forward navigation</li>
-        <li>UI improvements and bug fixes throughout Brink</li>
+        <li><b>Free to Download + One-Time Brink Pro Unlock:</b> Try Brink free on iPad, then unlock unlimited projects, citations, and bibliography exports forever for <span data-brink-price>£4.99</span> once (no subscriptions). Previous paid buyers receive Brink Pro automatically.</li>
+        <li><b>One-Tap Project Bibliography Export:</b> Compile an entire research project or folder into an alphabetised Harvard, APA 7, MLA 9, or Chicago Reference List, or export numbered IEEE, BibTeX (.bib), or RIS (.ris) files.</li>
+        <li><b>Academic DOI &amp; CrossRef Auto-Lookup:</b> Paste any DOI or save directly from JSTOR, PubMed, Nature, IEEE, or ScienceDirect to pull verified authors, journal titles, and publication years.</li>
+        <li><b>True PDF Highlighting &amp; Apple Pencil Markup:</b> Highlight academic PDFs in four colours, underline key passages, and write freehand margin notes with Apple Pencil.</li>
+        <li><b>Editorial Oxford Ink &amp; Warm Paper Palette:</b> A calmer, warm-paper reading environment built for long university study sessions.</li>
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
@@ -1331,7 +1326,7 @@
 
   <script>
     (function () {
-      const KEY = 'brink-announce-v1';
+      const KEY = 'brink-announce-v2';
       const closeBtn = document.getElementById('announce-close');
       const moreBtn = document.getElementById('announce-more');
       const overlay = document.getElementById('whatsnew');
@@ -1428,7 +1423,7 @@
       data-id="JoshBradley"
       data-description="Support me on Buy me a coffee!"
       data-message="Thanks for visiting, support me here :)"
-      data-color="#2563EB"
+      data-color="#1B365D"
       data-position="Right"
       data-x_margin="18"
       data-y_margin="18">
@@ -1496,5 +1491,28 @@
     }
   </script>
 
+
+  <script>
+    (function () {
+      try {
+        var lang = (navigator.language || "").toLowerCase();
+        var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+        var price = "£4.99";
+        if (lang === "en-gb" || tz === "Europe/London") {
+          price = "£4.99";
+        } else if (lang.startsWith("en-us") || lang.startsWith("en-ca") || lang.startsWith("en-au") || tz.startsWith("America/")) {
+          price = "$4.99";
+        } else if (tz.startsWith("Europe/")) {
+          price = "€5.99";
+        }
+        document.querySelectorAll("[data-brink-price]").forEach(function (el) {
+          el.textContent = price;
+        });
+      } catch (e) {}
+    })();
+  </script>
+
 </body>
 </html>
+
+

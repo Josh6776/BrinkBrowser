@@ -21,17 +21,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F5F5F7;
-      --bg2: #ffffff;
-      --bg3: #ECECF0;
-      --surface: #E3E4EA;
+      --bg: #F7F6F2;
+      --bg2: #FDFCFA;
+      --bg3: #EFECE5;
+      --surface: #E6E2D8;
       --border: rgba(0,0,0,0.07);
       --border2: rgba(0,0,0,0.12);
-      --accent: #2563EB;
-      --accent2: #1D4ED8;
-      --text: #0f1117;
-      --text2: #4B5365;
-      --text3: #5D6575;
+      --accent: #1B365D;
+      --accent2: #152A4B;
+      --text: #16181C;
+      --text2: #4A4E58;
+      --text3: #686D78;
       --serif: "New York", ui-serif, "Instrument Serif", Georgia, serif;
       --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "DM Sans", sans-serif;
       --radius: 14px;
@@ -197,7 +197,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 44px 0 16px;
-      background: linear-gradient(90deg, rgba(37,99,235,0.13), rgba(37,99,235,0.07));
+      background: linear-gradient(90deg, rgba(27,54,93,0.13), rgba(27,54,93,0.07));
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px) saturate(160%);
       -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -504,7 +504,7 @@
     .text-link:focus-visible,
     .footer-col a:focus-visible,
     .footer-social a:focus-visible {
-      outline: 3px solid rgba(37,99,235,0.35);
+      outline: 3px solid rgba(27,54,93,0.35);
       outline-offset: 3px;
     }
 
@@ -703,9 +703,9 @@
       /* ---- Theme: auto light / dark (follows device setting) ---- */
     :root {
       color-scheme: light dark;
-      --nav-bg: rgba(245,245,247,0.88);
-      --nav-bg-scrolled: rgba(245,245,247,0.96);
-      --menu-bg: rgba(245,245,247,0.98);
+      --nav-bg: rgba(247,246,242,0.88);
+      --nav-bg-scrolled: rgba(247,246,242,0.96);
+      --menu-bg: rgba(247,246,242,0.98);
       --hover: rgba(0,0,0,0.05);
     }
 
@@ -713,20 +713,20 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0A0A0C;
-        --bg2: #131316;
-        --bg3: #0E0E11;
-        --surface: #1D1D22;
+        --bg: #0E0E0D;
+        --bg2: #161614;
+        --bg3: #121210;
+        --surface: #1F1F1C;
         --border: rgba(255,255,255,0.09);
         --border2: rgba(255,255,255,0.15);
-        --accent2: #7AA7FF;
-        --accent-text: #7AA7FF;
-        --text: #EEF0F4;
-        --text2: #A8AFBE;
-        --text3: #8A93A5;
-        --nav-bg: rgba(10,10,12,0.82);
-        --nav-bg-scrolled: rgba(10,10,12,0.92);
-        --menu-bg: rgba(10,10,12,0.98);
+        --accent2: #6B9AC4;
+        --accent-text: #82AFD6;
+        --text: #F2F0EA;
+        --text2: #B5B2A8;
+        --text3: #8C897F;
+        --nav-bg: rgba(14,14,13,0.84);
+        --nav-bg-scrolled: rgba(14,14,13,0.94);
+        --menu-bg: rgba(14,14,13,0.98);
         --hover: rgba(255,255,255,0.07);
       }
 
@@ -744,8 +744,8 @@
 
   
     /* ---- Foundation: focus, motion ---- */
-    :root { --accent-text: #1D4ED8; }
-    @media (prefers-color-scheme: dark) { :root { --accent-text: #7AA7FF; } }
+    :root { --accent-text: #1B365D; }
+    @media (prefers-color-scheme: dark) { :root { --accent-text: #82AFD6; } }
 
     a:focus-visible,
     button:focus-visible,
@@ -1523,7 +1523,7 @@
 <body>
 
   <script>
-    try { if (localStorage.getItem('brink-announce-v1') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
+    try { if (localStorage.getItem('brink-announce-v2') === 'dismissed') document.documentElement.classList.add('announce-off'); } catch (e) {}
   </script>
 
   <nav id="main-nav">
@@ -1554,7 +1554,7 @@
   <div class="announce" id="announce" role="region" aria-label="Site announcement">
     <div class="announce-inner">
       <span class="announce-badge">New</span>
-      <span class="announce-text">Brink’s research workspace just got a major upgrade.</span>
+      <span class="announce-text">Brink 2.0 is here: Free to try on iPad, DOI auto-lookup, full project bibliographies &amp; Apple Pencil PDF markup.</span>
       <button class="announce-cta" id="announce-more" type="button">See what’s new</button>
     </div>
     <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
@@ -1563,7 +1563,7 @@
     <header class="hero">
     <div class="wrap">
       <h1>The iPad browser built for research, not just browsing.</h1>
-      <p class="hero-sub">Projects, Harvard &amp; APA citations, PDF markup, and lecture recording in one workspace. £4.99 once. No subscriptions.</p>
+      <p class="hero-sub">Projects, DOI auto-lookup, one-tap Harvard &amp; APA bibliographies, Apple Pencil PDF markup, and live lecture transcripts in one iPad workspace. Free to download · <span data-brink-price>£4.99</span> once for Brink Pro. No subscriptions.</p>
       <div class="hero-cta">
         <a class="appstore-badge lg" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82"></picture></a>
         <span class="req glass">Requires iPadOS 18.0 or later</span>
@@ -1645,7 +1645,7 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 id="cite-h">Pick a style. Get the reference.</h2>
-        <p>Brink builds a full reference and an in-text citation in Harvard, APA, MLA, Chicago and IEEE. Choose a style to see it, then copy it.</p>
+        <p>Auto-fill verified metadata by DOI via CrossRef, generate single references or in-text citations in Harvard, APA 7, MLA 9, Chicago and IEEE, or export an entire project’s Reference List, BibTeX (.bib) or RIS (.ris) in one tap.</p>
       </div>
       <div class="cite-demo">
         <div class="cite-source">
@@ -1658,6 +1658,7 @@
             <dt>Editor</dt><dd>Gordon H. Bower</dd>
             <dt>Publisher</dt><dd>Academic Press</dd>
             <dt>Pages</dt><dd>47–89</dd>
+            <dt>DOI</dt><dd><code>10.1016/S0079-7421(08)60452-1</code> · <strong style="color:var(--accent-text)">CrossRef Verified ✓</strong></dd>
           </dl>
         </div>
         <div class="cite-card" data-cite-mount id="cite-main"></div>
@@ -1784,8 +1785,8 @@
         </article>
 
         <article class="bt bt-pdf glass">
-          <h3>Interactive PDFs</h3>
-          <p>Annotate and fill supported form fields.</p>
+          <h3>PDF Highlighting &amp; Apple Pencil</h3>
+          <p>Highlight in 4 colours, underline passages, draw margin notes with Apple Pencil, and fill PDF forms.</p>
           <div class="pdf-sheet">
             <p>Dual-task studies <mark>load the central executive</mark> while participants reason.</p>
             <label for="pdf-name">Name</label>
@@ -1858,7 +1859,7 @@
   <section class="closer" id="download" aria-labelledby="dl-h">
     <div class="wrap">
       <h2 id="dl-h">Research without the mess.</h2>
-      <p>One iPad browser for finding sources, organising projects, building citations and staying focused. £4.99 once. No subscription.</p>
+      <p>One iPad browser for finding sources, organising projects, compiling bibliographies and staying focused. Free to download · <span data-brink-price>£4.99</span> once for Brink Pro. No subscription.</p>
       <div class="hero-cta">
         <a class="appstore-badge lg" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82"></picture></a>
         <span class="req glass">Requires iPadOS 18.0 or later</span>
@@ -1869,21 +1870,15 @@
 <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
     <div class="whatsnew">
       <button class="whatsnew-x" id="whatsnew-x" type="button" aria-label="Close">✕</button>
-      <div class="whatsnew-label">Latest update</div>
-      <h2 id="whatsnew-title">What’s new in Brink</h2>
-      <p class="whatsnew-lead">Brink’s research workspace just got a major upgrade.</p>
+      <div class="whatsnew-label">Brink 2.0 Academic Release</div>
+      <h2 id="whatsnew-title">What’s new in Brink 2.0</h2>
+      <p class="whatsnew-lead">Now free to download on iPad, with one-tap Project Bibliographies, CrossRef DOI lookup, and Apple Pencil PDF markup.</p>
       <ul class="whatsnew-list">
-        <li>Organise your research into separate projects</li>
-        <li>Keep tabs, folders and saved research organised by project</li>
-        <li>Swipe between research projects from the sidebar</li>
-        <li>Improved citations, including Harvard, IEEE and Chicago styles</li>
-        <li>Improved user experience in the sidebar</li>
-        <li>Better folder organisation with nested folders</li>
-        <li>Press and hold New Tab to create a private one</li>
-        <li>Improved PDFs, images, notes and lecture captures</li>
-        <li>Smarter Brink Spotlight search across your research and tabs</li>
-        <li>Improved browser back and forward navigation</li>
-        <li>UI improvements and bug fixes throughout Brink</li>
+        <li><b>Free to Download + One-Time Brink Pro Unlock:</b> Try Brink free on iPad, then unlock unlimited projects, citations, and bibliography exports forever for <span data-brink-price>£4.99</span> once (no subscriptions). Previous paid buyers receive Brink Pro automatically.</li>
+        <li><b>One-Tap Project Bibliography Export:</b> Compile an entire research project or folder into an alphabetised Harvard, APA 7, MLA 9, or Chicago Reference List, or export numbered IEEE, BibTeX (.bib), or RIS (.ris) files.</li>
+        <li><b>Academic DOI &amp; CrossRef Auto-Lookup:</b> Paste any DOI or save directly from JSTOR, PubMed, Nature, IEEE, or ScienceDirect to pull verified authors, journal titles, and publication years.</li>
+        <li><b>True PDF Highlighting &amp; Apple Pencil Markup:</b> Highlight academic PDFs in four colours, underline key passages, and write freehand margin notes with Apple Pencil.</li>
+        <li><b>Editorial Oxford Ink &amp; Warm Paper Palette:</b> A calmer, warm-paper reading environment built for long university study sessions.</li>
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
@@ -1929,7 +1924,8 @@
           </svg>
           <img class="foundrlist-verify" src="https://www.foundrlist.com/api/badge/appstore" alt="Featured on FoundrList" width="150" height="48" loading="lazy" aria-hidden="true" />
         </a>
-      </div>
+
+        </div>
 
       <div class="footer-col">
         <div class="footer-col-title">Product</div>
@@ -1960,7 +1956,7 @@
       data-id="JoshBradley"
       data-description="Support me on Buy me a coffee!"
       data-message="Thanks for visiting, support me here :)"
-      data-color="#2563EB"
+      data-color="#1B365D"
       data-position="Right"
       data-x_margin="18"
       data-y_margin="18">
@@ -1970,7 +1966,7 @@
   <script>
     // Announcement bar + What's new modal
     (function () {
-      const KEY = 'brink-announce-v1';
+      const KEY = 'brink-announce-v2';
       const closeBtn = document.getElementById('announce-close');
       const moreBtn = document.getElementById('announce-more');
       const overlay = document.getElementById('whatsnew');
@@ -2187,8 +2183,10 @@
               '<p class="cite-label">Full reference</p><p class="cite-ref"></p>' +
               '<p class="cite-label">In-text citation</p><p class="cite-in"></p>' +
               '<div class="cite-actions">' +
-                '<button type="button" class="cite-copy" data-copy="ref">Copy citation</button>' +
-                '<button type="button" class="cite-copy alt" data-copy="in">Copy in-text</button>' +
+                '<button type="button" class="cite-copy" data-copy="ref">Copy Full Reference</button>' +
+                '<button type="button" class="cite-copy alt" data-copy="in">Copy In-Text</button>' +
+                '<button type="button" class="cite-copy alt" data-copy="bib">Copy Project Bibliography (3)</button>' +
+                '<button type="button" class="cite-copy alt" data-copy="bibtex">Copy BibTeX (.bib)</button>' +
               '</div>' +
             '</div>' +
           '</div>';
@@ -2222,12 +2220,29 @@
 
         $$('.cite-copy', root).forEach((btn) => {
           btn.addEventListener('click', async () => {
-            const isRef = btn.dataset.copy === 'ref';
-            const text = plain(isRef ? STYLES[current].ref : STYLES[current].inText);
+            const mode = btn.dataset.copy;
+            let text = '';
+            let msg = '';
+            if (mode === 'ref') {
+              text = plain(STYLES[current].ref);
+              msg = STYLES[current].label + ' reference copied';
+            } else if (mode === 'in') {
+              text = plain(STYLES[current].inText);
+              msg = STYLES[current].label + ' in-text citation copied';
+            } else if (mode === 'bib') {
+              text = 'References (' + STYLES[current].label + ')\n\n' +
+                plain(STYLES[current].ref) + '\n\n' +
+                "Cowan, N. (2001) 'The magical number 4 in short-term memory', Behavioral and Brain Sciences, 24(1), pp. 87–114. doi:10.1017/S0140525X01003922.\n\n" +
+                "Miller, G.A. (1956) 'The magical number seven, plus or minus two', Psychological Review, 63(2), pp. 81–97. doi:10.1037/h0043158.";
+              msg = 'Alphabetised 3-source ' + STYLES[current].label + ' project bibliography copied';
+            } else if (mode === 'bibtex') {
+              text = '@incollection{baddeley1974working,\n  author = {Baddeley, Alan D. and Hitch, Graham},\n  title = {Working Memory},\n  booktitle = {The Psychology of Learning and Motivation},\n  volume = {8},\n  pages = {47--89},\n  year = {1974},\n  publisher = {Academic Press},\n  doi = {10.1016/S0079-7421(08)60452-1}\n}';
+              msg = 'BibTeX (.bib) entry copied for Overleaf / Zotero';
+            }
             const ok = await copyText(text);
             if (ok) {
               haptic();
-              say(STYLES[current].label + (isRef ? ' reference copied' : ' in-text citation copied'));
+              say(msg);
             } else {
               say('Copy is not available here. Select the text instead.');
             }
@@ -2366,5 +2381,28 @@
     })();
   </script>
 
+
+  <script>
+    (function () {
+      try {
+        var lang = (navigator.language || "").toLowerCase();
+        var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+        var price = "£4.99";
+        if (lang === "en-gb" || tz === "Europe/London") {
+          price = "£4.99";
+        } else if (lang.startsWith("en-us") || lang.startsWith("en-ca") || lang.startsWith("en-au") || tz.startsWith("America/")) {
+          price = "$4.99";
+        } else if (tz.startsWith("Europe/")) {
+          price = "€5.99";
+        }
+        document.querySelectorAll("[data-brink-price]").forEach(function (el) {
+          el.textContent = price;
+        });
+      } catch (e) {}
+    })();
+  </script>
+
 </body>
 </html>
+
+
