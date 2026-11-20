@@ -856,6 +856,10 @@
     .appstore-fallback { display: none; align-items: center; min-height: 50px; padding: 0 20px; border-radius: 12px; background: var(--text); color: var(--bg); font: 600 15px var(--sans); }
     .appstore-badge.badge-fallback picture { display: none; }
     .appstore-badge.badge-fallback .appstore-fallback { display: inline-flex; }
+  
+    /* ---- Coming soon tags ---- */
+    .soon { display: inline-block; margin: 0 0 14px 8px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border2); color: var(--text2); font: 600 12px var(--sans); vertical-align: top; }
+    .bt .soon, h3 .soon { margin: 0 0 0 8px; vertical-align: middle; }
   </style>
 </head>
 
@@ -1086,7 +1090,7 @@
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
-        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82" onerror="this.closest('a').classList.add('badge-fallback')"></picture><span class="appstore-fallback">Download on the App Store</span></a>
+        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="app-store-badge-white.svg"><img src="app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></picture></a>
         <button class="whatsnew-done" id="whatsnew-done" type="button">Got it</button>
       </div>
     </div>

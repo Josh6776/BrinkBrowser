@@ -1178,6 +1178,10 @@
     .appstore-fallback { display: none; align-items: center; min-height: 50px; padding: 0 20px; border-radius: 12px; background: var(--text); color: var(--bg); font: 600 15px var(--sans); }
     .appstore-badge.badge-fallback picture { display: none; }
     .appstore-badge.badge-fallback .appstore-fallback { display: inline-flex; }
+  
+    /* ---- Coming soon tags ---- */
+    .soon { display: inline-block; margin: 0 0 14px 8px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border2); color: var(--text2); font: 600 12px var(--sans); vertical-align: top; }
+    .bt .soon, h3 .soon { margin: 0 0 0 8px; vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -1223,7 +1227,7 @@
 
   <div class="page-hero">
     <h1>One browser for your entire research workflow</h1>
-    <p>Browse, collect, organise, cite and focus without breaking your flow. Brink brings the tools around your research into one iPad workspace. Some of what you see here arrives with Brink 3.0, which is coming soon.</p>
+    <p>Browse, collect, organise, cite and focus without breaking your flow. Brink brings the tools around your research into one iPad workspace. Features marked Coming in 3.0 arrive with Brink 3.0, which is coming soon.</p>
   </div>
 
   <main class="fx-wrap">
@@ -1255,7 +1259,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="folders-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="folders-screenshot.webp" alt="Projects, nested folders and tabs in the Brink sidebar beside a Wikipedia article" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
-            <div class="fx-text"><span class="feature-tag">Research Saving &amp; DOI Lookup</span><h3>Auto-fill academic metadata by DOI or directly from the page</h3><p>Save journal articles, websites, notes, PDFs and lecture recordings inside your active project. Paste any DOI to pull verified authors, journal titles and publication years from CrossRef, or let Brink extract academic meta tags directly from JSTOR, PubMed, Nature, IEEE and ScienceDirect.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Research Saving &amp; DOI Lookup</span><span class="soon">Coming in 3.0</span><h3>Auto-fill academic metadata by DOI or directly from the page</h3><p>Save journal articles, websites, notes, PDFs and lecture recordings inside your active project. Paste any DOI to pull verified authors, journal titles and publication years from CrossRef, or let Brink extract academic meta tags directly from JSTOR, PubMed, Nature, IEEE and ScienceDirect.</p><ul class="feature-bullets">
             <li>CrossRef DOI auto-lookup for verified authors, journal &amp; year</li>
             <li>Live DOM academic meta tag extraction (Highwire Press, Dublin Core &amp; JSON-LD)</li>
             <li>Websites, journal papers, notes, images, PDFs &amp; lecture recordings</li>
@@ -1263,7 +1267,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="save-research-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="save-research-screenshot.webp" alt="Save Research Source in Brink with a DOI pasted in and the authors, journal, year and title filled in from CrossRef" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
-            <div class="fx-text"><span class="feature-tag">Citations &amp; Bibliography Export</span><h3>One-tap references and complete project bibliographies</h3><p>Generate accurate in-text citations and full references in Harvard, APA 7, MLA 9, Chicago and IEEE. When it’s time to submit your essay or paper, export your entire project or folder as an alphabetised Reference List. or export standard BibTeX (.bib) and RIS (.ris) files for Overleaf, Zotero and Mendeley.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Citations &amp; Bibliography Export</span><span class="soon">Coming in 3.0</span><h3>One-tap references and complete project bibliographies</h3><p>Generate accurate in-text citations and full references in Harvard, APA 7, MLA 9, Chicago and IEEE. When it’s time to submit your essay or paper, export your entire project or folder as an alphabetised Reference List. or export standard BibTeX (.bib) and RIS (.ris) files for Overleaf, Zotero and Mendeley.</p><ul class="feature-bullets">
             <li>Harvard, APA 7, MLA 9, Chicago and IEEE citation styles</li>
             <li>One-tap Project &amp; Folder Bibliography compilation</li>
             <li>Alphabetised Reference Lists or numbered [1]..[N] IEEE lists</li>
@@ -1299,7 +1303,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="reader-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="reader-screenshot.webp" alt="Reader Mode in Brink Browser showing a clean reading view with the text settings button and reading progress" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
-            <div class="fx-text"><span class="feature-tag">PDF Highlighting &amp; Apple Pencil</span><h3>Highlight papers and annotate margins with Apple Pencil</h3><p>Open academic PDFs directly inside your research project. Highlight passages in four academic colour swatches (Yellow, Green, Blue, Rose), underline key arguments, draw freehand margin annotations with Apple Pencil, and save your annotated PDF straight back to your project.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">PDF Highlighting &amp; Apple Pencil</span><span class="soon">Coming in 3.0</span><h3>Highlight papers and annotate margins with Apple Pencil</h3><p>Open academic PDFs directly inside your research project. Highlight passages in four academic colour swatches (Yellow, Green, Blue, Rose), underline key arguments, draw freehand margin annotations with Apple Pencil, and save your annotated PDF straight back to your project.</p><ul class="feature-bullets">
             <li>Four academic PDF highlight swatches &amp; text underlining</li>
             <li>Freehand Apple Pencil &amp; ink margin annotations with undo support</li>
             <li>Fill interactive PDF form fields, checkboxes &amp; radio buttons</li>
@@ -1340,7 +1344,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="study-mode-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="study-mode-screenshot.webp" alt="Study Mode settings in Brink showing the current timer, Pencil hover delay and End Session" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
-            <div class="fx-text"><span class="feature-tag">Lecture Capture</span><h3>Record and transcribe lectures on device</h3><p>Start a lecture recording inside Brink and continue browsing while it runs. With Brink Pro, recordings automatically transcribe privately on your iPad into searchable text indexed in Brink Spotlight (⌘K).</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Lecture Capture</span><span class="soon">Coming in 3.0</span><h3>Record and transcribe lectures on device</h3><p>Start a lecture recording inside Brink and continue browsing while it runs. With Brink Pro, recordings automatically transcribe privately on your iPad into searchable text indexed in Brink Spotlight (⌘K).</p><ul class="feature-bullets">
             <li>Record while continuing to browse</li>
             <li>100% on-device speech-to-text transcription</li>
             <li>Search spoken transcripts in Brink Spotlight</li>
@@ -1348,7 +1352,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="lecture-capture-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="lecture-capture-screenshot.webp" alt="Lecture Playback in Brink with speed controls and an on-device transcript that can be copied or saved as a note" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
-            <div class="fx-text"><span class="feature-tag">Spotlight Search</span><h3>Search what was said in a lecture</h3><p>Type a word from a lecture and Brink Spotlight finds the matching transcript, listed under Notes &amp; Recordings with an option to search the web instead.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Spotlight Search</span><span class="soon">Coming in 3.0</span><h3>Search what was said in a lecture</h3><p>Type a word from a lecture and Brink Spotlight finds the matching transcript, listed under Notes &amp; Recordings with an option to search the web instead.</p><ul class="feature-bullets">
             <li>Transcript matches appear in Brink Spotlight</li>
             <li>Notes and recordings searched together</li>
             <li>Open Spotlight with &#8984;K on an iPad keyboard</li>
@@ -1366,7 +1370,7 @@
               <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
           </div>
           <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
-            <div class="fx-text"><span class="feature-tag">Brink Shield &amp; Security</span><h3>Cleaner pages and biometric privacy built in</h3><p>Tap the address-bar shield to see live HTTPS status, blocked trackers, cookie banner hiding, and tracking-parameter stripping. Lock Brink or Private Tabs with Face ID or Touch ID on shared iPads.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Brink Shield &amp; Security</span><span class="soon">Coming in 3.0</span><h3>Cleaner pages and biometric privacy built in</h3><p>Tap the address-bar shield to see live HTTPS status, blocked trackers, cookie banner hiding, and tracking-parameter stripping. Lock Brink or Private Tabs with Face ID or Touch ID on shared iPads.</p><ul class="feature-bullets">
             <li>70+ tracker networks &amp; 90+ cookie banners blocked</li>
             <li>Automatic HTTPS upgrades &amp; tracking-parameter stripping</li>
             <li>Face ID / Touch ID lock for Brink &amp; Private Tabs</li>
@@ -1374,7 +1378,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="shield-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="shield-screenshot.webp" alt="The Brink Shield panel open from the address bar on nature.com, showing HTTPS Encrypted, items blocked and switches for ad and tracker shield, cookie banners, tracking parameters and HTTPS upgrades" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
-            <div class="fx-text"><span class="feature-tag">Privacy Controls</span><h3>Cut the clutter and the tracking</h3><p>Hide cookie banners, strip tracking codes from links and upgrade sites to secure connections. Switch the built-in ad blocker on or off and see how many items it blocked on the page you're reading.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Privacy Controls</span><span class="soon">Coming in 3.0</span><h3>Cut the clutter and the tracking</h3><p>Hide cookie banners, strip tracking codes from links and upgrade sites to secure connections. Switch the built-in ad blocker on or off and see how many items it blocked on the page you're reading.</p><ul class="feature-bullets">
             <li>Hide cookie banners on most websites</li>
             <li>Remove tracking codes such as utm_ and fbclid from links</li>
             <li>Upgrade to secure connections, with a prompt before continuing over http</li>
@@ -1382,7 +1386,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="privacy-controls-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="privacy-controls-screenshot.webp" alt="Brink Browser Settings showing hide cookie banners, remove tracking from links, secure connections and the ad blocker" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
-            <div class="fx-text"><span class="feature-tag">Lock &amp; Search</span><h3>Lock Brink and choose your search engine</h3><p>Require Face ID, Touch ID or your passcode when you come back to Brink, keep Private Tabs blurred and locked until you authenticate, and pick the search engine that suits your research.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Lock &amp; Search</span><span class="soon">Coming in 3.0</span><h3>Lock Brink and choose your search engine</h3><p>Require Face ID, Touch ID or your passcode when you come back to Brink, keep Private Tabs blurred and locked until you authenticate, and pick the search engine that suits your research.</p><ul class="feature-bullets">
             <li>Lock Brink with Face ID, Touch ID or your passcode when you return</li>
             <li>Lock Private Tabs until you authenticate</li>
             <li>Choose your search engine</li>
@@ -1390,7 +1394,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="lock-search-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="lock-search-screenshot.webp" alt="Brink Browser Settings showing search engine, lock Brink with passcode and lock private tabs options" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
-            <div class="fx-text"><span class="feature-tag">Workspace Themes</span><h3>Make the workspace feel like your own</h3><p>Personalise Brink with 13 editorial workspace colours, left or right sidebar placement, compact sidebar mode, and light or dark appearances with matching iPadOS icons.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Workspace Themes</span><span class="soon">Coming in 3.0</span><h3>Make the workspace feel like your own</h3><p>Personalise Brink with 13 editorial workspace colours, left or right sidebar placement, compact sidebar mode, and light or dark appearances with matching iPadOS icons.</p><ul class="feature-bullets">
             <li>13 editorial workspace colour tints</li>
             <li>Left or right sidebar + compact sidebar mode</li>
             <li>Light, dark, and tinted iPadOS app icons</li>
@@ -1410,7 +1414,7 @@
               <button class="fx-arrow fx-next" type="button" aria-label="Next feature"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
           </div>
           <article class="fx-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
-            <div class="fx-text"><span class="feature-tag">Free tier</span><h3>Try Brink before you pay</h3><p>Brink 3.0 will be free to download. The free tier will let you work with one named research project, five citations and three lecture recordings, so you can see how it fits your own study.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Free tier</span><span class="soon">Coming in 3.0</span><h3>Try Brink before you pay</h3><p>Brink 3.0 will be free to download. The free tier will let you work with one named research project, five citations and three lecture recordings, so you can see how it fits your own study.</p><ul class="feature-bullets">
             <li>1 named research project included</li>
             <li>5 free citations</li>
             <li>3 free lecture recordings</li>
@@ -1418,7 +1422,7 @@
           </ul></div>
             <div class="fx-shot"><picture><source srcset="pro-free-screenshot.avif" type="image/avif"><img width="2000" height="1379" loading="lazy" decoding="async" src="pro-free-screenshot.webp" alt="The Brink Pro screen in Settings showing the free tier allowances: one named research project, five free citations and three free lecture recordings" /></picture></div>
           </article><article class="fx-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
-            <div class="fx-text"><span class="feature-tag">Brink Pro</span><h3>One payment unlocks everything, for good</h3><p>Brink Pro will be a single one-time purchase of <span data-brink-price>£4.99</span> with no subscription. If you bought Brink before, Restore Purchases will unlock Pro at no cost.</p><ul class="feature-bullets">
+            <div class="fx-text"><span class="feature-tag">Brink Pro</span><span class="soon">Coming in 3.0</span><h3>One payment unlocks everything, for good</h3><p>Brink Pro will be a single one-time purchase of <span data-brink-price>£4.99</span> with no subscription. If you bought Brink before, Restore Purchases will unlock Pro at no cost.</p><ul class="feature-bullets">
             <li>Unlimited research projects</li>
             <li>Unlimited citations and full bibliography export, including BibTeX and RIS</li>
             <li>Unlimited folders and nested subfolders</li>
@@ -1447,7 +1451,7 @@
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
-        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82" onerror="this.closest('a').classList.add('badge-fallback')"></picture><span class="appstore-fallback">Download on the App Store</span></a>
+        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="app-store-badge-white.svg"><img src="app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></picture></a>
         <button class="whatsnew-done" id="whatsnew-done" type="button">Got it</button>
       </div>
     </div>

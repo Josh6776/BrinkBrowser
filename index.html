@@ -1529,6 +1529,38 @@
     .appstore-fallback { display: none; align-items: center; min-height: 50px; padding: 0 20px; border-radius: 12px; background: var(--text); color: var(--bg); font: 600 15px var(--sans); }
     .appstore-badge.badge-fallback picture { display: none; }
     .appstore-badge.badge-fallback .appstore-fallback { display: inline-flex; }
+  
+    /* ---- Coming soon tags ---- */
+    .soon { display: inline-block; margin: 0 0 14px 8px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border2); color: var(--text2); font: 600 12px var(--sans); vertical-align: top; }
+    .bt .soon, h3 .soon { margin: 0 0 0 8px; vertical-align: middle; }
+  
+    /* ---- Privacy section ---- */
+    .priv { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: start; }
+    .shield { border-radius: 28px; padding: 24px; box-shadow: var(--shadow-lift); }
+    .shield-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+    .shield-head h3 { font: 600 18px var(--sans); margin: 0; }
+    .shield-head p { margin: 2px 0 0; font-size: 13px; color: var(--text2); }
+    .shield-chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .chip { padding: 4px 10px; border-radius: 999px; background: var(--bg3); color: var(--text2); font: 600 12px var(--sans); font-variant-numeric: tabular-nums; }
+    .chip.ok { color: var(--accent-text); }
+    .shield-list { list-style: none; border-top: 1px solid var(--border); }
+    .shield-list li { border-bottom: 1px solid var(--border); }
+    .shield-list li:last-child { border-bottom: 0; }
+    .shield-sw { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; border: 0; background: transparent; color: var(--text); font: 500 15px var(--sans); text-align: left; cursor: pointer; }
+    .shield-sw i { position: relative; flex: 0 0 auto; width: 46px; height: 28px; border-radius: 999px; background: var(--border2); transition: background 0.2s; }
+    .shield-sw i::after { content: ''; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: transform 0.2s; }
+    .shield-sw[aria-checked="true"] i { background: var(--accent); }
+    .shield-sw[aria-checked="true"] i::after { transform: translateX(18px); }
+    .shield-sw:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+    .shield-note { margin: 14px 0 0; font-size: 12.5px; color: var(--text3); }
+    .priv-list { list-style: none; border-top: 1px solid var(--border2); }
+    .priv-list li { padding: 24px 0; border-bottom: 1px solid var(--border2); }
+    .priv-list h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 6px; }
+    .priv-list p { color: var(--text2); font-size: 17px; line-height: 1.65; max-width: 32rem; margin: 0; }
+    .priv-soon { margin-top: 36px; max-width: 42rem; color: var(--text2); font-size: 15px; line-height: 1.65; }
+    .closer-link { margin-top: 20px; }
+    .closer-link a { color: var(--accent-text); font-weight: 600; }
+    @media (max-width: 860px) { .priv { grid-template-columns: minmax(0, 1fr); gap: 36px; } }
   </style>
 </head>
 <body>
@@ -1576,7 +1608,7 @@
       <h1>The iPad browser built for research, not just browsing.</h1>
       <p class="hero-sub">Projects, Harvard &amp; APA citations, PDF markup and lecture recording in one iPad workspace. <span data-brink-price>£4.99</span> once, no subscriptions. Brink 3.0 is coming soon.</p>
       <div class="hero-cta">
-        <a class="appstore-badge lg" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82" onerror="this.closest('a').classList.add('badge-fallback')"></picture><span class="appstore-fallback">Download on the App Store</span></a>
+        <a class="appstore-badge lg" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="app-store-badge-white.svg"><img src="app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></picture></a>
         <span class="req glass">Requires iPadOS 18.0 or later</span>
       </div>
     </div>
@@ -1656,7 +1688,7 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 id="cite-h">Pick a style. Get the reference.</h2>
-        <p>Auto-fill verified metadata by DOI via CrossRef, generate single references or in-text citations in Harvard, APA 7, MLA 9, Chicago and IEEE, or export an entire project’s Reference List, BibTeX (.bib) or RIS (.ris) in one tap.</p>
+        <p>Auto-fill verified metadata by DOI via CrossRef, generate single references or in-text citations in Harvard, APA 7, MLA 9, Chicago and IEEE, or export an entire project’s Reference List, BibTeX (.bib) or RIS (.ris) in one tap. DOI lookup and project bibliographies arrive with Brink 3.0, coming soon.</p>
       </div>
       <div class="cite-demo">
         <div class="cite-source">
@@ -1796,7 +1828,7 @@
         </article>
 
         <article class="bt bt-pdf glass">
-          <h3>PDF Highlighting &amp; Apple Pencil</h3>
+          <h3>PDF Highlighting &amp; Apple Pencil <span class="soon">Coming in 3.0</span></h3>
           <p>Highlight in 4 colours, underline passages, draw margin notes with Apple Pencil, and fill PDF forms.</p>
           <div class="pdf-sheet">
             <p>Dual-task studies <mark>load the central executive</mark> while participants reason.</p>
@@ -1819,6 +1851,37 @@
           </div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="band" id="privacy" aria-labelledby="privacy-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="privacy-h">Private by design.</h2>
+        <p>Your research stays on your iPad, and Brink works to stop the web following you around while you read.</p>
+      </div>
+      <div class="priv">
+        <div class="shield glass" id="shield">
+          <div class="shield-head">
+            <div><h3>Brink Shield</h3><p>nature.com</p></div>
+            <div class="shield-chips"><span class="chip ok">HTTPS Encrypted</span><span class="chip" id="shield-count" aria-live="polite">14 blocked</span></div>
+          </div>
+          <ul class="shield-list">
+            <li><button type="button" class="shield-sw" role="switch" aria-checked="true" data-n="7"><span>Ad &amp; Tracker Shield</span><i aria-hidden="true"></i></button></li>
+            <li><button type="button" class="shield-sw" role="switch" aria-checked="true" data-n="4"><span>Hide Cookie Banners</span><i aria-hidden="true"></i></button></li>
+            <li><button type="button" class="shield-sw" role="switch" aria-checked="true" data-n="3"><span>Strip Tracking Parameters</span><i aria-hidden="true"></i></button></li>
+            <li><button type="button" class="shield-sw" role="switch" aria-checked="true" data-n="0"><span>Upgrade to HTTPS</span><i aria-hidden="true"></i></button></li>
+          </ul>
+          <p class="shield-note">A demonstration of the Brink Shield panel. Try the switches.</p>
+        </div>
+        <ul class="priv-list">
+          <li><h3>Your research stays on your iPad</h3><p>Projects, notes, highlights, recordings and transcripts are not collected by Brink.</p></li>
+          <li><h3>Ads, trackers and banners</h3><p>Built-in ad blocking, cookie banners hidden and tracking codes removed from links.</p></li>
+          <li><h3>Secure connections</h3><p>Sites are upgraded to HTTPS where they support it, and Brink asks before continuing over http.</p></li>
+          <li><h3>Lock it down</h3><p>Lock Brink, or just your Private Tabs, with Face ID, Touch ID or your passcode.</p></li>
+        </ul>
+      </div>
+      <p class="priv-soon">Ad blocking is in Brink today. The Brink Shield panel, cookie banner hiding, tracking code removal, HTTPS upgrades and the lock options arrive with Brink 3.0, coming soon.</p>
     </div>
   </section>
 
@@ -1850,31 +1913,17 @@
     </div>
   </section>
 
-<section class="band paper">
-    <div class="wrap">
-      <div class="about-strip">
-        <div>
-          <h2>Built out of frustration.</h2>
-        </div>
 
-        <div>
-          <p>Brink started with a familiar problem: too many research tabs, citations being built by hand, notes living somewhere else and useful material becoming harder to find the longer a project went on.</p>
-          <p>So Brink was built around the research workflow itself. The browser is still at the centre, but projects, folders, notes, citations, PDFs, recordings and focus tools live around it instead of in separate places.</p>
-          <p>Brink is independently developed and funded by its users.</p>
-          <a class="text-link" href="about.html">Read why Brink was built →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="closer" id="download" aria-labelledby="dl-h">
     <div class="wrap">
       <h2 id="dl-h">Research without the mess.</h2>
       <p>One iPad browser for finding sources, organising projects, building citations and staying focused. <span data-brink-price>£4.99</span> once. No subscription.</p>
       <div class="hero-cta">
-        <a class="appstore-badge lg" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82" onerror="this.closest('a').classList.add('badge-fallback')"></picture><span class="appstore-fallback">Download on the App Store</span></a>
+        <a class="appstore-badge lg" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="app-store-badge-white.svg"><img src="app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></picture></a>
         <span class="req glass">Requires iPadOS 18.0 or later</span>
       </div>
+        <p class="closer-link"><a href="about.html">Why I built Brink</a></p>
     </div>
   </section>
 
@@ -1893,7 +1942,7 @@
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
-        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82" onerror="this.closest('a').classList.add('badge-fallback')"></picture><span class="appstore-fallback">Download on the App Store</span></a>
+        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="app-store-badge-white.svg"><img src="app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></picture></a>
         <button class="whatsnew-done" id="whatsnew-done" type="button">Got it</button>
       </div>
     </div>
@@ -2394,6 +2443,27 @@
     })();
   </script>
 
+
+  <script>
+    (function () {
+      var list = document.getElementById('shield');
+      if (!list) return;
+      var count = document.getElementById('shield-count');
+      var sws = Array.prototype.slice.call(list.querySelectorAll('.shield-sw'));
+      function update() {
+        var n = 0;
+        sws.forEach(function (b) { if (b.getAttribute('aria-checked') === 'true') n += parseInt(b.dataset.n, 10) || 0; });
+        count.textContent = n + ' blocked';
+      }
+      sws.forEach(function (b) {
+        b.addEventListener('click', function () {
+          b.setAttribute('aria-checked', String(b.getAttribute('aria-checked') !== 'true'));
+          update();
+        });
+      });
+      update();
+    })();
+  </script>
 </body>
 </html>
 
