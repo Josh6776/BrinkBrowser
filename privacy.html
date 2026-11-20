@@ -870,7 +870,19 @@
       .legal-wrap, .contact-section { padding-left: 20px; padding-right: 20px; padding-bottom: 80px; }
       .cta h2 { font-size: clamp(38px, 11vw, 56px); }
     }
-</style>
+
+    /* ---- Legal pages: plain reading layout ---- */
+    .legal-wrap { max-width: 1120px; }
+    .legal-wrap > * { max-width: 42rem; }
+    .legal-wrap .intro { font-size: 19px; line-height: 1.7; color: var(--text); margin-bottom: 56px; }
+    .legal-section { margin-bottom: 40px; }
+    .legal-section h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -0.015em; margin-bottom: 14px; }
+    .legal-section p, .legal-section li { font-size: 17px; line-height: 1.75; color: var(--text2); }
+    .legal-section p { margin-bottom: 16px; }
+    .legal-section ul { margin: 0 0 16px 1.25rem; }
+    .legal-section li { margin-bottom: 6px; }
+    .legal-section a { color: var(--accent-text); }
+  </style>
 </head>
 
 <body>
@@ -915,14 +927,11 @@
 
   <header class="page-hero">
     <h1>Privacy Policy</h1>
-    <p>Last updated: November 2026 · Brink Browser</p>
+    <p>Last updated: November 2026</p>
   </header>
 
   <main class="legal-wrap">
-    <div class="summary">
-      <h2>The short version</h2>
-      <p>Brink keeps the content of your research on your device. Your browsing history, search queries, research projects, folders, saved pages, notes and lecture recordings are not collected by Brink. Limited diagnostics and usage analytics may be processed to help understand app performance, identify crashes and improve Brink.</p>
-    </div>
+    <p class="intro">Brink keeps the content of your research on your device. Your browsing history, search queries, research projects, folders, saved pages, notes and lecture recordings are not collected by Brink. Limited diagnostics and usage analytics may be processed to help understand app performance, identify crashes and improve Brink.</p>
 
     <section class="legal-section">
       <h2>1. Who is responsible for Brink?</h2>
@@ -952,39 +961,13 @@
       <h2>3. Diagnostics and usage analytics</h2>
       <p>Brink uses Firebase services provided by Google to support app diagnostics and usage analytics. Depending on the Firebase services enabled in the version of Brink you use, technical information may be processed to help identify crashes, understand performance and understand how app features are used.</p>
 
-      <div class="data-table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Examples</th>
-              <th>Purpose</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Diagnostics</td>
-              <td>Crash information and technical diagnostic data</td>
-              <td>App stability, debugging and reliability</td>
-            </tr>
-            <tr>
-              <td>Usage data</td>
-              <td>Interactions with app features and events configured by Brink</td>
-              <td>Understanding feature usage and improving the app</td>
-            </tr>
-            <tr>
-              <td>Device / app information</td>
-              <td>Technical device, operating-system and app-version information made available through Firebase</td>
-              <td>Diagnostics, compatibility and analytics</td>
-            </tr>
-            <tr>
-              <td>Approximate location</td>
-              <td>Country or city-level location estimated from your IP address by Firebase</td>
-              <td>Regional and aggregate analytics</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <p>The information that may be processed falls into these groups:</p>
+      <ul>
+        <li>Diagnostics: crash information and technical diagnostic data, used for app stability, debugging and reliability.</li>
+        <li>Usage data: interactions with app features and events configured by Brink, used for understanding feature usage and improving the app.</li>
+        <li>Device and app information: technical device, operating-system and app-version information made available through Firebase, used for diagnostics, compatibility and analytics.</li>
+        <li>Approximate location: country or city-level location estimated from your IP address by Firebase, used for regional and aggregate analytics.</li>
+      </ul>
 
       <p>Firebase may process your device's IP address, from which an approximate location (for example, at country or city level) can be derived for analytics purposes. Brink itself does not request, access or use your device's precise or GPS location (it has no location permission) and does not track your whereabouts.</p>
 
@@ -992,7 +975,7 @@
 
       <p>Google processes information collected through Firebase under Google's applicable privacy and security terms. You can learn more through <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a>.</p>
 
-      <div class="note">Brink's privacy-sensitive research content is separate from its analytics and diagnostic events. The fact that a feature is used may be measurable where an analytics event has been configured, but the research content inside that feature is not sent as the event content.</div>
+      <p>Brink's privacy-sensitive research content is separate from its analytics and diagnostic events. The fact that a feature is used may be measurable where an analytics event has been configured, but the research content inside that feature is not sent as the event content.</p>
     </section>
 
     <section class="legal-section">
@@ -1099,7 +1082,6 @@
       Website: <a href="contact.html">Brink contact page</a></p>
     </section>
 
-    <p class="updated">Last updated: November 2026.</p>
   </main>
 
   <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">

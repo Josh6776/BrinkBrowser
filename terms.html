@@ -833,7 +833,19 @@
       .legal-wrap, .contact-section { padding-left: 20px; padding-right: 20px; padding-bottom: 80px; }
       .cta h2 { font-size: clamp(38px, 11vw, 56px); }
     }
-</style>
+
+    /* ---- Legal pages: plain reading layout ---- */
+    .legal-wrap { max-width: 1120px; }
+    .legal-wrap > * { max-width: 42rem; }
+    .legal-wrap .intro { font-size: 19px; line-height: 1.7; color: var(--text); margin-bottom: 56px; }
+    .legal-section { margin-bottom: 40px; }
+    .legal-section h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -0.015em; margin-bottom: 14px; }
+    .legal-section p, .legal-section li { font-size: 17px; line-height: 1.75; color: var(--text2); }
+    .legal-section p { margin-bottom: 16px; }
+    .legal-section ul { margin: 0 0 16px 1.25rem; }
+    .legal-section li { margin-bottom: 6px; }
+    .legal-section a { color: var(--accent-text); }
+  </style>
 </head>
 
 <body>
@@ -878,14 +890,11 @@
 
   <header class="page-hero">
     <h1>Terms &amp; Conditions</h1>
-    <p>Last updated: November 2026 · Governing law: England and Wales</p>
+    <p>Last updated: November 2026</p>
   </header>
 
   <main class="legal-wrap">
-    <div class="notice">
-      <h2>Before using Brink</h2>
-      <p>These Terms &amp; Conditions govern your use of Brink Browser. By downloading, installing or using Brink, you agree to these terms. Nothing in these terms is intended to exclude or restrict rights that cannot lawfully be excluded or restricted under applicable consumer law.</p>
-    </div>
+    <p class="intro">These Terms &amp; Conditions govern your use of Brink Browser. By downloading, installing or using Brink, you agree to these terms. Nothing in these terms is intended to exclude or restrict rights that cannot lawfully be excluded or restricted under applicable consumer law.</p>
 
     <section class="legal-section">
       <h2>1. About Brink</h2>
@@ -934,7 +943,7 @@
       <p>Brink allows you to create and organise content such as Research Projects, folders, notes, saved webpages, PDFs, images, highlights, citations and lecture recordings.</p>
       <p>You are responsible for the content you create, save, download, record, import or organise using Brink and for ensuring that your use of that content is lawful.</p>
       <p>Brink does not currently provide an account-based cloud backup or synchronisation service for your research workspace. You are responsible for maintaining any backups or exported copies that are important to you.</p>
-      <div class="note">Deleting Brink, deleting locally stored content, changing devices or other device-level events may result in loss of locally stored research where no separate backup or exported copy exists.</div>
+      <p>Deleting Brink, deleting locally stored content, changing devices or other device-level events may result in loss of locally stored research where no separate backup or exported copy exists.</p>
     </section>
 
     <section class="legal-section">
@@ -1049,7 +1058,6 @@
       Website: <a href="contact.html">Brink contact page</a></p>
     </section>
 
-    <p class="updated">Last updated: November 2026.</p>
   </main>
 
   <div class="whatsnew-overlay" id="whatsnew" role="dialog" aria-modal="true" aria-labelledby="whatsnew-title" aria-hidden="true">
