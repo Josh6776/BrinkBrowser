@@ -882,6 +882,17 @@
     .legal-section ul { margin: 0 0 16px 1.25rem; }
     .legal-section li { margin-bottom: 6px; }
     .legal-section a { color: var(--accent-text); }
+  
+    /* ---- What's new sheet: structured list + badge fallback ---- */
+    .whatsnew-list { gap: 0; }
+    .whatsnew-list li { display: block; position: relative; padding: 14px 0 14px 20px; border-top: 1px solid var(--border); font-size: 15px; line-height: 1.55; color: var(--text2); }
+    .whatsnew-list li:first-child { border-top: 0; padding-top: 4px; }
+    .whatsnew-list li::before { position: absolute; left: 0; top: 22px; margin-top: 0; }
+    .whatsnew-list li:first-child::before { top: 12px; }
+    .whatsnew-list li b { display: block; margin-bottom: 3px; color: var(--text); font-size: 15.5px; font-weight: 600; }
+    .appstore-fallback { display: none; align-items: center; min-height: 50px; padding: 0 20px; border-radius: 12px; background: var(--text); color: var(--bg); font: 600 15px var(--sans); }
+    .appstore-badge.badge-fallback picture { display: none; }
+    .appstore-badge.badge-fallback .appstore-fallback { display: inline-flex; }
   </style>
 </head>
 
@@ -918,7 +929,7 @@
   <div class="announce" id="announce" role="region" aria-label="Site announcement">
     <div class="announce-inner">
       <span class="announce-badge">New</span>
-      <span class="announce-text">Brink 2.0 is here: Free to try on iPad, DOI auto-lookup, full project bibliographies &amp; Apple Pencil PDF markup.</span>
+      <span class="announce-text">Brink 2.0 is here: Free to try on iPad, plus DOI lookup.</span>
       <button class="announce-cta" id="announce-more" type="button">See what’s new</button>
     </div>
     <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">✕</button>
@@ -1091,15 +1102,15 @@
       <h2 id="whatsnew-title">What’s new in Brink 2.0</h2>
       <p class="whatsnew-lead">Now free to download on iPad, with one-tap Project Bibliographies, CrossRef DOI lookup, and Apple Pencil PDF markup.</p>
       <ul class="whatsnew-list">
-        <li><b>Free to Download + One-Time Brink Pro Unlock:</b> Try Brink free on iPad, then unlock unlimited projects, citations, and bibliography exports forever for <span data-brink-price>£4.99</span> once (no subscriptions). Previous paid buyers receive Brink Pro automatically.</li>
-        <li><b>One-Tap Project Bibliography Export:</b> Compile an entire research project or folder into an alphabetised Harvard, APA 7, MLA 9, or Chicago Reference List. or export numbered IEEE, BibTeX (.bib), or RIS (.ris) files.</li>
-        <li><b>Academic DOI &amp; CrossRef Auto-Lookup:</b> Paste any DOI or save directly from JSTOR, PubMed, Nature, IEEE, or ScienceDirect to pull verified authors, journal titles, and publication years.</li>
-        <li><b>True PDF Highlighting &amp; Apple Pencil Markup:</b> Highlight academic PDFs in four colours, underline key passages, and write freehand margin notes with Apple Pencil.</li>
-        <li><b>Editorial Oxford Ink &amp; Warm Paper Palette:</b> A calmer, warm-paper reading environment built for long university study sessions.</li>
+        <li><b>Free to Download + One-Time Brink Pro Unlock</b> Try Brink free on iPad, then unlock unlimited projects, citations, and bibliography exports forever for <span data-brink-price>£4.99</span> once (no subscriptions). Previous paid buyers receive Brink Pro automatically.</li>
+        <li><b>One-Tap Project Bibliography Export</b> Compile an entire research project or folder into an alphabetised Harvard, APA 7, MLA 9, or Chicago Reference List, or export numbered IEEE, BibTeX (.bib), or RIS (.ris) files.</li>
+        <li><b>Academic DOI &amp; CrossRef Auto-Lookup</b> Paste any DOI or save directly from JSTOR, PubMed, Nature, IEEE, or ScienceDirect to pull verified authors, journal titles, and publication years.</li>
+        <li><b>True PDF Highlighting &amp; Apple Pencil Markup</b> Highlight academic PDFs in four colours, underline key passages, and write freehand margin notes with Apple Pencil.</li>
+        <li><b>Editorial Oxford Ink &amp; Warm Paper Palette</b> A calmer, warm-paper reading environment built for long university study sessions.</li>
       </ul>
       <p class="whatsnew-foot">Thanks for using Brink! Got feedback or ideas? Reach us from Settings → Support.</p>
       <div class="whatsnew-actions">
-        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82"></picture></a>
+        <a class="appstore-badge" href="https://apps.apple.com/us/app/brink-focus-browser/id6777463824?itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6777463824" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1788912000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1788912000" alt="Download on the App Store" width="244" height="82" onerror="this.closest('a').classList.add('badge-fallback')"></picture><span class="appstore-fallback">Download on the App Store</span></a>
         <button class="whatsnew-done" id="whatsnew-done" type="button">Got it</button>
       </div>
     </div>
